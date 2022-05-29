@@ -10,6 +10,10 @@ import news_3 from './images/news_3.png'
 import car_1 from './images/car_1.png'
 import car_2 from './images/car_2.png'
 import car_3 from './images/car_3.png'
+import instagram from './images/Instagram.png'
+import whatsapp from './images/Whatsapp.png'
+import youtube from './images/Youtube.png'
+import telegram from './images/Telegram.png'
 
 function App() {
     return (
@@ -153,7 +157,12 @@ function App() {
                         <div className="footer__block">
                             <p className="footer__subtitle">+996 755 055 865</p>
                             <p className="footer__subtitle">г. Бишкек, ул. Раззакова 32</p>
-                            <p className="footer__subtitle">г. Бишкек, ул. Раззакова 32</p>
+                            <div className="footer__grid">
+                                <span className="footer__eclipse"><img src={instagram} alt=""/></span>
+                                <span className="footer__eclipse"><img src={youtube} alt=""/></span>
+                                <span className="footer__eclipse"><img src={whatsapp} alt=""/></span>
+                                <span className="footer__eclipse"><img src={telegram} alt=""/></span>
+                            </div>
                         </div>
                     </div>
                 </div>
