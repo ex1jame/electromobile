@@ -14,7 +14,10 @@ import instagram from './images/Instagram.png'
 import whatsapp from './images/Whatsapp.png'
 import youtube from './images/Youtube.png'
 import telegram from './images/Telegram.png'
-
+import volkswagen from './images/Volkswagen.png'
+import credit_car from './images/credit.png'
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 function App() {
     return (
         <div className="App">
@@ -33,6 +36,7 @@ function App() {
                     </nav>
                 </div>
             </header>
+
             <section className="hero d-flex justify-center flex-column align-items">
                 <div className="hero__main d-flex align-center justify-center  flex-column">
                     <h1 className="hero__title">Авто <span class="bold">твоего</span> города</h1>
@@ -40,6 +44,43 @@ function App() {
                 </div>
                 <button className="orange_btn">Оформить заказ</button>
             </section>
+            <Carousel className="slider_page"
+                      showArrows={false}
+                      showIndicators={false}
+                      autoPlay
+                      interval={3000}
+                      transitionTime={1000}
+                      showThumbs={false}
+                      showStatus={false}
+                      infiniteLoop
+                      emulateTouch
+
+            >
+                <div className="d-flex justify-center align-center">
+                    <div className="drive">
+                        <h2 className="section__title"><img src={light_line} alt="" className="section__img"/>
+                            ТЕСТ-ДРАЙВ
+                            </h2>
+                        <p className="slider_page-subtitle">
+                            Мы предоставляем возможность лично прочувствовать электромобиль
+                        </p>
+                        <img src={volkswagen} alt="" className="drive__img"/>\
+                        <button className="orange_btn">Записаться</button>
+                    </div>
+                </div>
+                <div className="d-flex justify-center align-center">
+                    <div className="drive">
+                        <h2 className="section__title">КРЕДИТОВАНИЕ
+                            <img src={light_line} alt="" className="section__img"/></h2>
+                        <p className="slider_page-subtitle">
+                            Мы предоставляем возможность автокредитования на наши<br/>
+                            электромобили от различных банков
+                        </p>
+                        <img src={credit_car} alt="" className="drive__img"/>
+                        <button className="orange_btn">Подробнее</button>
+                    </div>
+                </div>
+            </Carousel>
             <section className="about">
                 <h2 className="section__title text-right">ПОЧЕМУ НЕОБХОДИМ
                     ЭЛЕКТРОМОБИЛЬ?</h2>
@@ -65,6 +106,7 @@ function App() {
                     </div>
                 </div>
             </section>
+
             <section className="crossover">
                 <div className="container">
                     <h2 className="section__title">Кроссоверы

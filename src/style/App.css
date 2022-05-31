@@ -50,26 +50,30 @@ a {
     justify-content: space-evenly;
 }
 
-.section__img {
-
-    position: absolute;
-    left: 430px;
-    bottom: -70px;
-}
 
 .section__title {
     position: relative;
-    font-family: 'Micra';
+
+    font-family: 'Micra', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 64px;
     line-height: 66px;
     color: #FFFFFF;
     text-align: center;
+
 }
 
 .text-right {
     text-align: right;
+}
+
+.section__img {
+
+    position: absolute;
+    left: 430px;
+    bottom: -70px;
+
 }
 
 .orange_btn {
@@ -181,6 +185,47 @@ a {
 
 }
 
+/*slider_page*/
+.carousel .slide img{
+    width: 85% !important;
+}
+.carousel .slide .section__img {
+    width: 40% !important;
+    object-fit: contain;
+}
+
+
+.slider_page {
+    background: url("../images/test_back.png") no-repeat center/cover;
+    height: 100%;
+    width: 100%;
+    padding: 105px 0;
+}
+
+.slider_page-subtitle {
+
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 117px;
+}
+.drive__img{
+    margin-bottom: 55px;
+}
+.drive .section__title {
+    margin-bottom: 100px;
+
+}
+.drive .section__title .section__img {
+    text-align: center;
+    left: 380px;
+
+}
+
 /*About*/
 .about {
     height: 100vh;
@@ -208,10 +253,12 @@ a {
     display: flex;
     transition: all 0.3s;
 }
+
 .about__flex:hover p {
     font-weight: bold;
 
 }
+
 .about__num {
     font-family: 'Proxima Nova Th', sans-serif;
     font-style: normal;
@@ -237,6 +284,7 @@ a {
 .d-flex .about__title {
     margin-left: 32px;
 }
+
 .about__num-right {
     padding-left: 17px;
 }
@@ -271,14 +319,15 @@ a {
 
 .crossover__main-block {
     position: relative;
-    background: url("../images/rectan_1.png") no-repeat center/cover ;
-    width:610.32px;
-    height:466.01px;
+    background: url("../images/rectan_1.png") no-repeat center/cover;
+    width: 610.32px;
+    height: 466.01px;
     clip-path: polygon(50% 0%, 100% 0, 100% 24%, 67% 100%, 0 100%, 0% 60%, 0 0);
     padding: 42px 0 0 64px;
 
 }
-.crossover__block{
+
+.crossover__block {
     position: relative;
     background: url("../images/rectan_2.png") no-repeat center/cover;
     height: 258px;
@@ -289,43 +338,49 @@ a {
     padding: 24px 0 0 140px;
 
 }
-.crossover__img{
+
+.crossover__img {
     position: absolute;
     top: 100px;
     right: 13px;
     clip-path: polygon(0 0, 98% 0, 65% 100%, 0% 100%);
     transform: matrix(1, -0.01, 0.01, 1, 0, 0);
 }
-.crossover__img-block{
+
+.crossover__img-block {
     position: absolute;
     top: 48px;
     right: 0;
     clip-path: polygon(0 0, 96% 0, 69% 100%, 0% 100%);
     transform: matrix(1, -0.01, 0.01, 1, 0, 0);
 }
-.crossover__img-block-2{
+
+.crossover__img-block-2 {
     position: absolute;
     top: 48px;
     right: 0;
     clip-path: polygon(0 0, 96% 0, 65% 100%, 0% 100%);
     transform: matrix(1, -0.01, 0.01, 1, 0, 0);
 }
-.crossover__title{
-    font-family: 'Micra',sans-serif;
+
+.crossover__title {
+    font-family: 'Micra', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 25px;
     color: #FFFFFF;
 }
-.crossover__subtitle{
-    font-family: 'Micra',sans-serif;
+
+.crossover__subtitle {
+    font-family: 'Micra', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
     line-height: 19px;
     color: #FFFFFF;
 }
+
 /*News section*/
 .news {
     background: #000000 url("../images/news_bg.png");
@@ -424,20 +479,23 @@ a {
     margin-bottom: 77px;
 
 }
-.footer__grid{
+
+.footer__grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 30px;
     align-items: center;
     justify-content: center;
 }
-.footer__eclipse{
+
+.footer__eclipse {
     position: relative;
     width: 52px;
     height: 52px;
     border-radius: 50%;
     background: #FFFFFF;
 }
+
 .footer__eclipse img {
     position: absolute;
     bottom: 16px;
