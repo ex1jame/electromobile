@@ -109,8 +109,24 @@ a {
     height: 100px;
 
 }
-
-
+.header__main-link{
+    width: 150px;
+}
+.header__testdrive-link{
+    width: 175px;
+}
+.header__tracking-link{
+    width: 140px;
+}
+.header__credit-link{
+    width: 200px;
+}
+.header__diler-link{
+    width: 150px;
+}
+.header__company-link{
+    width: 190px;
+}
 .header__link {
     font-family: 'Montserrat';
     display: inline-block;
@@ -251,7 +267,7 @@ a {
 
 .about__flex {
     display: flex;
-    transition: all 0.3s;
+    transition: all 0.8s;
 }
 
 .about__flex:hover p {
@@ -268,7 +284,7 @@ a {
     background: linear-gradient(168.32deg, #FFCC00 -28.61%, #C04710 68.23%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: font-weight 0.3s;
+    transition: font-weight 0.5s;
 }
 
 .about__title {
@@ -278,7 +294,7 @@ a {
     font-size: 24px;
     line-height: 25px;
     color: #FFFFFF;
-    transition: font-weight 0.3s;
+    transition: font-weight 1s;
 }
 
 .d-flex .about__title {
@@ -299,6 +315,22 @@ a {
     width: 100%;
     background: url("../images/cross_bg.png");
 }
+.crossover .container{
+    max-width: 1550px;
+}
+.crossover .section__title{
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.carousel .slide .section__title .crossover__img-left{
+    width: 2% !important;
+}.carousel .slide .section__title .crossover__img-right{
+    width: 2% !important;
+}
 
 .crossover__img-left {
 
@@ -313,6 +345,7 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 184px;
+    position: relative;
 
 
 }
@@ -338,6 +371,9 @@ a {
     padding: 24px 0 0 140px;
 
 }
+.crossover .slide .crossover__block img{
+    width: 70% !important;
+}
 
 .crossover__img {
     position: absolute;
@@ -348,9 +384,10 @@ a {
 }
 
 .crossover__img-block {
+
     position: absolute;
-    top: 48px;
-    right: 0;
+    top: 49px;
+    right: -1px;
     clip-path: polygon(0 0, 96% 0, 69% 100%, 0% 100%);
     transform: matrix(1, -0.01, 0.01, 1, 0, 0);
 }
@@ -358,11 +395,20 @@ a {
 .crossover__img-block-2 {
     position: absolute;
     top: 48px;
-    right: 0;
+    right: -2px;
     clip-path: polygon(0 0, 96% 0, 65% 100%, 0% 100%);
     transform: matrix(1, -0.01, 0.01, 1, 0, 0);
 }
-
+.crossover__link{
+    position: absolute;
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+    right: 20px;
+}
 .crossover__title {
     font-family: 'Micra', sans-serif;
     font-style: normal;
@@ -415,7 +461,7 @@ a {
 .news__video {
     width: 361px;
     height: 210px;
-    background: rgba(132, 132, 132, 0.66);
+    border: none;
 }
 
 .news__subtitle {
