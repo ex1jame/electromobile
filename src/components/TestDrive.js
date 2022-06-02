@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import '../style/TestDrive.css'
 import React from 'react'
 
@@ -84,6 +85,16 @@ const TestDrive = () => {
             </section>
         </div>
     )
+=======
+import React from 'react'
+
+const TestDrive = () => {
+	return (
+		<div style={{backgroundColor : "#000", height: "100vh"}}>
+
+		</div>
+	)
+>>>>>>> f05341b78b9fe9cf40e9cfdfbebd7c1f42ccb9a3
 }
 
 export default TestDrive
