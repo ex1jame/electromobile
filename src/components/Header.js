@@ -18,7 +18,7 @@ const Header = () => {
                         <NavLink to="/testdrive" className="header__link">Тест-драйв</NavLink>
                     </div>
                     <div className="header__tracking-link">
-                        <NavLink to="#" className="header__link">Трекинг</NavLink>
+                        <NavLink to="/tracking" className="header__link">Трекинг</NavLink>
                     </div>
                     <div className="header__credit-link">
                         <NavLink to="#" className="header__link">Кредитование</NavLink>
