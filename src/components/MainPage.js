@@ -99,7 +99,7 @@ const MainPage = () => {
 
             <Carousel className="crossover"
                       showArrows={true}
-                      showIndicators={false}
+                      showIndicators={true}
                       transitionTime={2000}
                       showThumbs={false}
                       showStatus={false}
@@ -109,11 +109,72 @@ const MainPage = () => {
                 <div className="container">
                     <h2 className="section__title"><img src={left_arrow} className="crossover__img-left"/>Кроссоверы<img
                         src={right_arrow} alt="" className="crossover__img-right"/>
+                        <img src={light_line} className="section__img"/></h2>
+
+                    <Carousel className="crossover__carousel"
+                              showArrows={false}
+                              showIndicators={false}
+                              transitionTime={2000}
+                              showThumbs={true}
+                              infiniteLoop
+                              showStatus={false}
+
+                              emulateTouch>
+                        <div className="crossover__grid">
+                            <p className="crossover__link">Модельный ряд</p>
+                            <div className="crossover__main-block">
+                                <p className="crossover__title">HONDA X-NV</p>
+                                <img src={car_1} alt="" className="crossover__img"/>
+                            </div>
+                            <div className="crossover__block">
+                                <p className="crossover__subtitle">Chery EQ5</p>
+                                <img src={car_2} alt="" className="crossover__img-block"/>
+                            </div>
+                            <div className="crossover__block">
+                                <p className="crossover__subtitle">Honda M-NV</p>
+                                <img src={car_4} alt="" className="crossover__img-block-2"/>
+                            </div>
+                        </div>
+                        <div className="crossover__grid">
+                            <p className="crossover__link">Модельный ряд</p>
+                            <div className="crossover__main-block">
+                                <p className="crossover__title">HONDA X-NV</p>
+                                <img src={car_1} alt="" className="crossover__img"/>
+                            </div>
+                            <div className="crossover__block">
+                                <p className="crossover__subtitle">Chery EQ5</p>
+                                <img src={car_2} alt="" className="crossover__img-block"/>
+                            </div>
+                            <div className="crossover__block">
+                                <p className="crossover__subtitle">Honda M-NV</p>
+                                <img src={car_3} alt="" className="crossover__img-block-2"/>
+                            </div>
+                        </div>
+                        <div className="crossover__grid">
+                            <p className="crossover__link">Модельный ряд</p>
+                            <div className="crossover__main-block">
+                                <p className="crossover__title">HONDA X-NV</p>
+                                <img src={car_1} alt="" className="crossover__img"/>
+                            </div>
+                            <div className="crossover__block">
+                                <p className="crossover__subtitle">Chery EQ5</p>
+                                <img src={car_2} alt="" className="crossover__img-block"/>
+                            </div>
+                            <div className="crossover__block">
+                                <p className="crossover__subtitle">Honda M-NV</p>
+                                <img src={car_3} alt="" className="crossover__img-block-2"/>
+                            </div>
+                        </div>
+                    </Carousel>
+                </div>
+                <div className="container">
+                    <h2 className="section__title"><img src={left_arrow} className="crossover__img-left"/>Кабриолет<img
+                        src={right_arrow} alt="" className="crossover__img-right"/>
                         <img src={light_line} class="section__img"/></h2>
 
                     <Carousel className="crossover__carousel"
                               showArrows={false}
-                              showIndicators={true}
+                              showIndicators={false}
                               transitionTime={2000}
                               showThumbs={true}
                               infiniteLoop
@@ -172,12 +233,11 @@ const MainPage = () => {
                         src={right_arrow} alt="" className="crossover__img-right"/></h2>
                     <Carousel className="crossover__carousel"
                               showArrows={false}
-                              showIndicators={true}
+                              showIndicators={false}
                               transitionTime={2000}
                               showThumbs={true}
                               infiniteLoop
                               showStatus={false}
-
                               emulateTouch>
                         <div className="crossover__grid">
                             <p className="crossover__link">Модельный ряд</p>
