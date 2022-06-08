@@ -1,0 +1,173 @@
+@import "../style/font.css";
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Basic conf*/
+button {
+    background: none;
+    border: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/*Unique setting*/
+.container {
+    max-width: 1440px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+
+.section__title {
+    position: relative;
+
+    font-family: 'Micra', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 66px;
+    color: #FFFFFF;
+    text-align: center;
+
+}
+
+.text-right {
+    text-align: right;
+}
+
+.section__img {
+
+    position: absolute;
+    left: 430px;
+    bottom: -70px;
+
+}
+
+.orange_btn {
+    background: #DC4400;
+    border-radius: 72px;
+    width: 228px;
+    height: 47px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #FFFFFF;
+}
+
+.orange_text {
+    color: #DC4400;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.align-items {
+    align-items: center;
+}
+/*Hero*/
+.aboutpage__hero{
+    height: 100vh;
+    width: 100%;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.51)), url("../images/about_bg2.png" ) ;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.aboutpage__hero{
+    float: bottom;
+    align-items: flex-end;
+    padding: 100px;
+}
+.aboutpage__grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.aboutpage__col{
+    width: 416px;
+    margin-right: 109px;
+}
+.aboutpage__title{
+    width: 1000px;
+    font-family: 'Micra',sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32.4461px;
+    line-height: 136.5%;
+    color: #FFFFFF;
+    margin-bottom: 80px;
+}
+.aboutpage__desc{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 148%;
+
+    color: #FFFFFF;
+}
+.aboutpage__about{
+    height: 100vh;
+    width: 100%;
+align-items: flex-end;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.51)), url("../images/aboutpage_bg1.png" ) ;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px;
+}
+.aboutpage__third{
+    height: 100vh;
+    width: 100%;
+    align-items: flex-end;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.51)), url("../images/aboutpage_bg2.png" ) ;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px;
+}
+.aboutpage__third .aboutpage__title{
+    margin-bottom: 50px;
+}

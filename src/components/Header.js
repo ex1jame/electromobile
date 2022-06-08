@@ -21,13 +21,13 @@ const Header = () => {
                         <NavLink to="/tracking" className="header__link">Трекинг</NavLink>
                     </div>
                     <div className="header__credit-link">
-                        <NavLink to="#" className="header__link">Кредитование</NavLink>
+                        <NavLink to="/credit" className="header__link">Кредитование</NavLink>
                     </div>
                     <div className="header__diler-link">
-                        <NavLink to="#" className="header__link">Дилерам</NavLink>
+                        <NavLink to="/diler" className="header__link">Дилерам</NavLink>
                     </div>
                     <div className="header__company-link">
-                        <NavLink to="#" className="header__link">О компании</NavLink>
+                        <NavLink to="/about" className="header__link">О компании</NavLink>
                     </div>
                 </nav>
             </div>

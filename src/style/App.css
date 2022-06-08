@@ -128,7 +128,7 @@ a {
     width: 190px;
 }
 .header__link {
-    font-family: 'Montserrat';
+    font-family: 'Montserrat',sans-serif;
     display: inline-block;
     position: relative;
     margin-left: 65px;
