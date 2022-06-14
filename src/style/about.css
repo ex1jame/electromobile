@@ -171,3 +171,119 @@ align-items: flex-end;
 .aboutpage__third .aboutpage__title{
     margin-bottom: 50px;
 }
+.aboutpage__fourth{
+    height: 100vh;
+    width: 100%;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.51)), url("../images/aboutpage_bg3.png" ) ;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+/*Video*/
+.aboutpage__video{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.51)), url("../images/anketa_back.png" ) ;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.aboutpage__main{
+    width: 1104.72px;
+    height: 644.2px;
+    border: none    ;
+}
+.aboutpage__video-title{
+    font-family: 'Proxima Nova',sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 57px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+/*footer*/
+.aboutpage__footer{
+    width: 100%;
+    height: 100vh;
+    background: url("../images/anketa_back.png"), no-repeat center/cover;
+
+}
+.aboutpage__footer img{
+    position: relative;
+    left: 0px;
+}
+
+.aboutpage__footer .section__title{
+    font-family: 'Micra',sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 25px;
+    color: #FFFFFF;
+}
+.aboutpage__footer .section__subtitle{
+    width: 620px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+/*Form*/
+
+.aboutpage__form_block {
+    width: 689px;
+    height: 292px;
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 40px;
+    margin: 0 auto;
+}
+
+.aboutpage__form_form{
+    padding: 15px 90px 45px 90px;
+}
+.aboutpage__form_input{
+    width: 510px;
+    position: relative;
+    border: none;
+    background: none;
+    color: #FFFFFF;
+
+}
+.aboutpage__form_form label{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+
+}
+.aboutpage__form_span{
+    position: absolute;
+    width: 510px;
+    border: 1px solid #aba9a9;
+
+}
+.aboutpage__form_desc{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+}
+.aboutpage__footer .orange_btn{
+    height: 64px;
+    width: 689px;
+}

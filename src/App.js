@@ -10,18 +10,22 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Credit from "./components/Credit";
 import Dileram from "./components/Dileram";
 import About from "./components/About";
+import {useState} from "react";
 
 function App() {
+
+    const [isLight, setIsLight] = useState(false)
+
     return (
         <BrowserRouter className="App">
-            <Header />
+            <Header isLight={isLight} />
             <Routes>
-                <Route path="/" element={ <MainPage /> } />
-                <Route path="/testdrive" element={ <TestDrive /> } />
-                <Route path="/tracking" element={<Tracking/>} />
-                <Route path="/credit" element={<Credit/>} />
-                <Route path="/diler" element={<Dileram/>} />
-                <Route path="/about" element={<About/>} />
+                <Route path="/" element={ <MainPage setIsLight={setIsLight} /> } />
+                <Route path="/testdrive" element={ <TestDrive setIsLight={setIsLight} /> } />
+                <Route path="/tracking" element={<Tracking setIsLight={setIsLight} />} />
+                <Route path="/credit" element={<Credit setIsLight={setIsLight} />} />
+                <Route path="/diler" element={<Dileram setIsLight={setIsLight}/>} />
+                <Route path="/about" element={<About setIsLight={setIsLight} />} />
             </Routes>
         </BrowserRouter>
     );

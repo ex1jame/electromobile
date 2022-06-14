@@ -136,7 +136,7 @@ a {
     font-size: 18px;
     line-height: 22px;
     color: #FFFFFF;
-    transition: all 0.2s linear;
+    transition: all 0.01s linear;
     pointer-events: painted;
 }
 
@@ -303,7 +303,7 @@ a {
     background: linear-gradient(168.32deg, #FFCC00 -28.61%, #C04710 68.23%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: font-weight 0.5s;
+    transition: font-weight 0.01s;
 }
 
 .about__title {
@@ -313,7 +313,7 @@ a {
     font-size: 24px;
     line-height: 25px;
     color: #FFFFFF;
-    transition: font-weight 1s;
+    transition: font-weight 0.01s;
 }
 
 .d-flex .about__title {
@@ -343,21 +343,83 @@ a {
 
     align-items: center;
 }
+.control-arrow{
+
+}
+.control-arrow .control-prev{
+    position: absolute;
+    cursor: pointer;
+}
+.carousel.carousel-slider .control-arrow {
+    top: -683px !important;
+    cursor: pointer;
 
 
+
+}
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow {
+    opacity: 1;
+    filter: alpha(opacity=40);
+    position: absolute;
+    top: 20px;
+    background: none !important;
+    font-size: 32px;
+    cursor: pointer;
+}
+.carousel .control-prev.control-arrow:before {
+    border-right: 0 !important;
+    width: 30px;
+}
+
+.carousel .control-prev.control-arrow {
+    left: 561px !important;
+    cursor: pointer;
+
+}
 .carousel .slide .section__title .crossover__img-left{
     width: 2% !important;
 }.carousel .slide .section__title .crossover__img-right{
     width: 2% !important;
 }
+.control-arrow .control-next{
+    position: absolute;
+    cursor: pointer;
+}
+
+
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow {
+    opacity: 1;
+    filter: alpha(opacity=40);
+    position: absolute;
+    top: 20px;
+    background: none !important;
+    font-size: 32px;
+    cursor: pointer;
+}
+.carousel .control-next.control-arrow:before {
+    border-left: 0 !important;
+    width: 50px;
+}
+.carousel .control-next.control-arrow {
+    right: 561px !important;
+    cursor: pointer;
+
+}
+.sm-1 .crossover__img-left  {
+
+    margin-right: 25px !important;
+}
+.sm-1 .crossover__img-right  {
+      margin-left: 25px !important;
+  }
 
 .crossover__img-left {
 
-    margin-right: 39.37px;
+    margin-right: 39px;
 }
 
 .crossover__img-right {
-    margin-left: 39.37px;
+    margin-left: 39px;
 }
 
 .crossover__grid {
@@ -365,7 +427,6 @@ a {
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 184px;
     position: relative;
-
 
 }
 
@@ -559,10 +620,13 @@ a {
     height: 52px;
     border-radius: 50%;
     background: #FFFFFF;
+    transition: all 0.01s;
 }
+
 
 .footer__eclipse img {
     position: absolute;
-    bottom: 16px;
-    right: 16px;
+    bottom: 15px;
+    right: 15px;
+    transition: all 0.01s;
 }

@@ -1,0 +1,48 @@
+@media (max-width: 1440px) {
+    .container{
+        max-width: 1320px !important;
+
+    }
+    .header__link{
+        font-size: 17px;
+    }
+    .about .section__title{
+        font-size: 54px !important;
+    }
+    .drive .section__title{
+        font-size: 54px !important;
+    }
+    .hero__title{
+        font-size: 54px !important;
+    }
+    .crossover .section__title{
+        font-size: 50px !important;
+    }
+    .hero__subtitle{
+        font-size: 44px !important;
+    }
+
+    .drive .section__title {
+        margin-bottom: 77px !important;
+    }
+    .slider_page-subtitle {
+        font-size: 18px !important;
+        font-weight: 400 !important;
+
+    }
+    .about{
+        padding-right:150px !important ;
+    }
+    .news .section__title {
+        font-size: 36px !important;
+        line-height: 37px;
+        margin-top: 100px;
+    }
+    .section__img {
+
+        left: 380px !important;
+
+
+    }
+}
+

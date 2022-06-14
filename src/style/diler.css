@@ -142,11 +142,9 @@ a {
     border-radius: 40px;
     margin: 0 auto;
 }
-.diler__form_info{
-    margin-bottom: 22px;
-}
+
 .diler__form_form{
-    padding: 45px 90px 45px 90px;
+    padding: 15px 90px 45px 90px;
 }
 .diler__form_input{
     width: 510px;
@@ -178,6 +176,7 @@ a {
     font-size: 14px;
     line-height: 17px;
     color: #FFFFFF;
+    margin-top: 22px;
 }
 .diler__hero .orange_btn{
     height: 64px;

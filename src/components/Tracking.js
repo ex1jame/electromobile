@@ -1,6 +1,6 @@
 import '../style/tracking.css'
 import React from 'react'
-
+import '../style/media.css'
 import tracking_map from "../images/tracking_map.png"
 import light_line from "../images/light_line.png";
 import graf from "../images/График.svg"
@@ -28,7 +28,16 @@ const Tracking = () => {
                             приобретение электромобиля.</p>
                         <div className="tracking__hero_block">
                             <div className="tracking__hero_main">
-                                <img src={graf} alt="" className="tracking__hero_img" />
+                                <div className="tracking__hero_track">
+                                    <div className="tracking__hero_line">
+                                        <div className="tracking__hero_eclipse eclipse_active"></div>
+                                        <div className="tracking__hero_eclipse"></div>
+                                        <div className="tracking__hero_eclipse"></div>
+                                        <div className="tracking__hero_eclipse"></div>
+                                        <div className="tracking__hero_eclipse"></div>
+
+                                    </div>
+                                </div>
                                 <div className="tracking__hero_info">
                                     <p className="tracking__hero_text">22.04.22 | Поиск машины, Шанхай</p>
                                     <p className="tracking__hero_text">24.04.22 | Оформление документации</p>

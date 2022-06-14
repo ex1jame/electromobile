@@ -1,5 +1,6 @@
-import React from "react"
-
+import React, {useEffect} from "react"
+import '../style/media.css'
+import '../style/App.css'
 import about__car from '../images/car_2 2.png'
 import left_arrow from '../images/Left_arrow.png'
 import right_arrow from '../images/Right_arrow.png'
@@ -24,7 +25,13 @@ import credit_car from '../images/credit.png'
 import {Carousel} from 'react-responsive-carousel';
 
 
-const MainPage = () => {
+
+const MainPage = ({setIsLight}) => {
+
+    useEffect(() => {
+        setIsLight(true)
+    }, [])
+
     return (
         <div>
             <section className="hero d-flex justify-center flex-column align-items">
@@ -37,7 +44,7 @@ const MainPage = () => {
             <Carousel className="slider_page"
                       showArrows={false}
                       showIndicators={false}
-                      autoPlay
+
                       interval={1500}
                       transitionTime={2000}
                       showThumbs={false}
@@ -97,7 +104,7 @@ const MainPage = () => {
                 </div>
             </section>
 
-            <Carousel className="crossover"
+            <Carousel className="crossover "
                       showArrows={true}
                       showIndicators={true}
                       transitionTime={2000}
@@ -106,9 +113,10 @@ const MainPage = () => {
                       infiniteLoop
 
             >
-                <div className="container">
-                    <h2 className="section__title"><img src={left_arrow} className="crossover__img-left"/>Кроссоверы<img
-                        src={right_arrow} alt="" className="crossover__img-right"/>
+                <div className="container sm-1">
+                    <h2 className="section__title "><img
+                        src={left_arrow} alt="" className="crossover__img-left "/>Кроссоверы<img
+                        src={right_arrow} alt="" className="crossover__img-right "/>
                         <img src={light_line} className="section__img"/></h2>
 
                     <Carousel className="crossover__carousel"
@@ -358,10 +366,10 @@ const MainPage = () => {
                             <p className="footer__subtitle">+996 755 055 865</p>
                             <p className="footer__subtitle">г. Бишкек, ул. Раззакова 32</p>
                             <div className="footer__grid">
-                                <span className="footer__eclipse"><img src={instagram} alt=""/></span>
-                                <span className="footer__eclipse"><img src={youtube} alt=""/></span>
-                                <span className="footer__eclipse"><img src={whatsapp} alt=""/></span>
-                                <span className="footer__eclipse"><img src={telegram} alt=""/></span>
+                                <a href="" className="footer__eclipse"><img src={instagram} alt=""/></a>
+                                <a href="https://www.youtube.com/channel/UCQ38-AA8Ec1theWNJEQyz1A/featured" className="footer__eclipse"><img src={youtube} alt=""/></a>
+                                <a href="" className="footer__eclipse"><img src={whatsapp} alt=""/></a>
+                                <a href="" className="footer__eclipse"><img src={telegram} alt=""/></a>
                             </div>
                         </div>
                     </div>

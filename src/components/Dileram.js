@@ -1,7 +1,7 @@
 import '../style/diler.css'
 import React from 'react'
 import light_line from "../images/light_line.png";
-
+import '../style/media.css'
 const Dileram = () => {
     return (
 
@@ -16,14 +16,14 @@ const Dileram = () => {
                     <div className="diler__form_block">
                         <form className='diler__form_form'>
                             <div className="diler__form_info">
-                                <label>ФИО</label>
-                                <input type="text" className='diler__form_input'/>
-                                <span className="diler__form_span"></span>
+
+                                <input type="text" className='testdrive__form_input' placeholder="ФИО"/>
+                                <span className="testdrive__form_span"></span>
                             </div>
                             <div className="diler__form_info">
-                                <label>Телефон</label>
-                                <input type="tel" className='diler__form_input'/>
-                                <span className="diler__form_span"></span>
+
+                                <input type="tel" className='testdrive__form_input' placeholder="Телефон"/>
+                                <span className="testdrive__form_span"></span>
                             </div>
                             <p className="diler__form_desc">
                                 После отправки заявки менеджер утвердит дату и время встречи

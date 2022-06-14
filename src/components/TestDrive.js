@@ -1,7 +1,7 @@
 
 import '../style/TestDrive.css'
 import React from 'react'
-
+import '../style/media.css'
 import car_1 from '../images/testdrive_Car1.png'
 import timeicon from '../images/timeicon.svg'
 import priteicon from '../images/priceicon.svg'
@@ -56,23 +56,19 @@ const TestDrive = () => {
                     <div className="testdrive__form_block">
                         <form className='testdrive__form_form'>
                             <div className="testdrive__form_info">
-                                <label>ФИО</label>
-                                <input type="text" className='testdrive__form_input'/>
+                                <input type="text" className='testdrive__form_input' placeholder="ФИО"/>
                                 <span className="testdrive__form_span"></span>
                             </div>
                             <div className="testdrive__form_info">
-                                <label>Телефон</label>
-                                <input type="tel" className='testdrive__form_input'/>
+                                <input type="tel" className='testdrive__form_input' placeholder="Телефон"/>
                                 <span className="testdrive__form_span"></span>
                             </div>
                             <div className="testdrive__form_info">
-                                <label>дд.мм.гг</label>
-                                <input type="text" className='testdrive__form_input'/>
+                                <input type="date" className='testdrive__form_input' placeholder=""/>
                                 <span className="testdrive__form_span"></span>
                             </div>
                             <div className="testdrive__form_info">
-                                <label>Время</label>
-                                <input type="text" className='testdrive__form_input'/>
+                                <input type="text" className='testdrive__form_input' placeholder="Время"/>
                                 <span className="testdrive__form_span"></span>
                             </div>
                             <p className="testdrive__form_desc">

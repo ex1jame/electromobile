@@ -214,28 +214,33 @@ a {
     border-radius: 40px;
 }
 .testdrive__form_form{
-    padding: 45px 90px 10px 90px;
+    padding: 0 90px 10px 90px;
 }
-.testdrive__form_info{
-    margin-bottom: 22px;
+
+.testdrive__form_input{
+    width: 510px;
+    height: 65px;
+    position: relative;
+    border: none;
+    background: none;
+    color: #FFFFFF;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
 }
-.testdrive__form_form label{
+.testdrive__form_input::placeholder{
     font-family: 'Montserrat',sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
-    color: #FFFFFF;
 
-}
-.testdrive__form_input{
-    width: 510px;
-    position: relative;
-    border: none;
-    background: none;
     color: #FFFFFF;
-
 }
+
 .testdrive__form_desc{
     font-family: 'Montserrat',sans-serif;
     font-style: normal;
@@ -243,6 +248,7 @@ a {
     font-size: 14px;
     line-height: 17px;
     color: #FFFFFF;
+    margin-top: 23px;
 }
 .testdrive__form_span{
     position: absolute;

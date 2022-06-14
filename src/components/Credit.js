@@ -1,12 +1,17 @@
 import '../style/credit.css'
-import React from 'react'
+import '../style/media.css'
+import React, {useEffect} from 'react'
 import logo from "../images/logo_black.svg";
 import {NavLink} from "react-router-dom";
 
 
-const Credit = () => {
-    return (
+const Credit = ({setIsLight}) => {
 
+    useEffect(() => {
+        setIsLight(true)
+    }, [])
+
+    return (
         <div className="credit">
             <section className="credit__hero">
 
