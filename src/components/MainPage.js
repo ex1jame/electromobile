@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, {useEffect, useState} from "react"
 import '../style/media.css'
 import '../style/App.css'
 import about__car from '../images/car_2 2.png'
@@ -29,8 +29,13 @@ import {Carousel} from 'react-responsive-carousel';
 const MainPage = ({setIsLight}) => {
 
     useEffect(() => {
-        setIsLight(true)
+        setIsLight (false)
     }, [])
+
+    const [vygodno, setVygodno] = useState(false)
+    const [eco, setEco] = useState(false)
+    const [patri, setPatri] = useState(false)
+    const [present, setPresent] = useState(false)
 
     return (
         <div>
@@ -84,22 +89,85 @@ const MainPage = ({setIsLight}) => {
                 <div className="about__main d-flex ">
                     <img src={about__car} alt="" class="about__img"/>
                     <div className="about__info">
-                        <div className="about__flex align-center">
+                        <div className="about__flex align-center" onClick={() =>{
+                            setVygodno(true)
+                        }}>
                             <p className="about__num about__num-right">01</p>
                             <p className="about__title">Выгодно</p>
-                        </div>
-                        <div className="about__flex align-center">
+
+                        </div>{
+                        vygodno && (
+                            <div>
+                                <p className="about__click">
+                                    Ездить на электромобиле в 35 раз дешевле. Буквально
+                                    за сумму от 10-20 тысяч долларов вы становитесь обладателем совсем нового «свежего» автомобиля, вместо подержанного импортного авто, купленного на задворках развитых стран. Ну и огромная экономия на топливе,
+                                    за которую сможете оплачивать вместе со счетом за свет.</p>
+
+                            </div>
+                        )
+
+
+                    }
+                        <div className="about__flex align-center" onClick={() =>{
+                            setEco(true)
+
+                        }}>
                             <p className="about__num">02</p>
                             <p className="about__title">экологично</p>
                         </div>
-                        <div className="about__flex align-center">
+                        {
+                            eco && (
+                                <div>
+                                    <p className="about__click">
+                                        Ездить на электромобиле в 35 раз дешевле. Буквально
+                                        за сумму от 10-20 тысяч долларов вы становитесь обладателем совсем нового «свежего» автомобиля, вместо подержанного импортного авто, купленного на задворках развитых стран. Ну и огромная экономия на топливе,
+                                        за которую сможете оплачивать вместе со счетом за свет.</p>
+
+                                </div>
+                            )
+
+
+                        }
+                        <div className="about__flex align-center" onClick={() =>{
+                            setPatri(true)
+                        }}>
                             <p className="about__num">03</p>
                             <p className="about__title">патриотично</p>
                         </div>
-                        <div className="about__flex align-center">
+                        {
+                            patri && (
+                                <div>
+                                    <p className="about__click">
+                                        Ездить на электромобиле в 35 раз дешевле. Буквально
+                                        за сумму от 10-20 тысяч долларов вы становитесь обладателем совсем нового «свежего» автомобиля, вместо подержанного импортного авто, купленного на задворках развитых стран. Ну и огромная экономия на топливе,
+                                        за которую сможете оплачивать вместе со счетом за свет.</p>
+
+                                </div>
+                            )
+
+
+                        }
+                        <div className="about__flex align-center" onClick={() =>{
+                            setPresent(true)
+
+                        }}>
                             <p className="about__num">04</p>
                             <p className="about__title">презентабельно</p>
                         </div>
+                        {
+                            present && (
+                                <div>
+                                    <p className="about__click">
+                                        Ездить на электромобиле в 35 раз дешевле. Буквально
+                                        за сумму от 10-20 тысяч долларов вы становитесь обладателем совсем нового «свежего» автомобиля, вместо подержанного импортного авто, купленного на задворках развитых стран. Ну и огромная экономия на топливе,
+                                        за которую сможете оплачивать вместе со счетом за свет.</p>
+
+                                </div>
+
+                            )
+
+
+                        }
                     </div>
                 </div>
             </section>

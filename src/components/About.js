@@ -2,7 +2,15 @@ import '../style/about.css'
 import React from 'react'
 
 import light_line from "../images/light_line.png";
-const About = () => {
+import {useEffect} from 'react'
+
+
+const About = ({setIsLight}) => {
+
+    useEffect(() => {
+        setIsLight(false)
+    }, [])
+
     return (
         <div className="aboutpage">
             <section className="aboutpage__hero d-flex ">

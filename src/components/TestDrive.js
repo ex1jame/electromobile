@@ -1,6 +1,6 @@
-
+import React, {useEffect} from "react"
 import '../style/TestDrive.css'
-import React from 'react'
+
 import '../style/media.css'
 import car_1 from '../images/testdrive_Car1.png'
 import timeicon from '../images/timeicon.svg'
@@ -8,7 +8,13 @@ import priteicon from '../images/priceicon.svg'
 import mapicon from '../images/mapicon.svg'
 import light_line from "../images/light_line.png";
 
-const TestDrive = () => {
+
+const TestDrive = ({setIsLight}) => {
+
+    useEffect(() => {
+        setIsLight(false)
+    }, [])
+
     return (
         <div>
             <section className="testdrive__hero">

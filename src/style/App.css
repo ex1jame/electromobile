@@ -139,7 +139,17 @@ a {
     transition: all 0.01s linear;
     pointer-events: painted;
 }
+.header__light{
+    color: #000000;
 
+}
+ .header__link:after {
+    background: #000000;
+
+}
+.header__padding{
+    padding: 15px 11px 0 0;
+}
 .header__link:after {
     content: '';
     position: absolute;
@@ -315,7 +325,17 @@ a {
     color: #FFFFFF;
     transition: font-weight 0.01s;
 }
-
+.about__click{
+    position: relative;
+    left: 110px;
+    width: 443px;
+    font-family: 'Proxima Nova Rg',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
 .d-flex .about__title {
     margin-left: 32px;
 }

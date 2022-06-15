@@ -1,8 +1,15 @@
 import '../style/diler.css'
-import React from 'react'
+import React, {useEffect} from 'react'
 import light_line from "../images/light_line.png";
 import '../style/media.css'
-const Dileram = () => {
+
+
+const Dileram = ({setIsLight}) => {
+
+    useEffect(() => {
+        setIsLight (false)
+    }, [])
+
     return (
 
         <div className="diler">

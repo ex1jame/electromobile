@@ -1,12 +1,18 @@
 import '../style/tracking.css'
-import React from 'react'
+import React, {useEffect} from 'react'
 import '../style/media.css'
 import tracking_map from "../images/tracking_map.png"
 import light_line from "../images/light_line.png";
 import graf from "../images/График.svg"
 
 
-const Tracking = () => {
+
+const Tracking = ({setIsLight}) => {
+
+    useEffect(() => {
+        setIsLight(false)
+    }, [])
+
     return (
         <div>
             <section className="tracking__hero">
