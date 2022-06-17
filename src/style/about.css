@@ -13,6 +13,7 @@ body {
 }
 
 /*Basic conf*/
+input {outline: 0 !important;}
 button {
     background: none;
     border: none;

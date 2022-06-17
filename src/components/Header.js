@@ -4,12 +4,13 @@ import {NavLink} from 'react-router-dom';
 import logo from '../images/Logo.png';
 import logo2 from '../images/logo2.svg';
 
-const Header = ({isLight}) => {
+const Header = ({isLight,isDisplay}) => {
 
     const [Light, setIsLight] = useState(false)
+    const [display, setDisplay] = useState(false)
 
 return (
-    <header className={`header ${isLight ? "header__padding" : "" }`}>
+    <header className={`header ${isLight ? "header__padding" : "" } ${isDisplay ? "header__none" : ""}`}>
         <div className="header__main container d-flex justify-between align-center">
             <NavLink to="/" className="header__logo">
                 <img src={isLight ? logo2 : logo } alt="" className=""/>

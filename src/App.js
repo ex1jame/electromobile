@@ -11,14 +11,17 @@ import Credit from "./components/Credit";
 import Dileram from "./components/Dileram";
 import About from "./components/About";
 import {useState} from "react";
+import Login from "./components/Login";
+import Admin from "./components/Admin";
 
 function App() {
 
     const [isLight, setIsLight] = useState(false)
+    const [isDisplay, setDisplay] = useState(false)
 
     return (
         <BrowserRouter className="App">
-            <Header isLight={isLight} />
+            <Header isLight={isLight} isDisplay={isDisplay}/>
             <Routes>
                 <Route path="/" element={ <MainPage setIsLight={setIsLight} /> } />
                 <Route path="/testdrive" element={ <TestDrive setIsLight={setIsLight} /> } />
@@ -26,6 +29,8 @@ function App() {
                 <Route path="/credit" element={<Credit setIsLight={setIsLight} />} />
                 <Route path="/diler" element={<Dileram setIsLight={setIsLight}/>} />
                 <Route path="/about" element={<About setIsLight={setIsLight} />} />
+                <Route path="/login" element={<Login setDisplay={setDisplay} />} />
+                <Route path="/admin" element={<Admin setDisplay={setDisplay} />} />
             </Routes>
         </BrowserRouter>
     );

@@ -12,7 +12,7 @@ import car_1 from '../images/car_1.png'
 import car_2 from '../images/car_2.png'
 import car_3 from '../images/car_3.png'
 import car_4 from '../images/car_4.png'
-
+import 'animate.css';
 
 import instagram from '../images/Instagram.png'
 import whatsapp from '../images/Whatsapp.png'
@@ -25,11 +25,10 @@ import credit_car from '../images/credit.png'
 import {Carousel} from 'react-responsive-carousel';
 
 
-
 const MainPage = ({setIsLight}) => {
 
     useEffect(() => {
-        setIsLight (false)
+        setIsLight(false)
     }, [])
 
     const [vygodno, setVygodno] = useState(false)
@@ -42,7 +41,7 @@ const MainPage = ({setIsLight}) => {
             <section className="hero d-flex justify-center flex-column align-items">
                 <div className="hero__main d-flex align-center justify-center  flex-column">
                     <h1 className="hero__title">Авто <span class="bold">твоего</span> города</h1>
-                    <h2 className="hero__subtitle">Будь одним из первых</h2>
+                    <h2 className="hero__subtitle ">Будь одним из первых</h2>
                 </div>
                 <button className="orange_btn">Оформить заказ</button>
             </section>
@@ -84,32 +83,41 @@ const MainPage = ({setIsLight}) => {
                 </div>
             </Carousel>
             <section className="about">
-                <h2 className="section__title text-right">ПОЧЕМУ НЕОБХОДИМ
+                <h2 className="section__title text-right" >ПОЧЕМУ НЕОБХОДИМ
                     ЭЛЕКТРОМОБИЛЬ?</h2>
                 <div className="about__main d-flex ">
                     <img src={about__car} alt="" class="about__img"/>
                     <div className="about__info">
-                        <div className="about__flex align-center" onClick={() =>{
-                            setVygodno(true)
+                        <div className="about__flex align-center" onClick={() => {
+                            setVygodno(!vygodno)
+                            setEco(false)
+                            setPatri(false)
+                            setPresent(false)
                         }}>
                             <p className="about__num about__num-right">01</p>
                             <p className="about__title">Выгодно</p>
 
-                        </div>{
-                        vygodno && (
-                            <div>
-                                <p className="about__click">
-                                    Ездить на электромобиле в 35 раз дешевле. Буквально
-                                    за сумму от 10-20 тысяч долларов вы становитесь обладателем совсем нового «свежего» автомобиля, вместо подержанного импортного авто, купленного на задворках развитых стран. Ну и огромная экономия на топливе,
-                                    за которую сможете оплачивать вместе со счетом за свет.</p>
+                        </div>-
+                        {
+                            vygodno && (
+                                <div >
+                                    <p className="about__click animate__animated animate__fadeInRight">
+                                        Ездить на электромобиле в 35 раз дешевле. Буквально
+                                        за сумму от 10-20 тысяч долларов вы становитесь обладателем совсем нового «свежего»
+                                        автомобиля, вместо подержанного импортного авто, купленного на задворках развитых
+                                        стран. Ну и огромная экономия на топливе,
+                                        за которую сможете оплачивать вместе со счетом за свет.</p>
 
-                            </div>
-                        )
+                                </div>
+                            )
 
 
-                    }
-                        <div className="about__flex align-center" onClick={() =>{
-                            setEco(true)
+                        }
+                        <div className="about__flex align-center" onClick={() => {
+                            setVygodno(false)
+                            setEco(!eco)
+                            setPatri(false)
+                            setPresent(false)
 
                         }}>
                             <p className="about__num">02</p>
@@ -118,18 +126,23 @@ const MainPage = ({setIsLight}) => {
                         {
                             eco && (
                                 <div>
-                                    <p className="about__click">
-                                        Ездить на электромобиле в 35 раз дешевле. Буквально
-                                        за сумму от 10-20 тысяч долларов вы становитесь обладателем совсем нового «свежего» автомобиля, вместо подержанного импортного авто, купленного на задворках развитых стран. Ну и огромная экономия на топливе,
-                                        за которую сможете оплачивать вместе со счетом за свет.</p>
+                                    <p className="about__click animate__animated animate__fadeInRight">
+                                        Никаких выхлопов. Став обладателем электромобиля,
+                                        вы перестаете загрязнять атмосферу нашего любимого города. В Кыргызстане 93%
+                                        электроэнергии приходится
+                                        на чистые энергоисточники как гидроэнергетика. Электромобили же используют эту
+                                        чистую энергию.</p>
 
                                 </div>
                             )
 
 
                         }
-                        <div className="about__flex align-center" onClick={() =>{
-                            setPatri(true)
+                        <div className="about__flex align-center" onClick={() => {
+                            setVygodno(false)
+                            setEco(false)
+                            setPatri(!patri)
+                            setPresent(false)
                         }}>
                             <p className="about__num">03</p>
                             <p className="about__title">патриотично</p>
@@ -137,19 +150,22 @@ const MainPage = ({setIsLight}) => {
                         {
                             patri && (
                                 <div>
-                                    <p className="about__click">
-                                        Ездить на электромобиле в 35 раз дешевле. Буквально
-                                        за сумму от 10-20 тысяч долларов вы становитесь обладателем совсем нового «свежего» автомобиля, вместо подержанного импортного авто, купленного на задворках развитых стран. Ну и огромная экономия на топливе,
-                                        за которую сможете оплачивать вместе со счетом за свет.</p>
+                                    <p className="about__click animate__animated animate__fadeInRight">
+                                        Использование собственной электроэнергии. Деньги потраченные на бензин каждый месяц
+                                        плавно перетекают в Россию в то время, когда наши соотечественники кровью и потом
+                                        зарабатывают эти деньги и отправляют на родину. Используя электромобиль,
+                                        мы оставляем эти деньги у себя в стране, ведь электроэнергию производим мы сами.</p>
 
                                 </div>
                             )
 
 
                         }
-                        <div className="about__flex align-center" onClick={() =>{
-                            setPresent(true)
-
+                        <div className="about__flex align-center" onClick={() => {
+                            setVygodno(false)
+                            setEco(false)
+                            setPatri(false)
+                            setPresent(!present)
                         }}>
                             <p className="about__num">04</p>
                             <p className="about__title">презентабельно</p>
@@ -157,10 +173,11 @@ const MainPage = ({setIsLight}) => {
                         {
                             present && (
                                 <div>
-                                    <p className="about__click">
-                                        Ездить на электромобиле в 35 раз дешевле. Буквально
-                                        за сумму от 10-20 тысяч долларов вы становитесь обладателем совсем нового «свежего» автомобиля, вместо подержанного импортного авто, купленного на задворках развитых стран. Ну и огромная экономия на топливе,
-                                        за которую сможете оплачивать вместе со счетом за свет.</p>
+                                    <p className="about__click animate__animated animate__fadeInRight">
+                                        Будьте первыми. Электромобили это уже наступление будущего. Будучи пионерами в
+                                        использовании электромобилей вы одним из первых ощутите современные технологии в
+                                        своей повседневной жизни. Внимание друзей и знакомых к вашему выбору машины будет
+                                        обеспечено в ближайшие 2 года</p>
 
                                 </div>
 
@@ -435,7 +452,8 @@ const MainPage = ({setIsLight}) => {
                             <p className="footer__subtitle">г. Бишкек, ул. Раззакова 32</p>
                             <div className="footer__grid">
                                 <a href="" className="footer__eclipse"><img src={instagram} alt=""/></a>
-                                <a href="https://www.youtube.com/channel/UCQ38-AA8Ec1theWNJEQyz1A/featured" className="footer__eclipse"><img src={youtube} alt=""/></a>
+                                <a href="https://www.youtube.com/channel/UCQ38-AA8Ec1theWNJEQyz1A/featured"
+                                   className="footer__eclipse"><img src={youtube} alt=""/></a>
                                 <a href="" className="footer__eclipse"><img src={whatsapp} alt=""/></a>
                                 <a href="" className="footer__eclipse"><img src={telegram} alt=""/></a>
                             </div>
