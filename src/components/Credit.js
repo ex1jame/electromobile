@@ -19,27 +19,35 @@ const Credit = ({setIsLight}) => {
 
     return (
         <div className="credit">
-            <section className="credit__hero">
+            <section className="credit__hero d-flex flex-column">
                 <div className="credit__img">
                     <img src={car} alt=""/>
                 </div>
-                <div className="credit__main-block">
+                <div className="credit__main-block"><span className="credit__line"></span>
+                    <span className="credit__line"></span>
                     <div className="credit__block">
+
                         <div className="credit__col">
                             <h2 className="credit__title">РАССРОЧКА</h2>
                             <p className="credit__subtitle">до <span className="orange_span">3</span> лет<br/>
                                 Первоначальный взнос <span className="orange_span">10%</span><br/>
                                 <span className="orange_span">0,5%</span> в месяц</p>
                             <img src={dcb} alt="" className="credit__dcb"/>
+
                         </div>
+
                         <div className="credit__col">
                             <h2 className="credit__title">АВТОКРЕДИТ</h2>
-                            <p className="credit__subtitle">до <span className="orange_span">1</span> года - <span className="orange_span">13%</span> годовых<br/>
-                                до <span className="orange_span">2</span> лет - <span className="orange_span">16%</span> годовых<br/>
-                                до <span className="orange_span">3</span> лет - <span className="orange_span">18%</span> годовых<br/>
-                                Первоначальный взнос на новые авто - <span className="orange_span">20%</span>   <br/>
+                            <p className="credit__subtitle">до <span className="orange_span">1</span> года - <span
+                                className="orange_span">13%</span> годовых<br/>
+                                до <span className="orange_span">2</span> лет - <span
+                                    className="orange_span">16%</span> годовых<br/>
+                                до <span className="orange_span">3</span> лет - <span
+                                    className="orange_span">18%</span> годовых<br/>
+                                Первоначальный взнос на новые авто - <span className="orange_span">20%</span> <br/>
                                 Взнос на б/у авто не ранее 2017 г. - <span className="orange_span">30%</span></p>
                             <img src={baitushum} alt="" className="credit__baitushum"/>
+
                         </div>
                         <div className="credit__col">
                             <h2 className="credit__title">ЛИЗИНГ</h2>
@@ -51,7 +59,6 @@ const Credit = ({setIsLight}) => {
                         </div>
                     </div>
                 </div>
-
             </section>
             <section className="credit__form">
                 <div className="container">

@@ -7,7 +7,7 @@ import timeicon from '../images/timeicon.svg'
 import priteicon from '../images/priceicon.svg'
 import mapicon from '../images/mapicon.svg'
 import light_line from "../images/light_line.png";
-
+import light_line_media from "../images/light_line_media.png";
 
 const TestDrive = ({setIsLight}) => {
 
@@ -21,7 +21,9 @@ const TestDrive = ({setIsLight}) => {
                 <div className="container">
                     <div className="d-flex justify-between align-center">
                         <div className="testdrive__hero_main">
-                            <h1 className="testdrive__hero_title">Тест-драйв электромобиля</h1>
+                            <h1 className="testdrive__hero_title">Тест-драйв электромобиля
+                                <img src={light_line_media} alt="" className="testdrive__line_media"/>
+                            </h1>
                             <p className="testdrive__hero_subtitle">Мы предоставляем возможность лично прочувствовать
                                 электромобиль </p>
                             <div className="testdrive__hero_grid">

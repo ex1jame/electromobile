@@ -10,7 +10,7 @@ const Header = ({isLight,isDisplay}) => {
     const [display, setDisplay] = useState(false)
 
 return (
-    <header className={`header ${isLight ? "header__padding" : "" } ${isDisplay ? "header__none" : ""}`}>
+    <header className={`header  ${isLight ? "header__padding" : "" } ${isDisplay ? "header__none" : ""}`}>
         <div className="header__main container d-flex justify-between align-center">
             <NavLink to="/" className="header__logo">
                 <img src={isLight ? logo2 : logo } alt="" className=""/>

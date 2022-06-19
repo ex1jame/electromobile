@@ -38,9 +38,9 @@ const MainPage = ({setIsLight}) => {
     const [present, setPresent] = useState(false)
 
     return (
-        <div>
+        <div className="mainpage">
             <section className="hero d-flex justify-center flex-column align-items">
-                <div className="hero__main d-flex align-center justify-center  flex-column">
+                <div className="hero__main container d-flex align-center justify-center  flex-column">
                     <h1 className="hero__title">Авто <span class="bold">твоего</span> города</h1>
                     <h2 className="hero__subtitle ">Будь одним из первых</h2>
                 </div>
@@ -59,19 +59,19 @@ const MainPage = ({setIsLight}) => {
 
             >
                 <div className="d-flex justify-center align-center">
-                    <div className="drive">
+                    <div className="drive d-flex flex-column align-center   justify-center">
                         <h2 className="section__title"><img src={light_line} alt="" className="section__img"/>
                             ТЕСТ-ДРАЙВ
                         </h2>
                         <p className="slider_page-subtitle">
                             Мы предоставляем возможность лично прочувствовать электромобиль
                         </p>
-                        <img src={volkswagen} alt="" className="drive__img"/>\
+                        <img src={volkswagen} alt="" className="drive__img"/>
                         <button className="orange_btn">Записаться</button>
                     </div>
                 </div>
                 <div className="d-flex justify-center align-center">
-                    <div className="drive">
+                    <div className="drive d-flex flex-column align-center   justify-center">
                         <h2 className="section__title">КРЕДИТОВАНИЕ
                             <img src={light_line} alt="" className="section__img"/></h2>
                         <p className="slider_page-subtitle">
@@ -103,7 +103,7 @@ const MainPage = ({setIsLight}) => {
                         </div>
                         {
                             vygodno && (
-                                <div>
+                                <div className="about__block">
                                     <p className="about__click animate__animated animate__fadeInRight">
                                         Ездить на электромобиле в 35 раз дешевле. Буквально
                                         за сумму от 10-20 тысяч долларов вы становитесь обладателем совсем нового «свежего»
@@ -126,7 +126,7 @@ const MainPage = ({setIsLight}) => {
                         </div>
                         {
                             eco && (
-                                <div>
+                                <div className="about__block">
                                     <p className="about__click animate__animated animate__fadeInRight">
                                         Никаких выхлопов. Став обладателем электромобиля,
                                         вы перестаете загрязнять атмосферу нашего любимого города. В Кыргызстане 93%
@@ -152,7 +152,7 @@ const MainPage = ({setIsLight}) => {
                         </div>
                         {
                             patri && (
-                                <div>
+                                <div className="about__block">
                                     <p className="about__click animate__animated animate__fadeInRight">
                                         Использование собственной электроэнергии. Деньги потраченные на бензин каждый месяц
                                         плавно перетекают в Россию в то время, когда наши соотечественники кровью и потом
@@ -177,7 +177,7 @@ const MainPage = ({setIsLight}) => {
                         </div>
                         {
                             present && (
-                                <div>
+                                <div className="about__block">
                                     <p className="about__click animate__animated animate__fadeInRight">
                                         Будьте первыми. Электромобили это уже наступление будущего. Будучи пионерами в
                                         использовании электромобилей вы одним из первых ощутите современные технологии в

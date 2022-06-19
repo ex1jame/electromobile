@@ -76,7 +76,9 @@ a {
     bottom: -70px;
 
 }
-
+.testdrive__line_media{
+    display: none;
+}
 .orange_btn {
     background: #DC4400;
     border-radius: 72px;
