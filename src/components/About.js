@@ -13,76 +13,82 @@ const About = ({setIsLight}) => {
 
     return (
         <div className="aboutpage">
-            <section className="aboutpage__hero d-flex ">
-                <div className="container">
-                    <div className="aboutpage__info">
-                        <h1 className="aboutpage__title">НАША МИССИЯ - ПЕРЕСАДИТЬ ВСЮ СТРАНУ НА ЭЛЕКТРОтранСПОРТ</h1>
-                        <div className="aboutpage__grid">
-                            <div className="aboutpage__col">
-                                <p className="aboutpage__desc">Основатели нашей команды, серийные предприниматели
-                                    Чаргынов Замир
-                                    и Чаргынов Дастан, также, как и многие современные жители нашей планеты
-                                    вдохновлялись успехом Илона Маска
-                                    с электромобилем Tesla.
-                                    Они говорят: «Мы всегда мечтали ездить на электромобилях.
-                                </p>
-                            </div>
-                            <div className="aboutpage__col">
-                                <p className="aboutpage__desc">Основатели нашей команды, серийные предприниматели
-                                    Чаргынов Замир
-                                    и Чаргынов Дастан, также, как и многие современные жители нашей планеты
-                                    вдохновлялись успехом Илона Маска
-                                    с электромобилем Tesla.
-                                    Они говорят: «Мы всегда мечтали ездить на электромобилях.
-                                </p>
-                            </div>
-                            <div className="aboutpage__col">
-                                <p className="aboutpage__desc">Основатели нашей команды, серийные предприниматели
-                                    Чаргынов Замир
-                                    и Чаргынов Дастан, также, как и многие современные жители нашей планеты
-                                    вдохновлялись успехом Илона Маска
-                                    с электромобилем Tesla.
-                                    Они говорят: «Мы всегда мечтали ездить на электромобилях.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className="aboutpage__about d-flex">
-                <div className="container">
-                    <div className="aboutpage__info">
-                        <div className="aboutpage__grid">
-                            <div className="aboutpage__col">
-                                <p className="aboutpage__desc">Не дожидаясь, пока Теsla или другие автоконцерны откроют
-                                    у нас представительства или массовое производство на местах, мы основали компанию
-                                    Электромобиль. Наша компания импортирует новые электромобили ведущих брэндов
-                                </p>
-                            </div>
-                            <div className="aboutpage__col">
-                                <p className="aboutpage__desc">в страны ЕАЭС.
-                                    <br/>
-                                    <br/>
-                                    С нами вы можете купить различные электромобили, начиная с дорогих брендов, как
-                                    Mercedes или Tesla, и заканчивая экономичными моделями от BYD и Changan.
-                                </p>
-                            </div>
-                            <div className="aboutpage__col">
-                                <p className="aboutpage__desc">Если наше волнение также резонирует
-                                    у Вас, то мы нашли друг друга.
-                                    <br/>
-                                    <br/>
-                                    Добро пожаловать в компанию единомышленников!
-                                </p>
+            <section className="aboutpage__hero black__media d-flex ">
+                <div className="black__media">
+                    <div className="container">
+                        <div className="aboutpage__info">
+                            <h1 className="aboutpage__title-sm-2">НАША МИССИЯ - ПЕРЕСАДИТЬ ВСЮ СТРАНУ НА
+                                ЭЛЕКТРОтранСПОРТ</h1>
+                            <div className="aboutpage__grid">
+                                <div className="aboutpage__col">
+                                    <p className="aboutpage__desc">Основатели нашей команды, серийные предприниматели
+                                        Чаргынов Замир
+                                        и Чаргынов Дастан, также, как и многие современные жители нашей планеты
+                                        вдохновлялись успехом Илона Маска
+                                        с электромобилем Tesla.
+                                        Они говорят: «Мы всегда мечтали ездить на электромобилях.
+                                    </p>
+                                </div>
+                                <div className="aboutpage__col">
+                                    <p className="aboutpage__desc">Ведь сам факт перехода человека
+                                        от автомобиля с ДВС на электромобиль хоть и символично, но означает переход
+                                        человечества от старой эпохи в новую, «более экологичную, разумную
+                                        и технологичную». Мы просто хотели быть частью этого.
+                                    </p>
+                                </div>
+                                <div className="aboutpage__col">
+                                    <p className="aboutpage__desc">Прочувствовать это волнение и быть непосредственно
+                                        свидетелем этого исторического процесса. А находясь
+                                        в странах и городах ЕАЭС, мы поняли, что хотим ускорить этот процесс для себя
+                                        и для наших современников.
+
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="aboutpage__third d-flex">
+
+            <section className="aboutpage__about  d-flex">
+                <div className="black__media_about">
+                    <div className="container">
+                        <div className="aboutpage__info">
+                            <div className="aboutpage__grid">
+                                <div className="aboutpage__col">
+                                    <p className="aboutpage__desc">Не дожидаясь, пока Теsla или другие автоконцерны
+                                        откроют
+                                        у нас представительства или массовое производство на местах, мы основали
+                                        компанию
+                                        Электромобиль. Наша компания импортирует новые электромобили ведущих брэндов
+                                    </p>
+                                </div>
+                                <div className="aboutpage__col">
+                                    <p className="aboutpage__desc">в страны ЕАЭС.
+                                        <br/>
+                                        <br/>
+                                        С нами вы можете купить различные электромобили, начиная с дорогих брендов, как
+                                        Mercedes или Tesla, и заканчивая экономичными моделями от BYD и Changan.
+                                    </p>
+                                </div>
+                                <div className="aboutpage__col">
+                                    <p className="aboutpage__desc">Если наше волнение также резонирует
+                                        у Вас, то мы нашли друг друга.
+                                        <br/>
+                                        <br/>
+                                        Добро пожаловать в компанию единомышленников!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="aboutpage__third black__media d-flex">
+                <div className="black__media_third">
                 <div className="container">
                     <div className="aboutpage__info">
-                        <h1 className="aboutpage__title">НАС ВЫБИРАЮТ ЛУЧШИЕ</h1>
+                        <h1 className="aboutpage__title ">НАС ВЫБИРАЮТ ЛУЧШИЕ</h1>
                         <div className="aboutpage__grid">
                             <div className="aboutpage__col">
                                 <p className="aboutpage__desc">За год существования компании “Электромобиль” мы успели
@@ -106,12 +112,15 @@ const About = ({setIsLight}) => {
                         </div>
                     </div>
                 </div>
+                </div>
             </section>
-            <section className="aboutpage__fourth">
+            <section className="aboutpage__fourth ">
+                <div className="black__media_fourth">
+                </div>
             </section>
             <section className="aboutpage__video d-flex align-center justify-center flex-column">
                 <iframe className="aboutpage__main"
-                src="https://www.youtube.com/embed/T1_QF5Q660k">
+                        src="https://www.youtube.com/embed/T1_QF5Q660k">
                 </iframe>
                 <h3 className="aboutpage__video-title">ЭЛЕКТРОМОБИЛЬ HONDA X-NV УЖЕ В БИШКЕКЕ!</h3>
                 <img src={light_line} alt=""/>
@@ -121,8 +130,10 @@ const About = ({setIsLight}) => {
                     <h2 className="section__title">
                         желаете встретиться лично?
                     </h2>
-                    <img src={light_line} alt="" />
-                    <p className="section__subtitle"> Оставьте пожалуйста свой номер, и наши менеджеры свяжутся с вами для утверждения даты и времени встречи.</p>
+                    <img src={light_line} alt=""/>
+                    <p className="section__subtitle"> Оставьте пожалуйста свой номер, и наши менеджеры свяжутся с вами
+                        для
+                        утверждения даты и времени встречи.</p>
                     <div className="aboutpage__form_block">
                         <form className='aboutpage__form_form'>
                             <div className="testdrive__form_info">

@@ -3,41 +3,79 @@ import '../style/media.css'
 import {NavLink} from 'react-router-dom';
 import logo from '../images/Logo.png';
 import logo2 from '../images/logo2.svg';
+import instagram from "../images/Instagram.png";
+import youtube from "../images/Youtube.png";
+import whatsapp from "../images/Whatsapp.png";
+import telegram from "../images/Telegram.png";
 
-const Header = ({isLight,isDisplay}) => {
+const Header = ({isLight, isDisplay}) => {
 
     const [Light, setIsLight] = useState(false)
     const [display, setDisplay] = useState(false)
+    const [showBurger, setShowBurger] = useState(false)
 
-return (
-    <header className={`header  ${isLight ? "header__padding" : "" } ${isDisplay ? "header__none" : ""}`}>
-        <div className="header__main container d-flex justify-between align-center">
-            <NavLink to="/" className="header__logo">
-                <img src={isLight ? logo2 : logo } alt="" className=""/>
-            </NavLink>
-            <nav class="header__nav d-flex justify-between">
-                <div className="header__main-link">
-                    <NavLink to="/" className={`header__link ${isLight ? "header__light header__link" : "" }`}>Главная</NavLink>
-                </div>
-                <div className="header__testdrive-link">
-                    <NavLink to="/testdrive" className={`header__link ${isLight ? "header__light" : "" }`}>Тест-драйв</NavLink>
-                </div>
-                <div className="header__tracking-link">
-                    <NavLink to="/tracking" className={`header__link ${isLight ? "header__light" : "" }`}>Трекинг</NavLink>
-                </div>
-                <div className="header__credit-link">
-                    <NavLink to="/credit" className={`header__link ${isLight ? "header__light" : "" }`}>Кредитование</NavLink>
-                </div>
-                <div className="header__diler-link">
-                    <NavLink to="/diler" className={`header__link ${isLight ? "header__light" : "" }`}>Дилерам</NavLink>
-                </div>
-                <div className="header__company-link">
-                    <NavLink to="/about" className={`header__link ${isLight ? "header__light" : "" }`}>О компании</NavLink>
-                </div>
-            </nav>
-        </div>
-    </header>
-)
+    const handleBurger = () => {
+        setShowBurger(!showBurger)
+    }
+    return (
+        <header className={`header  ${isLight ? "header__padding" : ""} ${isDisplay ? "header__none" : ""}`}>
+            <div className="header__main container d-flex justify-between align-center">
+                <NavLink to="/" className="header__logo">
+                    <img src={isLight ? logo2 : logo} alt="" className=""/>
+                </NavLink>
+                <nav class="header__nav d-flex justify-between">
+                    <div className="header__main-link">
+                        <NavLink to="/"
+                                 className={`header__link ${isLight ? "header__light header__link" : ""}`}>Главная</NavLink>
+                    </div>
+                    <div className="header__testdrive-link">
+                        <NavLink to="/testdrive"
+                                 className={`header__link ${isLight ? "header__light" : ""}`}>Тест-драйв</NavLink>
+                    </div>
+                    <div className="header__tracking-link">
+                        <NavLink to="/tracking"
+                                 className={`header__link ${isLight ? "header__light" : ""}`}>Трекинг</NavLink>
+                    </div>
+                    <div className="header__credit-link">
+                        <NavLink to="/credit"
+                                 className={`header__link ${isLight ? "header__light" : ""}`}>Кредитование</NavLink>
+                    </div>
+                    <div className="header__diler-link">
+                        <NavLink to="/diler"
+                                 className={`header__link ${isLight ? "header__light" : ""}`}>Дилерам</NavLink>
+                    </div>
+                    <div className="header__company-link">
+                        <NavLink to="/about" className={`header__link ${isLight ? "header__light" : ""}`}>О
+                            компании</NavLink>
+                    </div>
+                </nav>
+                <button onClick={handleBurger}
+                        className={`header__burger ${showBurger ? "header__burger_active" : ""}${isLight ? "header__nav_light" : ""}`}></button>
+                {
+                    showBurger && (
+                        <nav className="header__nav_burger d-flex flex-column">
+                            <NavLink to="/" className="header__nav_logo">
+                                <img src={isLight ? logo : ""} alt="" className=""/>
+                            </NavLink>
+                                <NavLink to="/" className="header__nav_link">Главная</NavLink>
+                                <NavLink to="/testdrive" className="header__nav_link">Тест-драйв</NavLink>
+                                <NavLink to="/tracking" className="header__nav_link">Трекинг</NavLink>
+                                <NavLink to="/credit" className="header__nav_link">Кредитование</NavLink>
+                                <NavLink to="/diler" className="header__nav_link">Дилерам </NavLink>
+                                <NavLink to="/about" className="header__nav_link">О компании</NavLink>
+                            <div className="footer__grid">
+                                <a href="" className="header__eclipse"><img src={instagram} alt=""/></a>
+                                <a href="https://www.youtube.com/channel/UCQ38-AA8Ec1theWNJEQyz1A/featured"
+                                   className="header__eclipse"><img src={youtube} alt=""/></a>
+                                <a href="" className="header__eclipse"><img src={whatsapp} alt=""/></a>
+                                <a href="" className="header__eclipse"><img src={telegram} alt=""/></a>
+                            </div>
+                        </nav>
+                    )
+                }
+            </div>
+        </header>
+    )
 }
 
 export default Header

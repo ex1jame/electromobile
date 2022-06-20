@@ -110,6 +110,9 @@ a {
 }
 
 /*Hero*/
+.testdrive{
+    width: 100%;
+}
 .testdrive__hero {
     width: 100%;
     height: 100vh;

@@ -14,7 +14,7 @@ const Tracking = ({setIsLight}) => {
     }, [])
 
     return (
-        <div>
+        <div className="tracking">
             <section className="tracking__hero">
                 <div className="container">
                     <h2 className="section__title"><img src={light_line} alt="" className="section__img"/>

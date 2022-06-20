@@ -112,7 +112,7 @@ a {
     width: 100%;
     min-height: 100vh;
     background: url("../images/cross_bg.png") no-repeat center/cover;
-    padding: 195px 0 0 0;
+    padding: 195px 0 20px 0;
 }
 
 .tracking__hero .container {
