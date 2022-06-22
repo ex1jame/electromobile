@@ -55,7 +55,7 @@ const TestDrive = ({setIsLight}) => {
             <section className="testdrive__form">
                 <div className="container">
                     <h2 className="section__title"><img src={light_line} alt="" className="section__img"/>
-                        КАК ЗАПИСАТЬСЯ?
+                        Связь с нами
                     </h2>
                     <p className="testdrive__form_subtitle">
                         Выберите подходящую дату, заполните заявку и с вами свяжется наш менеджер

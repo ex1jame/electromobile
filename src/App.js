@@ -13,15 +13,17 @@ import About from "./components/About";
 import {useState} from "react";
 import Login from "./components/Login";
 import Admin from "./components/Admin";
+import Cars from "./components/Cars";
 
 function App() {
 
     const [isLight, setIsLight] = useState(false)
     const [isDisplay, setDisplay] = useState(false)
+    const [isBlack, setIsBlack] = useState(false)
 
     return (
         <BrowserRouter className="App">
-            <Header isLight={isLight} isDisplay={isDisplay}/>
+            <Header isLight={isLight} isDisplay={isDisplay} isBlack={isBlack}/>
             <Routes>
                 <Route path="/" element={ <MainPage setIsLight={setIsLight} /> } />
                 <Route path="/testdrive" element={ <TestDrive setIsLight={setIsLight} /> } />
@@ -31,6 +33,7 @@ function App() {
                 <Route path="/about" element={<About setIsLight={setIsLight} />} />
                 <Route path="/login" element={<Login setDisplay={setDisplay} />} />
                 <Route path="/admin" element={<Admin setDisplay={setDisplay} />} />
+                <Route path="/cars" element={<Cars setIsBlack={setIsBlack} />} />
             </Routes>
         </BrowserRouter>
     );

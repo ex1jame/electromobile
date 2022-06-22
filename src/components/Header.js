@@ -8,17 +8,19 @@ import youtube from "../images/Youtube.png";
 import whatsapp from "../images/Whatsapp.png";
 import telegram from "../images/Telegram.png";
 
-const Header = ({isLight, isDisplay}) => {
+const Header = ({isLight, isDisplay, isBlack}) => {
 
     const [Light, setIsLight] = useState(false)
     const [display, setDisplay] = useState(false)
     const [showBurger, setShowBurger] = useState(false)
+    const [Black, setIsBlack] = useState(false)
 
     const handleBurger = () => {
         setShowBurger(!showBurger)
     }
     return (
-        <header className={`header  ${isLight ? "header__padding" : ""} ${isDisplay ? "header__none" : ""}`}>
+        <header className={`header  ${isLight ? "header__padding" : ""}
+         ${isBlack ? "header__cars" : ""} ${isDisplay ? "header__none" : ""}`}>
             <div className="header__main container d-flex justify-between align-center">
                 <NavLink to="/" className="header__logo">
                     <img src={isLight ? logo2 : logo} alt="" className=""/>
@@ -45,8 +47,8 @@ const Header = ({isLight, isDisplay}) => {
                                  className={`header__link ${isLight ? "header__light" : ""}`}>Дилерам</NavLink>
                     </div>
                     <div className="header__company-link">
-                        <NavLink to="/about" className={`header__link ${isLight ? "header__light" : ""}`}>О
-                            компании</NavLink>
+                        <NavLink to="/about" className={`header__link ${isLight ? "header__light" : ""}`}>
+                           O компании</NavLink>
                     </div>
                 </nav>
                 <button onClick={handleBurger}
@@ -63,6 +65,7 @@ const Header = ({isLight, isDisplay}) => {
                                 <NavLink to="/credit" className="header__nav_link">Кредитование</NavLink>
                                 <NavLink to="/diler" className="header__nav_link">Дилерам </NavLink>
                                 <NavLink to="/about" className="header__nav_link">О компании</NavLink>
+
                             <div className="footer__grid">
                                 <a href="" className="header__eclipse"><img src={instagram} alt=""/></a>
                                 <a href="https://www.youtube.com/channel/UCQ38-AA8Ec1theWNJEQyz1A/featured"

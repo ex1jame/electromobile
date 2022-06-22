@@ -17,7 +17,7 @@ const About = ({setIsLight}) => {
                 <div className="black__media">
                     <div className="container">
                         <div className="aboutpage__info">
-                            <h1 className="aboutpage__title-sm-2">НАША МИССИЯ - ПЕРЕСАДИТЬ ВСЮ СТРАНУ НА
+                            <h1 className="aboutpage__title-sm-2 aboutpage__title">НАША МИССИЯ - ПЕРЕСАДИТЬ ВСЮ СТРАНУ НА
                                 ЭЛЕКТРОтранСПОРТ</h1>
                             <div className="aboutpage__grid">
                                 <div className="aboutpage__col">
