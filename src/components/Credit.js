@@ -1,6 +1,6 @@
 import '../style/credit.css'
 import '../style/media.css'
-import React from 'react'
+import React, { useState } from 'react'
 import {useEffect} from 'react'
 import logo from "../images/logo_black.svg";
 import {NavLink} from "react-router-dom";
@@ -9,13 +9,51 @@ import dcb from "../images/DCB.svg"
 import aylbank from "../images/aylbank.svg"
 import baitushum from "../images/baitushum.svg"
 import light_line from "../images/light_line.png";
-
+import axios from "axios"
+import { _LINK } from '../data/Data';
 
 const Credit = ({setIsLight}) => {
 
     useEffect(() => {
         setIsLight(true)
     }, [])
+
+    const [request, setRequest] = useState({ isCalled: false, category: 3 })
+
+    const handleCreateRequest = async () => {
+        const config = {
+            method: 'post',
+            url: `${_LINK}/v1/api/user/request/create`,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify(request)
+        }
+        const { data } = await axios(config)
+    }
+
+
+    const handleAddData = ({ target: { id, value } }) => {
+        switch (id) {
+            case "fullName": {
+                setRequest({ ...request, fullName: value })
+                break;
+            }
+            case "phone": {
+                setRequest({ ...request, phone: value })
+                break;
+            }
+            case "dateTime": {
+                setRequest({ ...request, dateTime: `${value}T00:00:00` })
+                break;
+            }
+            case "time": {
+                setRequest({ ...request, time: value })
+                break;
+            }
+        }
+
+    }
 
     return (
         <div className="credit">
@@ -72,26 +110,26 @@ const Credit = ({setIsLight}) => {
                     <div className="credit__form_block">
                         <form className='credit__form_form'>
                             <div className="credit__form_info">
-                                <input type="text" className='credit__form_input' placeholder="ФИО"/>
+                                <input type="text" className='credit__form_input' placeholder="ФИО" onInput={handleAddData} id="fullName" />
                                 <span className="credit__form_span"></span>
                             </div>
                             <div className="credit__form_info">
-                                <input type="tel" className='credit__form_input' placeholder="Телефон"/>
+                                <input type="tel" className='credit__form_input' placeholder="Телефон" onInput={handleAddData} id="phone" />
                                 <span className="credit__form_span"></span>
                             </div>
                             <div className="credit__form_info">
-                                <input type="date" className='credit__form_input' placeholder=""/>
+                                <input type="date" className='credit__form_input' placeholder="" onInput={handleAddData} id="dateTime" />
                                 <span className="credit__form_span"></span>
                             </div>
                             <div className="credit__form_info">
-                                <input type="text" className='credit__form_input' placeholder="Время"/>
+                                <input type="text" className='credit__form_input' placeholder="Время" onInput={handleAddData} id="time" />
                                 <span className="credit__form_span"></span>
                             </div>
                             <p className="credit__form_desc">
                                 Клиент считается зарегистрированным после подтверждения даты и времени нашим менеджером
                             </p>
                         </form>
-                        <button className="orange_btn">ЗАПИСАТЬСЯ</button>
+                        <button className="orange_btn" onClick={handleCreateRequest}>ЗАПИСАТЬСЯ</button>
                     </div>
                 </div>
             </section>

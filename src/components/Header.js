@@ -25,7 +25,7 @@ const Header = ({isLight, isDisplay, isBlack}) => {
                 <NavLink to="/" className="header__logo">
                     <img src={isLight ? logo2 : logo} alt="" className=""/>
                 </NavLink>
-                <nav class="header__nav d-flex justify-between">
+                <nav className="header__nav d-flex justify-between">
                     <div className="header__main-link">
                         <NavLink to="/"
                                  className={`header__link ${isLight ? "header__light header__link" : ""}`}>Главная</NavLink>
