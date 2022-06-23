@@ -14,6 +14,13 @@ import {useState} from "react";
 import Login from "./components/Login";
 import Admin from "./components/Admin";
 import Cars from "./components/Cars";
+import Categories from "./components/Categories";
+import Materials from "./components/materials";
+import Application from "./components/Application";
+import Seo from "./components/seo";
+import Icons from "./components/icons";
+import Create from "./components/Create";
+import Edit_application from "./components/edit_application";
 
 function App() {
 
@@ -34,6 +41,13 @@ function App() {
                 <Route path="/login" element={<Login setDisplay={setDisplay} />} />
                 <Route path="/admin" element={<Admin setDisplay={setDisplay} />} />
                 <Route path="/cars" element={<Cars setIsBlack={setIsBlack} />} />
+                <Route path="/categories" element={<Categories setDisplay={setDisplay} />} />
+                <Route path="/material" element={<Materials setDisplay={setDisplay} />} />
+                <Route path="/application" element={<Application setDisplay={setDisplay} />} />
+                <Route path="/seo" element={<Seo setDisplay={setDisplay} />} />
+                <Route path="/icons" element={<Icons setDisplay={setDisplay} />} />
+                <Route path="/create" element={<Create setDisplay={setDisplay} />} />
+                <Route path="/edit" element={<Edit_application setDisplay={setDisplay} />} />
             </Routes>
         </BrowserRouter>
     );
