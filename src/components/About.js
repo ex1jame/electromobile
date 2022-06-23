@@ -1,8 +1,10 @@
 import '../style/about.css'
-import React from 'react'
+import React, { useState } from 'react'
 
 import light_line from "../images/light_line.png";
 import {useEffect} from 'react'
+import { _LINK } from '../data/Data';
+import axios from 'axios';
 
 
 const About = ({setIsLight}) => {
@@ -10,6 +12,43 @@ const About = ({setIsLight}) => {
     useEffect(() => {
         setIsLight(false)
     }, [])
+    
+    const [request, setRequest] = useState({ isCalled: false, category: 2 })
+
+    const handleCreateRequest = async () => {
+        const config = {
+            method: 'post',
+            url: `${_LINK}/v1/api/user/request/create`,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify(request)
+        }
+        const { data } = await axios(config)
+    }
+
+
+    const handleAddData = ({ target: { id, value } }) => {
+        switch (id) {
+            case "fullName": {
+                setRequest({ ...request, fullName: value })
+                break;
+            }
+            case "phone": {
+                setRequest({ ...request, phone: value })
+                break;
+            }
+            case "dateTime": {
+                setRequest({ ...request, dateTime: `${value}T00:00:00` })
+                break;
+            }
+            case "time": {
+                setRequest({ ...request, time: value })
+                break;
+            }
+        }
+
+    }
 
     return (
         <div className="aboutpage">
@@ -137,18 +176,18 @@ const About = ({setIsLight}) => {
                     <div className="aboutpage__form_block">
                         <form className='aboutpage__form_form'>
                             <div className="testdrive__form_info">
-                                <input type="text" className='testdrive__form_input' placeholder="ФИО"/>
+                                <input type="text" className='testdrive__form_input' placeholder="ФИО" onInput={handleAddData} id="fullName" />
                                 <span className="testdrive__form_span"></span>
                             </div>
                             <div className="testdrive__form_info">
-                                <input type="tel" className='testdrive__form_input' placeholder="Телефон"/>
+                                <input type="tel" className='testdrive__form_input' placeholder="Телефон" onInput={handleAddData} id="phone" />
                                 <span className="testdrive__form_span"></span>
                             </div>
                             <p className="testdrive__form_desc">
                                 Клиент считается зарегистрированным после подтверждения даты и времени нашим менеджером
                             </p>
                         </form>
-                        <button className="orange_btn">ЗАПИСАТЬСЯ</button>
+                        <button className="orange_btn" onClick={handleCreateRequest}>ЗАПИСАТЬСЯ</button>
                     </div>
                 </div>
             </section>
