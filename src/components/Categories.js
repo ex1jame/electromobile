@@ -1,9 +1,11 @@
-import '../style/admin.css'
+import '../style/categ.css'
 import React, {useEffect} from 'react'
 import logo from '../images/Logo.svg'
-
-
-const Admin = ({setDisplay}) => {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import pen from '../images/pen-to-square-solid.svg'
+import trash from '../images/trash-can-solid.svg'
+import {NavLink} from "react-router-dom";
+const Categories = ({setDisplay}) => {
 
     useEffect(() => {
         setDisplay(true)
@@ -63,10 +65,49 @@ const Admin = ({setDisplay}) => {
                         <a href="#" className="">Admin</a>
                     </div>
                 </div>
+                <div className="admin__categories_block ">
+                    <h3 className="admin__categories_title">
+                        Categories
+                    </h3>
+                    <div className="admin__categories_header d-flex align-center justify-between">
+                        <p className="admin__categories_head">Categories</p>
+                        <button href="/admin" className="admin__categories_add"><NavLink to="/admin">Add</NavLink></button>
+                    </div>
+                    <div className="table__block table__categories">
+                    <table className="table ">
+                        <thead className= "table__header_block">
+                        <tr className="table__header_flex">
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Option</th>
+                        </tr>
+                        </thead>
+                        <tbody className="table__block_body">
+                        <tr className="table__header_flex">
+                            <td className="table__block_id">1</td>
+                            <td className="table__block_name">Хетчбеки</td>
+
+                            <td className="table__block_option "><NavLink to="/edit"><img src={pen} alt="" className="table__icon"/></NavLink><img src={trash} alt="" className="table__icon"/></td>
+                        </tr>
+                        <tr className="table__header_flex">
+                            <td className="table__block_id">1</td>
+                            <td className="table__block_name">Хетчбеки</td>
+
+                            <td className="table__block_option "><NavLink to="/edit"><img src={pen} alt="" className="table__icon"/></NavLink><img src={trash} alt="" className="table__icon"/></td>
+                        </tr>
+                        <tr className="table__header_flex">
+                            <td className="table__block_id">1</td>
+                            <td className="table__block_name">Хетчбеки</td>
+                            <td className="table__block_option "><NavLink to="/edit"><img src={pen} alt="" className="table__icon"/></NavLink><img src={trash} alt="" className="table__icon"/></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
             </section>
 
         </div>
     )
 }
 
-export default Admin
+export default Categories

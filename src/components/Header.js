@@ -59,12 +59,12 @@ const Header = ({isLight, isDisplay, isBlack}) => {
                             <NavLink to="/" className="header__nav_logo">
                                 <img src={isLight ? logo : ""} alt="" className=""/>
                             </NavLink>
-                                <NavLink to="/" className="header__nav_link">Главная</NavLink>
-                                <NavLink to="/testdrive" className="header__nav_link">Тест-драйв</NavLink>
-                                <NavLink to="/tracking" className="header__nav_link">Трекинг</NavLink>
-                                <NavLink to="/credit" className="header__nav_link">Кредитование</NavLink>
-                                <NavLink to="/diler" className="header__nav_link">Дилерам </NavLink>
-                                <NavLink to="/about" className="header__nav_link">О компании</NavLink>
+                                <NavLink to="/" className="header__nav_link" onClick={showBurger ? "header__burger_active" : ""}>Главная</NavLink>
+                                <NavLink to="/testdrive" className="header__nav_link" onClick={showBurger ? "header__burger_active" : ""}>Тест-драйв</NavLink>
+                                <NavLink to="/tracking" className="header__nav_link" onClick={showBurger ? "header__burger_active" : ""}>Трекинг</NavLink>
+                                <NavLink to="/credit" className="header__nav_link" onClick={showBurger ? "header__burger_active" : ""}>Кредитование</NavLink>
+                                <NavLink to="/diler" className="header__nav_link" onClick={showBurger ? "header__burger_active" : ""}>Дилерам </NavLink>
+                                <NavLink to="/about" className="header__nav_link" onClick={showBurger ? "header__burger_active" : ""}>О компании</NavLink>
 
                             <div className="footer__grid">
                                 <a href="" className="header__eclipse"><img src={instagram} alt=""/></a>
