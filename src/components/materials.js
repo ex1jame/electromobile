@@ -6,7 +6,7 @@ import pen from '../images/pen-to-square-solid.svg'
 import trash from '../images/trash-can-solid.svg'
 import { NavLink } from "react-router-dom";
 import Login from './Login'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { AdminPanel } from './AdminPanel'
 import { logoutAction } from '../redux/actions/login'
 const Materials = ({ setDisplay }) => {
