@@ -1,16 +1,5 @@
 @import "../style/font.css";
 
-body {
-    padding: 0;
-    margin: 0;
-    font-family: "Montserrat", sans-serif;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
 /*Basic conf*/
 input {outline: 0 !important;}
@@ -115,6 +104,7 @@ a {
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 
 }
 .aboutpage__hero{
@@ -158,6 +148,7 @@ align-items: flex-end;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 100px;
+    background-attachment: fixed;
 }
 .aboutpage__third{
     height: 100vh;
@@ -168,6 +159,7 @@ align-items: flex-end;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 100px;
+    background-attachment: fixed;
 }
 .aboutpage__third .aboutpage__title{
     margin-bottom: 50px;
@@ -180,7 +172,7 @@ align-items: flex-end;
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-
+    background-attachment: fixed;
 }
 /*Video*/
 .aboutpage__video{
@@ -287,4 +279,10 @@ align-items: flex-end;
 .aboutpage__footer .orange_btn{
     height: 64px;
     width: 689px;
+}
+.about__shadow-img1,
+.about__shadow-img2,
+.about__shadow-img3,
+.about__shadow-img4 {
+    display: none;
 }

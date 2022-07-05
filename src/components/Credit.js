@@ -11,6 +11,11 @@ import baitushum from "../images/baitushum.svg"
 import light_line from "../images/light_line.png";
 import axios from "axios"
 import { _LINK } from '../data/Data';
+import instagram from '../images/Instagram.png'
+import whatsapp from '../images/Whatsapp.png'
+import youtube from '../images/Youtube.png'
+import telegram from '../images/Telegram.png'
+import { Footer } from './Footer';
 
 const Credit = ({setIsLight}) => {
 
@@ -30,6 +35,7 @@ const Credit = ({setIsLight}) => {
             data: JSON.stringify(request)
         }
         const { data } = await axios(config)
+        window.location.reload()
     }
 
 
@@ -98,10 +104,10 @@ const Credit = ({setIsLight}) => {
                     </div>
                 </div>
             </section>
-            <section className="credit__form">
+            <section className="credit__form" id="credit">
                 <div className="container">
                     <h2 className="section__title"><img src={light_line} alt="" className="section__img"/>
-                        КАК ЗАПИСАТЬСЯ?
+                        СВЯЗЬ С НАМИ
                     </h2>
                     <p className="credit__form_subtitle">
                         Выберите подходящую дату, заполните заявку и с вами свяжется наш менеджер
@@ -133,6 +139,7 @@ const Credit = ({setIsLight}) => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </div>
     )
 }

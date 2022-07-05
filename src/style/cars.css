@@ -1,20 +1,6 @@
 @import "font.css";
 
-body {
-    padding: 0;
-    margin: 0;
-    font-family: "Montserrat", sans-serif;
-}
 
-input {
-    outline: 0 !important;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
 
 /*Basic conf*/

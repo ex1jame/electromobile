@@ -4,6 +4,11 @@ import light_line from "../images/light_line.png";
 import axios from "axios"
 import '../style/media.css'
 import { _LINK } from '../data/Data';
+import instagram from '../images/Instagram.png'
+import whatsapp from '../images/Whatsapp.png'
+import youtube from '../images/Youtube.png'
+import telegram from '../images/Telegram.png'
+import { Footer } from './Footer';
 
 
 const Dileram = ({setIsLight}) => {
@@ -24,6 +29,7 @@ const Dileram = ({setIsLight}) => {
             data: JSON.stringify(request)
         }
         const { data } = await axios(config)
+        window.location.reload()
     }
 
 
@@ -55,7 +61,7 @@ const Dileram = ({setIsLight}) => {
             <section className="diler__hero d-flex justify-center align-center">
                 <div className="container">
                     <h2 className="section__title">
-                        ТРЕКИНГ-КАРТА ДЛЯ ОТСЛЕЖИВАНИЯ МАШИНЫ
+                        ХОТИТЕ ПРИСОЕДИНИТЬСЯ К ДИЛЕРСКОЙ СЕТИ?
                     </h2>
                     <p className="section__subtitle">Если вы решили приобрести официальный статус дилера компании “Электромобиль”,
                         вам необходимо подать заявку, чтобы запланировать личную встречу. Успейте присоединиться к нам по выгодным условиям!</p>\
@@ -79,6 +85,7 @@ const Dileram = ({setIsLight}) => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </div>
     )
 }

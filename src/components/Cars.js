@@ -7,6 +7,7 @@ import left_arrow from '../images/Left_arrow.svg'
 import right_arrow from '../images/right_arr.svg'
 import axios from 'axios';
 import { _LINK } from '../data/Data';
+import { Footer } from './Footer';
 
 
 const Cars = ({setIsBlack}) => {
@@ -15,7 +16,7 @@ const Cars = ({setIsBlack}) => {
         setIsBlack(true)
     }, [])
 
-    const [request, setRequest] = useState({ isCalled: false, category: 3 })
+    const [request, setRequest] = useState({ isCalled: false, category: 2 })
 
     const handleCreateRequest = async () => {
         const config = {
@@ -27,6 +28,7 @@ const Cars = ({setIsBlack}) => {
             data: JSON.stringify(request)
         }
         const { data } = await axios(config)
+        window.location.reload()
     }
 
 
@@ -51,7 +53,7 @@ const Cars = ({setIsBlack}) => {
         }
 
     }
-
+    
     return (
         <div className="cars">
             <section className="cars__hero">
@@ -187,34 +189,34 @@ const Cars = ({setIsBlack}) => {
                     </div>
                 </Carousel>
             </section>
-            <section className="testdrive__form">
+            <section className="credit__form" id="cars">
                 <div className="container">
-                    <h2 className="section__title"><img src={light_line} alt="" className="section__img"/>
-                        Связь с нами
+                    <h2 className="section__title"><img src={light_line} alt="" className="section__img" />
+                        КАК ЗАПИСАТЬСЯ?
                     </h2>
-                    <p className="testdrive__form_subtitle">
+                    <p className="credit__form_subtitle">
                         Выберите подходящую дату, заполните заявку и с вами свяжется наш менеджер
                         для подтверждения данной информации.
                     </p>
-                    <div className="testdrive__form_block">
-                        <form className='testdrive__form_form'>
-                            <div className="testdrive__form_info">
-                                <input type="text" className='testdrive__form_input' placeholder="ФИО" onInput={handleAddData} id="fullName" />
-                                <span className="testdrive__form_span"></span>
+                    <div className="credit__form_block">
+                        <form className='credit__form_form'>
+                            <div className="credit__form_info">
+                                <input type="text" className='credit__form_input' placeholder="ФИО" onInput={handleAddData} id="fullName" />
+                                <span className="credit__form_span"></span>
                             </div>
-                            <div className="testdrive__form_info">
-                                <input type="tel" className='testdrive__form_input' placeholder="Телефон" onInput={handleAddData} id="phone" />
-                                <span className="testdrive__form_span"></span>
+                            <div className="credit__form_info">
+                                <input type="tel" className='credit__form_input' placeholder="Телефон" onInput={handleAddData} id="phone" />
+                                <span className="credit__form_span"></span>
                             </div>
-                            <div className="testdrive__form_info">
-                                <input type="date" className='testdrive__form_input' placeholder="" onInput={handleAddData} id="dateTime" />
-                                <span className="testdrive__form_span"></span>
+                            <div className="credit__form_info">
+                                <input type="date" className='credit__form_input' placeholder="" onInput={handleAddData} id="dateTime" />
+                                <span className="credit__form_span"></span>
                             </div>
-                            <div className="testdrive__form_info">
-                                <input type="text" className='testdrive__form_input' placeholder="Время" onInput={handleAddData} id="time" />
-                                <span className="testdrive__form_span"></span>
+                            <div className="credit__form_info">
+                                <input type="text" className='credit__form_input' placeholder="Время" onInput={handleAddData} id="time" />
+                                <span className="credit__form_span"></span>
                             </div>
-                            <p className="testdrive__form_desc">
+                            <p className="credit__form_desc">
                                 Клиент считается зарегистрированным после подтверждения даты и времени нашим менеджером
                             </p>
                         </form>
@@ -222,6 +224,7 @@ const Cars = ({setIsBlack}) => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </div>
     )
 }

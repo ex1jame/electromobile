@@ -1,113 +1,116 @@
 import '../style/categ.css'
-import React, {useEffect} from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../images/Logo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import pen from '../images/pen-to-square-solid.svg'
 import trash from '../images/trash-can-solid.svg'
-import {NavLink} from "react-router-dom";
-const Categories = ({setDisplay}) => {
+import { NavLink } from "react-router-dom";
+import Login from './Login'
+import { useSelector } from 'react-redux'
+import { AdminPanel } from './AdminPanel'
+import axios from 'axios'
+import { _LINK } from '../data/Data'
+const Categories = ({ setDisplay }) => {
 
     useEffect(() => {
         setDisplay(true)
     }, [])
 
-    return (
-        <div className="admin">
-            <header className="admin__header">
-                <div className="admin__header-sm">
-                    <img src={logo} alt=""/>
-                </div>
-                <div className="admin__home d-flex align-center">
-                    <h5 className="admin__subtitle ">Главная</h5>
-                </div>
-                <div className="admin__nav">
-                    <p className="admin__text">MENU</p>
-                    <div className="admin__block">
-                        <h5 className="admin__subtitle">Машины</h5>
-                        <p className="admin__desc">Категории</p>
-                        <p className="admin__desc">Машины</p>
-                    </div>
-                    <div className="admin__block">
-                        <h5 className="admin__subtitle">Подписки</h5>
-                        <p className="admin__desc">Категории</p>
-                        <p className="admin__desc">Машины</p>
-                    </div>
-                    <div className="admin__block">
-                        <h5 className="admin__subtitle">Кредитование</h5>
-                        <p className="admin__desc">Категории</p>
-                        <p className="admin__desc">Машины</p>
-                    </div>
-                    <div className="admin__block">
-                        <h5 className="admin__subtitle">Новости и видео</h5>
-                        <p className="admin__desc">Категории</p>
-                        <p className="admin__desc">Машины</p>
-                    </div>
-                    <div className="admin__block">
-                        <h5 className="admin__subtitle">Слайдеры</h5>
-                        <p className="admin__desc">Категории</p>
-                        <p className="admin__desc">Машины</p>
-                    </div>
-                    <div className="admin__block">
-                        <h5 className="admin__subtitle">Заявки</h5>
+    const [categories, setCategories] = useState([])
 
-                    </div>
-                    <div className="admin__block">
-                        <h5 className="admin__subtitle">SEO настройки</h5>
-
-                    </div>
+    useEffect(() => {
+        const get = async () => {
+            const config = {
+                method: 'get',
+                url: `${_LINK}/v1/api/car/category`,
+                headers: {
+                    'Authorization': localStorage.getItem("token")
+                }
+            }
+            try {
+                const { data } = await axios(config)
+                console.log(data)
+                setCategories(data)
+            } catch (e) {
+                alert(e)
+            }
+        }
+        get()
+    }, [])
 
 
-                </div>
-            </header>
-            <section className="admin__hero">
-                <div className="admin__hero_header ">
-                    <div className="admin__hero_admin">
-                        <a href="#" className="">Admin</a>
-                    </div>
-                </div>
-                <div className="admin__categories_block ">
-                    <h3 className="admin__categories_title">
-                        Categories
-                    </h3>
-                    <div className="admin__categories_header d-flex align-center justify-between">
-                        <p className="admin__categories_head">Categories</p>
-                        <button href="/admin" className="admin__categories_add"><NavLink to="/admin">Add</NavLink></button>
-                    </div>
-                    <div className="table__block table__categories">
-                    <table className="table ">
-                        <thead className= "table__header_block">
-                        <tr className="table__header_flex">
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Option</th>
-                        </tr>
-                        </thead>
-                        <tbody className="table__block_body">
-                        <tr className="table__header_flex">
-                            <td className="table__block_id">1</td>
-                            <td className="table__block_name">Хетчбеки</td>
+    const handleDelete = async (id) => {
+        const config = {
+            method: 'post',
+            url: `${_LINK}/v1/api/car/category/delete/${id}`,
+            headers: {
+                'Authorization': localStorage.getItem("token")
+            }
+        }
+        try {
+            const { data } = await axios(config)
+            console.log(data)
+            setCategories(data)
+            window.location.reload()
+        } catch (e) {
+            alert(e)
+        }
+    }
+    const { isAuth } = useSelector(store => store.login)
 
-                            <td className="table__block_option "><NavLink to="/edit"><img src={pen} alt="" className="table__icon"/></NavLink><img src={trash} alt="" className="table__icon"/></td>
-                        </tr>
-                        <tr className="table__header_flex">
-                            <td className="table__block_id">1</td>
-                            <td className="table__block_name">Хетчбеки</td>
 
-                            <td className="table__block_option "><NavLink to="/edit"><img src={pen} alt="" className="table__icon"/></NavLink><img src={trash} alt="" className="table__icon"/></td>
-                        </tr>
-                        <tr className="table__header_flex">
-                            <td className="table__block_id">1</td>
-                            <td className="table__block_name">Хетчбеки</td>
-                            <td className="table__block_option "><NavLink to="/edit"><img src={pen} alt="" className="table__icon"/></NavLink><img src={trash} alt="" className="table__icon"/></td>
-                        </tr>
-                        </tbody>
-                    </table>
+    if (isAuth) {
+        return (
+            <div className="admin">
+                <AdminPanel />
+                <section className="admin__hero">
+                    <div className="admin__hero_header ">
+                        <div className="admin__hero_admin">
+                            <span style={{ color: "#FFF", fontSize: "20px", cursor: "pointer" }}
+                                onClick={() => {
+                                    dispatch(logoutAction())
+                                }}
+                            >Logout</span>
+                        </div>
                     </div>
-                </div>
-            </section>
+                    <div className="admin__categories_block ">
+                        <h3 className="admin__categories_title">
+                            Categories
+                        </h3>
+                        <div className="admin__categories_header d-flex align-center justify-between">
+                            <p className="admin__categories_head">Categories</p>
+                            <NavLink to="/new-category"> <button href="/admin" className="admin__categories_add">Add</button></NavLink>
+                        </div>
+                        <div className="table__block table__categories">
+                            <table className="table ">
+                                <thead className="table__header_block">
+                                    <tr className="table__header_flex">
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Option</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="table__block_body">
+                                    {
+                                        categories.map((el) => (
+                                            <tr className="table__header_flex" key={el.id}>
+                                                <td className="table__block_id">{el.id}</td>
+                                                <td className="table__block_name">{el.name}</td>
+                                                <td className="table__block_option "><NavLink to={`/edit-category/${el.id}/${el.name}`}><img src={pen} alt="" className="table__icon" /></NavLink><img onClick={() => { handleDelete(el.id) }} src={trash} alt="" className="table__icon" /></td>
+                                            </tr>
+                                        ))
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
 
-        </div>
-    )
+            </div>
+        )
+    } else {
+        return <Login />
+    }
 }
 
 export default Categories

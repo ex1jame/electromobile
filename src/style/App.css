@@ -4,6 +4,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: "Montserrat", sans-serif;
+    
 }
 
 input {
@@ -28,6 +29,10 @@ a {
     text-decoration: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /*Unique setting*/
 .container {
     max-width: 1440px;
@@ -38,6 +43,8 @@ a {
 .d-flex {
     display: flex;
 }
+
+
 
 .align-center {
     align-items: center;
@@ -160,6 +167,10 @@ a {
     pointer-events: painted;
 }
 
+.header__link.active:after {
+    width: 100%;
+}
+
 .header__light {
     color: #000000;
 
@@ -175,6 +186,9 @@ a {
     transition: all 0.3s linear;
     width: 0;
     margin-top: 6px;
+}
+.header__link.header__light.active:after {
+    width: 100%;
 }
 
 .header__padding {
@@ -480,6 +494,9 @@ a {
     height: 100vh;
     width: 100%;
     background: url("../images/cross_bg.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .crossover .container {
@@ -598,10 +615,34 @@ a {
     height: 466.01px;
     clip-path: polygon(50% 0%, 100% 0, 100% 24%, 67% 100%, 0 100%, 0% 60%, 0 0);
     padding: 42px 0 0 64px;
+    overflow: hidden;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    transition: .71s;
+}
 
+.crossover__main-block .crossover__img-block{
+    right: -23px;
+}
+
+.overlay {
+    position: absolute;
+    background: #101010;
+    right: 183px;
+    bottom: 216px;
+    width: 84px;
+    transform: rotate(24deg);
+    height: 215px;
+    opacity: 1;
+    clip-path: polygon(0 0, -9% -46%, 107% 81%, 0% 101%);
+    z-index: 1;
 }
 
 .crossover__block {
+    align-self: center;
+    overflow: hidden;
     position: relative;
     background: url("../images/rectan_2.png") no-repeat center/cover;
     height: 258px;
@@ -610,7 +651,12 @@ a {
     margin-top: 100px;
     margin-left: -65px;
     padding: 24px 0 0 140px;
-
+    left: 0px;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    transition: 1s;
 }
 
 .crossover .slide .crossover__block img {
@@ -632,6 +678,7 @@ a {
     right: -1px;
     clip-path: polygon(0 0, 96% 0, 69% 100%, 0% 100%);
     transform: matrix(1, -0.01, 0.01, 1, 0, 0);
+    transition: .4s;
 }
 
 .crossover__img-block-2 {
@@ -793,4 +840,27 @@ a {
     bottom: 15px;
     right: 15px;
     transition: all 0.01s;
+}
+
+.pagination {
+    display: inline-block;
+    margin-top: 10px;
+    box-shadow: 0px 0px 200px 10px #989898;
+    border-radius: 5px;
+}
+.pagination__before {
+    display: inline-block;
+    padding: 10px 20px;
+    border-right: 1px solid #e8e7e7;
+}
+.pagination__num {
+    padding: 10px 13px;
+    border-right: 1px solid #e8e7e7;
+}
+.pagination__num.active {
+    background-color: #6777ef;
+    color: #FFF;
+}
+.pagination__after {
+    padding: 10px 20px;
 }

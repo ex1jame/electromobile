@@ -5,6 +5,16 @@ import light_line from "../images/light_line.png";
 import {useEffect} from 'react'
 import { _LINK } from '../data/Data';
 import axios from 'axios';
+import instagram from '../images/Instagram.png'
+import whatsapp from '../images/Whatsapp.png'
+import youtube from '../images/Youtube.png'
+import telegram from '../images/Telegram.png'
+import { Footer } from './Footer';
+
+import el1 from '../images/el1.png';
+import el2 from '../images/el2.png';
+import el3 from '../images/el3.png';
+import el4 from '../images/el4.png';
 
 
 const About = ({setIsLight}) => {
@@ -13,7 +23,7 @@ const About = ({setIsLight}) => {
         setIsLight(false)
     }, [])
     
-    const [request, setRequest] = useState({ isCalled: false, category: 2 })
+    const [request, setRequest] = useState({ isCalled: false, category: 4 })
 
     const handleCreateRequest = async () => {
         const config = {
@@ -25,6 +35,7 @@ const About = ({setIsLight}) => {
             data: JSON.stringify(request)
         }
         const { data } = await axios(config)
+        window.location.reload()
     }
 
 
@@ -58,6 +69,9 @@ const About = ({setIsLight}) => {
                         <div className="aboutpage__info">
                             <h1 className="aboutpage__title-sm-2 aboutpage__title">НАША МИССИЯ - ПЕРЕСАДИТЬ ВСЮ СТРАНУ НА
                                 ЭЛЕКТРОтранСПОРТ</h1>
+                            <div className='about__shadow-img1'>
+                                <img src={el1} alt=""/>
+                            </div>
                             <div className="aboutpage__grid">
                                 <div className="aboutpage__col">
                                     <p className="aboutpage__desc">Основатели нашей команды, серийные предприниматели
@@ -93,6 +107,9 @@ const About = ({setIsLight}) => {
                 <div className="black__media_about">
                     <div className="container">
                         <div className="aboutpage__info">
+                            <div className='about__shadow-img2'>
+                                <img src={el2} alt="" />
+                            </div>
                             <div className="aboutpage__grid">
                                 <div className="aboutpage__col">
                                     <p className="aboutpage__desc">Не дожидаясь, пока Теsla или другие автоконцерны
@@ -127,6 +144,9 @@ const About = ({setIsLight}) => {
                 <div className="black__media_third">
                 <div className="container">
                     <div className="aboutpage__info">
+                            <div className='about__shadow-img3'>
+                                <img src={el3} alt="" />
+                            </div>
                         <h1 className="aboutpage__title ">НАС ВЫБИРАЮТ ЛУЧШИЕ</h1>
                         <div className="aboutpage__grid">
                             <div className="aboutpage__col">
@@ -155,6 +175,9 @@ const About = ({setIsLight}) => {
             </section>
             <section className="aboutpage__fourth ">
                 <div className="black__media_fourth">
+                    <div className='about__shadow-img4'>
+                        <img src={el4} alt="" />
+                    </div>
                 </div>
             </section>
             <section className="aboutpage__video d-flex align-center justify-center flex-column">
@@ -165,7 +188,7 @@ const About = ({setIsLight}) => {
                 <img src={light_line} alt=""/>
             </section>
             <section className="aboutpage__footer d-flex align-center justify-center flex-column">
-                <div className="container d-flex align-center justify-center flex-column">
+                <div className="container d-flex align-center justify-center flex-column" id="order">
                     <h2 className="section__title">
                         желаете встретиться лично?
                     </h2>
@@ -191,6 +214,7 @@ const About = ({setIsLight}) => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </div>
     )
 }

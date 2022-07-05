@@ -1,16 +1,5 @@
 @import "../style/font.css";
 
-body {
-    padding: 0;
-    margin: 0;
-    font-family: "Montserrat", sans-serif;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
 /*Basic conf*/
 input {outline: 0 !important;}
@@ -111,15 +100,17 @@ a {
 }
 .admin{
     display: flex;
+    background-color: #fff;
+    min-height: 100vh;
 }
 /*Header*/
 .admin__header{
-    width: 17%;
+    width: 14%;
     min-height: 100vh;
     -webkit-box-shadow: 15px 1px 5px 3px rgba(34, 60, 80, 0.05);
     -moz-box-shadow: 15px 1px 5px 3px rgba(34, 60, 80, 0.05);
     box-shadow: 15px 1px 5px 3px rgba(34, 60, 80, 0.05);
-
+    background-color: #fff;
 }
 .admin__header-sm{
     position: relative;
@@ -148,25 +139,24 @@ a {
 }
 .admin__subtitle{
     font-family: 'Montserrat',sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 15px;
     color: rgba(70, 70, 70, 0.72);
     text-align: left;
-
+    padding-left: 15px;
+    margin-bottom: 10px;
 }
 
 .admin__block{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 30px;
 
     transition: all 0.3s;
-    height: 150px;
+    margin-top: 25px;
+    /* height: 150px; */
 }
-.admin__block:hover{
-    background: rgba(70, 70, 70, 0.25);
-}
+
 .admin__text{
     font-family: 'Montserrat',sans-serif;
     font-weight: 500;
@@ -178,7 +168,17 @@ a {
     margin-left: 30px;
 }
 .admin__desc{
-    margin: 10px 0 10px 20px;
+    padding: 10px 0 10px 20px;
+}
+.admin__desc:hover {
+    background: rgba(70, 70, 70, 0.25);
+}
+
+.admin__warn {
+    background-color: #fc544b;
+    color: #fff;
+    padding: 1px 4px;
+    border-radius: 3px;
 }
 /*Hero*/
 
@@ -193,11 +193,45 @@ a {
     justify-content: flex-end;
     align-items: center;
     background: #1e1f1f;
-    height: 10%;
+    height: 109px;
 }
 .admin__hero_admin a{
     font-family: 'Montserrat',sans-serif;
     font-weight: 500;
     font-size: 20px;
     color: rgb(255, 255, 255);
+}
+.admin__select {
+    height: 30px;
+    min-width: 200px;
+    margin-top: 20px;
+}
+
+.admin__img {
+    width: 100%;
+    height: 200px;
+    margin: 10px 0 ;
+}
+.admin__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.admin__del {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    background: #a90000;
+    color: #FFF;
+    padding: 10px 20px;
+    font-weight: 800;
+    cursor: pointer;
+}
+.admin__name,
+.admin__code {
+    font-size: 23px;
+    margin: 20px 40px 60px;
+    border: none;
+    border-bottom: 1px solid #8e8e8e;
 }

@@ -1,128 +1,139 @@
 import '../style/categ.css'
-import React, {useEffect} from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../images/Logo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import pen from '../images/pen-to-square-solid.svg'
 import trash from '../images/trash-can-solid.svg'
-import {NavLink} from "react-router-dom";
-const Application = ({setDisplay}) => {
+import { NavLink, useParams } from "react-router-dom";
+import Login from './Login'
+import { useDispatch, useSelector } from 'react-redux'
+import { AdminPanel } from './AdminPanel'
+import { _LINK } from '../data/Data'
+import axios from 'axios'
+import { Paginate } from './Paginate'
+import { logoutAction } from '../redux/actions/login'
+const Application = ({ setDisplay }) => {
 
     useEffect(() => {
         setDisplay(true)
     }, [])
 
-    return (
-        <div className="admin">
-            <header className="admin__header">
-                <div className="admin__header-sm">
-                    <img src={logo} alt=""/>
-                </div>
-                <div className="admin__home d-flex align-center">
-                    <h5 className="admin__subtitle ">Главная</h5>
-                </div>
-                <div className="admin__nav">
-                    <p className="admin__text">MENU</p>
-                    <div className="admin__block">
-                        <h5 className="admin__subtitle">Машины</h5>
-                        <p className="admin__desc">Категории</p>
-                        <p className="admin__desc">Машины</p>
-                    </div>
-                    <div className="admin__block">
-                        <h5 className="admin__subtitle">Подписки</h5>
-                        <p className="admin__desc">Категории</p>
-                        <p className="admin__desc">Машины</p>
-                    </div>
-                    <div className="admin__block">
-                        <h5 className="admin__subtitle">Кредитование</h5>
-                        <p className="admin__desc">Категории</p>
-                        <p className="admin__desc">Машины</p>
-                    </div>
-                    <div className="admin__block">
-                        <h5 className="admin__subtitle">Новости и видео</h5>
-                        <p className="admin__desc">Категории</p>
-                        <p className="admin__desc">Машины</p>
-                    </div>
-                    <div className="admin__block">
-                        <h5 className="admin__subtitle">Слайдеры</h5>
-                        <p className="admin__desc">Категории</p>
-                        <p className="admin__desc">Машины</p>
-                    </div>
-                    <div className="admin__block">
-                        <h5 className="admin__subtitle">Заявки</h5>
-
-                    </div>
-                    <div className="admin__block">
-                        <h5 className="admin__subtitle">SEO настройки</h5>
-
-                    </div>
-
-                </div>
-            </header>
-            <section className="admin__hero">
-                <div className="admin__hero_header ">
-                    <div className="admin__hero_admin">
-                        <a href="#" className="">Admin</a>
-                    </div>
-                </div>
-                <div className="admin__application_block">
-                    <h3 className="admin__categories_title">
-                        Заявки
-                    </h3>
-                    <div className="admin__categories_header ">
-                        <p className="admin__categories_head">Заявки</p>
-                        <nav className="admin__categories_nav">
-                            <button href="#" className="admin__categories_link"> Тест-драйв </button>
-                            <button href="#" className="admin__categories_link sm-width"> Оформление заказов</button>
-                            <button href="#" className="admin__categories_link sm-width-2"> Электромобиль в кредит</button>
-                            <button href="#" className="admin__categories_link"> Консультация</button>
-                            <button href="#" className="admin__categories_link"> Дилерам</button>
-                        </nav>
-                    </div>
-                    <div className="table__block">
-                        <table className="table ">
-                            <thead className= "table__header_block">
-                            <tr className="table__header_flex">
-                                <th className="table__id">ID</th>
-                                <th className="table__name">ФИО</th>
-                                <th className="table__num">Телефон</th>
-                                <th className="table__status ">Статус</th>
-                                <th className="table__option">Option</th>
-                            </tr>
-                            </thead>
-                            <tbody className="table__block_body">
-
-                            <tr className="table__header_flex">
-                                <td className="table__block_id">1</td>
-                                <td className="table__block_name">Хетчбеки</td>
-                                <td className="table__block_num">0222346534</td>
-                                <td className="table__block_status "><span className="sm-red">Не звонили</span></td>
-                                <td className="table__block_option "><NavLink to="/edit"><img src={pen} alt="" className="table__icon"/></NavLink><img src={trash} alt="" className="table__icon"/></td>
-                            </tr>
-                            <tr className="table__header_flex">
-                                <td className="table__block_id">1</td>
-                                <td className="table__block_name">Хетчбеки</td>
-                                <td className="table__block_num">0222346534</td>
-                                <td className="table__block_status "><span className="sm-red">Не звонили</span></td>
-                                <td className="table__block_option "><NavLink to="/edit"><img src={pen} alt="" className="table__icon"/></NavLink><img src={trash} alt="" className="table__icon"/></td>
-                            </tr>
-                            <tr className="table__header_flex">
-                                <td className="table__block_id">1</td>
-                                <td className="table__block_name">Хетчбеки</td>
-                                <td className="table__block_num">0222346534</td>
-                                <td className="table__block_status "><span className="sm-green">Звонили</span></td>
-                                <td className="table__block_option "><NavLink to="/edit"><img src={pen} alt="" className="table__icon"/></NavLink><img src={trash} alt="" className="table__icon"/></td>
-                            </tr>
 
 
+    const { isAuth } = useSelector(store => store.login)
 
-                            </tbody>
-                        </table>
+    const { id } = useParams()
+    const [page, setPage] = useState(0)
+    const [back, setBack] = useState({})
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        const getApplications = async () => {
+            const config = {
+                method: 'get',
+                url: `${_LINK}/v1/api/request/page/${page}/50/${id}`,
+                headers: {
+                    'Authorization': localStorage.getItem("token")
+                }
+            }
+            try {
+                const { data } = await axios(config)
+                console.log(data)
+                setBack(data)
+            } catch (e) {
+                alert(e)
+            }
+        }
+        getApplications()
+    }, [page, id])
+
+    const handleTitle = () => {
+        switch (+id) {
+            case 1: return "Тест-драйв"
+            case 2: return "Оформление заказов"
+            case 3: return "Кредитование"
+            case 4: return "Консультация"
+            case 5: return "Дилерам"
+        }
+    }
+
+    const handleDelete = (id) => {
+        const getApplication = async () => {
+            const config = {
+                method: 'post',
+                url: `${_LINK}/v1/api/request/delete/${id}`,
+                headers: {
+                    'Authorization': localStorage.getItem("token")
+                }
+            }
+            try {
+                const { data } = await axios(config)
+                window.location.reload()
+            } catch (e) {
+                alert(e)
+            }
+        }
+        getApplication()
+    }
+
+
+    if (isAuth) {
+
+        return (
+            <div className="admin">
+                <AdminPanel />
+                <section className="admin__hero">
+                    <div className="admin__hero_header ">
+                        <div className="admin__hero_admin">
+                            <span style={{ color: "#FFF", fontSize: "20px", cursor: "pointer" }}
+                                onClick={() => {
+                                    dispatch(logoutAction())
+                                }}
+                            >Logout</span>
+                        </div>
                     </div>
-                </div>
-            </section>
-
-        </div>
-    )
+                    <div className="admin__application_block">
+                        <h3 className="admin__categories_title">
+                            {handleTitle()}
+                        </h3>
+                        <div className="table__block">
+                            <table className="table ">
+                                <thead className="table__header_block">
+                                    <tr className="table__header_flex">
+                                        <th className="table__id">ID</th>
+                                        <th className="table__name">ФИО</th>
+                                        <th className="table__num">Телефон</th>
+                                        <th className="table__status ">Статус</th>
+                                        <th className="table__option">Option</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="table__block_body">
+                                    {
+                                        back?.content?.map((el, idx) => (
+                                            <tr className="table__header_flex" key={idx}>
+                                                <td className="table__block_id">{el.id}</td>
+                                                <td className="table__block_name">{el.fullName}</td>
+                                                <td className="table__block_num">{el.phone}</td>
+                                                <td className="table__block_status "><span className={`${el.isCalled ? "sm-green" : "sm-red"}`}>{el.isCalled ? "Звонили" : "Не звонили"}</span></td>
+                                                <td className="table__block_option "><NavLink to={`/edit/${el.id}`}><img src={pen} alt="" className="table__icon" /></NavLink><img onClick={() => handleDelete(el.id)} src={trash} alt="" className="table__icon" /></td>
+                                            </tr>
+                                        ))
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                            {
+                                back?.totalPages && <div className='pagination__container'><Paginate page={page} setPage={setPage} totalPages={back?.totalPages} /></div>
+                            }
+                        </div>
+                    </div>
+                </section>
+            </div>
+        )
+    } else {
+        return <Login />
+    }
 }
 
 export default Application

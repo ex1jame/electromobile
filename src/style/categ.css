@@ -1,16 +1,6 @@
 @import "../style/font.css";
 
-body {
-    padding: 0;
-    margin: 0;
-    font-family: "Montserrat", sans-serif;
-}
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
 /*Basic conf*/
 input {
@@ -116,9 +106,11 @@ a {
 
 .admin {
     display: flex;
+    background-color: #fff;
 }
 .create{
     display: flex;
+    background-color: #fff;
 }
 .edit{
     display: flex;
@@ -140,7 +132,7 @@ height: 4%;
     height: 4%;
 }
 .admin__header {
-    width: 17%;
+    width: 14%;
     min-height: 100%;
     -webkit-box-shadow: 15px 1px 5px 3px rgba(34, 60, 80, 0.05);
     -moz-box-shadow: 15px 1px 5px 3px rgba(34, 60, 80, 0.05);
@@ -180,7 +172,7 @@ height: 4%;
 
 .admin__subtitle {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 15px;
     color: rgba(70, 70, 70, 0.72);
     text-align: left;
@@ -191,15 +183,11 @@ height: 4%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 30px;
 
     transition: all 0.3s;
-    height: 100px;
+    /* height: 100px; */
 }
 
-.admin__block:hover {
-    background: rgba(70, 70, 70, 0.25);
-}
 
 .admin__text {
     font-family: 'Montserrat', sans-serif;
@@ -213,7 +201,10 @@ height: 4%;
 }
 
 .admin__desc {
-    margin: 10px 0 10px 20px;
+    padding: 10px 0 10px 20px;
+}
+.admin__desc:hover {
+    background: rgba(70, 70, 70, 0.25);
 }
 
 /*Hero*/
@@ -230,7 +221,7 @@ height: 4%;
     justify-content: flex-end;
     align-items: center;
     background: #1e1f1f;
-    height: 10%;
+    height: 109px;
 }
 
 .admin__hero_admin a {
@@ -302,6 +293,22 @@ height: 4%;
 
 }
 
+.table-inp {
+    border: none;
+    border-bottom: 1px solid #989898;
+    font-size: 16px;
+    min-width: 500px;
+}
+.table-save {
+    width: 100px;
+    background-color: green;
+    color: #FFF;
+    height: 24px;
+    font-size: 18px;
+    border-radius: 3px;
+    display: block;
+    margin: 0 auto;
+}
 .table__header_block {
 
     width: 100%;
@@ -326,12 +333,22 @@ height: 4%;
 .admin__categories_block .table__icon {
     position: relative;
     right: -80px;
-    width: 10%;
+    width: 4%;
     margin-left: 49px;
 }
 
 .table__block_id {
     width: 10%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    margin-right: 20px;
+    color: rgba(0, 55, 175, 0.54);
+    font-weight: 600;
+    height: 70px;
+}
+.new-table__block_id {
+    width: 130px;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     text-align: center;
@@ -349,8 +366,26 @@ height: 4%;
     font-weight: 500;
     font-size: 16px;
     color: rgba(0, 0, 0, 0.42);
+}
 
-
+.new-table__block_name {
+    height: 70px;
+    text-align: center;
+    width: 60%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.42);
+}
+.new-table__block_option {
+    text-align: center;
+}
+.new-table__block_option img{
+    margin: 0 20px !important;
+    right: 0 !important;
+}
+.table__block_name.modify {
+    width: 8%;
 }
 
 .table__block_num {
@@ -387,9 +422,9 @@ height: 4%;
 }
 
 .table__icon {
-    width: 20%;
+    width: 12%;
     margin-left: 35px;
-
+    cursor: pointer;
 }
 
 .admin__categories_link {
@@ -514,7 +549,7 @@ height: 4%;
 }
 
 .admin__seo_line {
-    margin: 200px 0 10px;
+    margin: 20px 0 10px;
     width: 100%;
     border: 1px solid rgba(66, 66, 66, 0.25);
 }
@@ -596,4 +631,22 @@ height: 4%;
     font-size: 17px;
 
     color: rgba(0, 0, 0, 0.75);
+}
+.create-step {
+    margin-top: 30px;
+}
+.create-step input {
+    height: 40px;
+    width: 700px;
+    padding: 0 10px;
+    background-color: #fff;
+    border: none;
+    box-shadow: -20px 0px 50px -11px #989898;
+}
+.create-step button {
+    height: 37px;
+    background-color: #0432a6;
+    padding: 0 30px;
+    color: #FFF;
+    font-size: 17px;
 }

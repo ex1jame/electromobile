@@ -10,6 +10,11 @@ import light_line from "../images/light_line.png";
 import light_line_media from "../images/light_line_media.png";
 import axios from 'axios'
 import { _LINK } from '../data/Data'
+import instagram from '../images/Instagram.png'
+import whatsapp from '../images/Whatsapp.png'
+import youtube from '../images/Youtube.png'
+import telegram from '../images/Telegram.png'
+import { Footer } from './Footer'
 
 const TestDrive = ({setIsLight}) => {
 
@@ -29,6 +34,7 @@ const TestDrive = ({setIsLight}) => {
             data : JSON.stringify(request)
         }
         const { data } = await axios(config)
+        window.location.reload()
     }
 
 
@@ -91,10 +97,10 @@ const TestDrive = ({setIsLight}) => {
                     </div>
                 </div>
             </section>
-            <section className="testdrive__form">
+            <section className="testdrive__form" id="testdrive">
                 <div className="container">
                     <h2 className="section__title"><img src={light_line} alt="" className="section__img"/>
-                        Связь с нами
+                        КАК ЗАПИСАТЬСЯ?
                     </h2>
                     <p className="testdrive__form_subtitle">
                         Выберите подходящую дату, заполните заявку и с вами свяжется наш менеджер
@@ -126,6 +132,7 @@ const TestDrive = ({setIsLight}) => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </div>
     )
 
