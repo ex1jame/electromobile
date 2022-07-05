@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 import Login from './Login'
 import { useSelector } from 'react-redux'
 import { AdminPanel } from './AdminPanel'
+import { logoutAction } from '../redux/actions/login'
 const Materials = ({ setDisplay }) => {
 
     useEffect(() => {
@@ -15,6 +16,7 @@ const Materials = ({ setDisplay }) => {
     }, [])
 
     const { isAuth } = useSelector(store => store.login)
+    const { dispatch } = useDispatch()
 
     if (isAuth) {
         return (

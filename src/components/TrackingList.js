@@ -7,6 +7,7 @@ import Login from './Login';
 import pen from '../images/pen-to-square-solid.svg'
 import trash from '../images/trash-can-solid.svg'
 import { NavLink } from 'react-router-dom';
+import { logoutAction } from '../redux/actions/login';
 
 export const TrackingList = ({ setDisplay }) => {
 
@@ -51,6 +52,7 @@ export const TrackingList = ({ setDisplay }) => {
 	}
 
 	const { isAuth } = useSelector(store => store.login)
+	const { dispatch } = useDispatch()
 
 	if (isAuth) {
 		return (
@@ -61,6 +63,7 @@ export const TrackingList = ({ setDisplay }) => {
 						<div className="admin__hero_admin">
 							<span style={{ color: "#FFF", fontSize: "20px", cursor: "pointer" }}
 								onClick={() => {
+									dispatch(logoutAction())
 								}}
 							>Logout</span>
 						</div>

@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux'
 import { AdminPanel } from './AdminPanel'
 import axios from 'axios'
 import { _LINK } from '../data/Data'
+import { logoutAction } from '../redux/actions/login'
 const Categories = ({ setDisplay }) => {
 
     useEffect(() => {
@@ -58,6 +59,7 @@ const Categories = ({ setDisplay }) => {
     }
     const { isAuth } = useSelector(store => store.login)
 
+    const { dispatch } = useDispatch()
 
     if (isAuth) {
         return (
