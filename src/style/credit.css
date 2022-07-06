@@ -103,7 +103,7 @@ a {
 
 /*Hero*/
 .credit__hero {
-    min-height: 100vh;
+    min-height: 96vh;
     width: 100%;
     background: url("../images/credit_back.png") no-repeat center/cover;
     padding-top: 400px;
