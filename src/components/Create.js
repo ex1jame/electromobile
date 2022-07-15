@@ -1,11 +1,4 @@
-import '../style/categ.css'
 import React, { useEffect, useState } from 'react'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import pen from '../images/pen-to-square-solid.svg'
-import trash from '../images/trash-can-solid.svg'
-import { NavLink } from "react-router-dom";
-import logo from "../images/Logo.svg"
 import { useDispatch, useSelector } from 'react-redux'
 import Login from './Login'
 import { AdminPanel } from './AdminPanel'
@@ -38,7 +31,6 @@ const Create = ({ setDisplay }) => {
             }
             try {
                 const { data } = await axios(config)
-                console.log(data)
                 setCategories(data)
             } catch (e) {
                 alert(e)
@@ -79,7 +71,6 @@ const Create = ({ setDisplay }) => {
                 await addImage(mini, "mini", data.id)
             }
             if (gallery?.length) {
-                console.log(gallery)
                 for (let i = 0; i < gallery.length; i++) {
                     await addImage(gallery[i], "addToGallery", data.id)
                 }
@@ -108,7 +99,6 @@ const Create = ({ setDisplay }) => {
     const handleInputImage = (e) => {
         const { id, files } = e.target
         if (files?.length) {
-            console.log("heyo", files)
             switch (id) {
                 case "main": setMain(files[0])
                     break;

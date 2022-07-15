@@ -1,28 +1,65 @@
-import '../style/about.css'
-import React, { useState } from 'react'
-
+import React, { useCallback, useRef, useState } from 'react'
 import light_line from "../images/light_line.png";
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 import { _LINK } from '../data/Data';
 import axios from 'axios';
-import instagram from '../images/Instagram.png'
-import whatsapp from '../images/Whatsapp.png'
-import youtube from '../images/Youtube.png'
-import telegram from '../images/Telegram.png'
 import { Footer } from './Footer';
-
-import el1 from '../images/el1.png';
-import el2 from '../images/el2.png';
-import el3 from '../images/el3.png';
-import el4 from '../images/el4.png';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Autoplay, Navigation, Pagination, Scrollbar } from 'swiper';
 
 
-const About = ({setIsLight}) => {
+const About = ({ setIsLight }) => {
+
+    SwiperCore.use([Autoplay, Pagination])
+
+    const [video, setVideo] = useState({})
+    const [imgs, setImgs] = useState([])
+
+    const sliderRef = useRef(null);
+
+    const handlePrev = useCallback(() => {
+        if (!sliderRef.current) return;
+        sliderRef.current.swiper.slidePrev();
+    }, []);
+
+    const handleNext = useCallback(() => {
+        if (!sliderRef.current) return;
+        sliderRef.current.swiper.slideNext();
+    }, []);
 
     useEffect(() => {
         setIsLight(false)
+        const get = async (num) => {
+            const conf = {
+                "method": "get",
+                "url": `${_LINK}/v1/api/user/news/${num}`,
+                "headers": {
+                    "Authorization": localStorage.getItem("token")
+                }
+            }
+            try {
+                const { data } = await axios(conf)
+                setVideo(data)
+            } catch (e) {
+                console.log(e)
+            }
+        }
+        get(4)
+
+        const get2 = async () => {
+            const config = {
+                method: 'get',
+                url: `${_LINK}/v1/api/user/about/slider/all`,
+                headers: {
+                    'Authorization': localStorage.getItem("token")
+                }
+            }
+            const { data } = await axios(config)
+            setImgs(data)
+        }
+        get2()
     }, [])
-    
+
     const [request, setRequest] = useState({ isCalled: false, category: 4 })
 
     const handleCreateRequest = async () => {
@@ -69,9 +106,9 @@ const About = ({setIsLight}) => {
                         <div className="aboutpage__info">
                             <h1 className="aboutpage__title-sm-2 aboutpage__title">НАША МИССИЯ - ПЕРЕСАДИТЬ ВСЮ СТРАНУ НА
                                 ЭЛЕКТРОтранСПОРТ</h1>
-                            <div className='about__shadow-img1'>
-                                <img src={el1} alt=""/>
-                            </div>
+                            {/* <div className='about__shadow-img1'>
+                                <img src={el1} alt="" />
+                            </div> */}
                             <div className="aboutpage__grid">
                                 <div className="aboutpage__col">
                                     <p className="aboutpage__desc">Основатели нашей команды, серийные предприниматели
@@ -107,9 +144,9 @@ const About = ({setIsLight}) => {
                 <div className="black__media_about">
                     <div className="container">
                         <div className="aboutpage__info">
-                            <div className='about__shadow-img2'>
+                            {/* <div className='about__shadow-img2'>
                                 <img src={el2} alt="" />
-                            </div>
+                            </div> */}
                             <div className="aboutpage__grid">
                                 <div className="aboutpage__col">
                                     <p className="aboutpage__desc">Не дожидаясь, пока Теsla или другие автоконцерны
@@ -121,8 +158,8 @@ const About = ({setIsLight}) => {
                                 </div>
                                 <div className="aboutpage__col">
                                     <p className="aboutpage__desc">в страны ЕАЭС.
-                                        <br/>
-                                        <br/>
+                                        <br />
+                                        <br />
                                         С нами вы можете купить различные электромобили, начиная с дорогих брендов, как
                                         Mercedes или Tesla, и заканчивая экономичными моделями от BYD и Changan.
                                     </p>
@@ -130,8 +167,8 @@ const About = ({setIsLight}) => {
                                 <div className="aboutpage__col">
                                     <p className="aboutpage__desc">Если наше волнение также резонирует
                                         у Вас, то мы нашли друг друга.
-                                        <br/>
-                                        <br/>
+                                        <br />
+                                        <br />
                                         Добро пожаловать в компанию единомышленников!
                                     </p>
                                 </div>
@@ -142,57 +179,75 @@ const About = ({setIsLight}) => {
             </section>
             <section className="aboutpage__third black__media d-flex">
                 <div className="black__media_third">
-                <div className="container">
-                    <div className="aboutpage__info">
-                            <div className='about__shadow-img3'>
+                    <div className="container">
+                        <div className="aboutpage__info">
+                            {/* <div className='about__shadow-img3'>
                                 <img src={el3} alt="" />
-                            </div>
-                        <h1 className="aboutpage__title ">НАС ВЫБИРАЮТ ЛУЧШИЕ</h1>
-                        <div className="aboutpage__grid">
-                            <div className="aboutpage__col">
-                                <p className="aboutpage__desc">За год существования компании “Электромобиль” мы успели
-                                    продать более 50 электромобилей. Среди крупных покупателей есть такие компании, как
-                                    GIZ, Jorgo Taxi, “Лекарь” и другие. На обзоре
-                                    и в качестве покупателей у нас успели побывать такие успешные люди, как
-                                </p>
-                            </div>
-                            <div className="aboutpage__col">
-                                <p className="aboutpage__desc">известный КВН артист Ростислав Ященко,
-                                    серебрянный призёр по греко-римской борьбе на Олимпиаде в Токио 2021 - Акжол
-                                    Махмудов, известные кыргызстанские певцы Бек Исраилов, Омар и другие. Также мы
-                                    успели открыть наш казахстанский филиал в городе Алматы!
-                                </p>
-                            </div>
-                            <div className="aboutpage__col">
-                                <p className="aboutpage__desc">Так мы распространяем идею перехода
-                                    на электро по всему миру!
-                                </p>
+                            </div> */}
+                            <h1 className="aboutpage__title ">НАС ВЫБИРАЮТ ЛУЧШИЕ</h1>
+                            <div className="aboutpage__grid">
+                                <div className="aboutpage__col">
+                                    <p className="aboutpage__desc">За год существования компании “Электромобиль” мы успели
+                                        продать более 50 электромобилей. Среди крупных покупателей есть такие компании, как
+                                        GIZ, Jorgo Taxi, “Лекарь” и другие. На обзоре
+                                        и в качестве покупателей у нас успели побывать такие успешные люди, как
+                                    </p>
+                                </div>
+                                <div className="aboutpage__col">
+                                    <p className="aboutpage__desc">известный КВН артист Ростислав Ященко,
+                                        серебрянный призёр по греко-римской борьбе на Олимпиаде в Токио 2021 - Акжол
+                                        Махмудов, известные кыргызстанские певцы Бек Исраилов, Омар и другие. Также мы
+                                        успели открыть наш казахстанский филиал в городе Алматы!
+                                    </p>
+                                </div>
+                                <div className="aboutpage__col">
+                                    <p className="aboutpage__desc">Так мы распространяем идею перехода
+                                        на электро по всему миру!
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
             </section>
-            <section className="aboutpage__fourth ">
-                <div className="black__media_fourth">
-                    <div className='about__shadow-img4'>
-                        <img src={el4} alt="" />
-                    </div>
-                </div>
-            </section>
+            <div className="news__articles-cont2">
+                <Swiper
+                    slidesPerView={1}
+                    onSlideChange={() => {}}
+                    onSwiper={(swiper) => {}}
+                    className="aboutpage__slider"
+                    loop={true}
+                    ref={sliderRef}
+                    autoplay={{
+                        delay: 3000
+                    }}
+                    modules={[Navigation, Scrollbar]}
+                    speed={1500}
+                >
+                    {
+                        imgs?.map((el, idx) => (
+                            <SwiperSlide className='aboutpage__slide' key={idx}>
+                                <img src={`${_LINK}/v1/api/file/${el?.file?.name}`} alt="" />
+                            </SwiperSlide>
+                        ))
+                    }
+                </Swiper>
+                <div style={{ zIndex: 2 }} className="sw-prev-arrow" onClick={handlePrev} />
+                <div style={{ zIndex: 2 }} className="sw-next-arrow" onClick={handleNext} />
+            </div>
             <section className="aboutpage__video d-flex align-center justify-center flex-column">
                 <iframe className="aboutpage__main"
-                        src="https://www.youtube.com/embed/T1_QF5Q660k">
+                    src={video?.link}>
                 </iframe>
-                <h3 className="aboutpage__video-title">ЭЛЕКТРОМОБИЛЬ HONDA X-NV УЖЕ В БИШКЕКЕ!</h3>
-                <img src={light_line} alt=""/>
+                <h3 className="aboutpage__video-title">{video?.text}</h3>
+                <img src={light_line} alt="" />
             </section>
             <section className="aboutpage__footer d-flex align-center justify-center flex-column">
                 <div className="container d-flex align-center justify-center flex-column" id="order">
                     <h2 className="section__title">
                         желаете встретиться лично?
                     </h2>
-                    <img src={light_line} alt=""/>
+                    <img src={light_line} alt="" />
                     <p className="section__subtitle"> Оставьте пожалуйста свой номер, и наши менеджеры свяжутся с вами
                         для
                         утверждения даты и времени встречи.</p>

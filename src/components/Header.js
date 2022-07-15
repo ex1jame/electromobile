@@ -1,12 +1,11 @@
 import React, {useState} from 'react'
-import '../style/media.css'
 import {NavLink} from 'react-router-dom';
 import logo from '../images/Logo.png';
 import logo2 from '../images/logo2.svg';
-import instagram from "../images/Instagram.png";
-import youtube from "../images/Youtube.png";
-import whatsapp from "../images/Whatsapp.png";
-import telegram from "../images/Telegram.png";
+import instagram from "../images/Instagram.svg";
+import youtube from "../images/Youtube.svg";
+import whatsapp from "../images/Whatsapp.svg";
+import telegram from "../images/Telegram.svg";
 
 const Header = ({isLight, isDisplay, isBlack}) => {
 

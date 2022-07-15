@@ -1,10 +1,4 @@
-import '../style/categ.css'
 import React, { useEffect, useState } from 'react'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import pen from '../images/pen-to-square-solid.svg'
-import trash from '../images/trash-can-solid.svg'
-import { NavLink } from "react-router-dom";
 import logo from "../images/Logo.svg"
 import Login from './Login'
 import { useDispatch, useSelector } from 'react-redux'
@@ -42,7 +36,6 @@ const Seo = ({ setDisplay, seo }) => {
         } catch (e) {
             alert(e)
         }
-        console.log(newSeo)
     }
 
     const dispatch = useDispatch()

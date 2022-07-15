@@ -1,10 +1,4 @@
-import '../style/categ.css'
 import React, { useEffect } from 'react'
-import logo from '../images/Logo.svg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import pen from '../images/pen-to-square-solid.svg'
-import trash from '../images/trash-can-solid.svg'
-import { NavLink } from "react-router-dom";
 import Login from './Login'
 import { useDispatch, useSelector } from 'react-redux'
 import { AdminPanel } from './AdminPanel'

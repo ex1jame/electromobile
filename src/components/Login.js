@@ -1,5 +1,4 @@
-import '../style/login.css'
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import logo from '../images/Logo.svg'
 import axios from 'axios'
 import { _LINK } from '../data/Data'

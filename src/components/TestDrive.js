@@ -1,7 +1,4 @@
 import React, {useEffect, useState} from "react"
-import '../style/TestDrive.css'
-
-import '../style/media.css'
 import car_1 from '../images/testdrive_Car1.png'
 import timeicon from '../images/timeicon.svg'
 import priteicon from '../images/priceicon.svg'
@@ -10,10 +7,6 @@ import light_line from "../images/light_line.png";
 import light_line_media from "../images/light_line_media.png";
 import axios from 'axios'
 import { _LINK } from '../data/Data'
-import instagram from '../images/Instagram.png'
-import whatsapp from '../images/Whatsapp.png'
-import youtube from '../images/Youtube.png'
-import telegram from '../images/Telegram.png'
 import { Footer } from './Footer'
 
 const TestDrive = ({setIsLight}) => {
@@ -23,6 +16,24 @@ const TestDrive = ({setIsLight}) => {
     }, [])
 
     const [request, setRequest] = useState({isCalled: false, category: 1})
+
+    const [icons, setIcons] = useState()
+
+    useEffect(() => {
+        const get2 = async () => {
+            const config = {
+                method: 'get',
+                url: `${_LINK}/v1/api/user/socials`
+            }
+            try {
+                const { data } = await axios(config)
+                setIcons(data)
+            } catch (e) {
+                console.log(e)
+            }
+        }
+        get2()
+    }, [])
 
     const handleCreateRequest = async () => {
         const config = {
@@ -87,7 +98,7 @@ const TestDrive = ({setIsLight}) => {
                                 <div className="testdrive__hero_block">
                                     <img src={mapicon} alt=""/>
                                     <p className="testdrive__hero_text">г. Бишкек, ул. Раззакова 32, БЦ “Олимп”, 9 этаж.<br/>
-                                        <a className="orange_text">Смотреть на карте</a>
+                                        <a className="orange_text" href={icons?.address} target="_blank">Смотреть на карте</a>
                                     </p>
                                 </div>
                             </div>

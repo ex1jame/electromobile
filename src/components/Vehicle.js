@@ -25,7 +25,6 @@ const Vehicle = ({ setDisplay }) => {
 			}
 			try {
 				const { data } = await axios(config)
-				console.log(data)
 				setCars(data)
 			} catch (e) {
 				alert(e)

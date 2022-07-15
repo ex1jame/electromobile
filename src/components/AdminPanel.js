@@ -3,6 +3,7 @@ import logo from '../images/Logo.svg'
 import { Link } from 'react-router-dom'
 import { _LINK } from '../data/Data'
 import axios from 'axios'
+import { MenuBlock } from './MenuBlock'
 
 export const AdminPanel = ({height}) => {
 
@@ -19,7 +20,6 @@ export const AdminPanel = ({height}) => {
 			}
 			try {
 				const { data } = await axios(config)
-				console.log(data)
 				setBack(data)
 			} catch (e) {
 				alert(e)
@@ -38,11 +38,12 @@ export const AdminPanel = ({height}) => {
 			</div>
 			<div className="admin__nav">
 				<p className="admin__text">MENU</p>
-				<div className="admin__block">
-					<h5 className="admin__subtitle">Машины</h5>
-					<Link to="/categories" className="admin__desc">Категории</Link>
-					<Link to="/vehicle" className="admin__desc">Машины</Link>
-				</div>
+				<MenuBlock
+					links={[
+						{ link: "/categories", text: "Категории" },
+						{ link: "/vehicle", text: "Машины" }]}
+					name="Машины"
+				/>
 				<div className="admin__block">
 					<h5 className="admin__subtitle">Заявки</h5>
 					<Link to="/application/1" className="admin__desc">Тест-драйв <span className="admin__warn">{back.c1}</span></Link>
@@ -51,36 +52,36 @@ export const AdminPanel = ({height}) => {
 					<Link to="/application/4" className="admin__desc">Консультация <span className="admin__warn">{back.c4}</span></Link>
 					<Link to="/application/5" className="admin__desc">Дилерам <span className="admin__warn">{back.c5}</span></Link>
 				</div>
-				{/* <div className="admin__block">
-					<h5 className="admin__subtitle">Кредитование</h5>
-					<p className="admin__desc">Категории</p>
-					<p className="admin__desc">Машины</p>
-				</div>
-				<div className="admin__block">
-					<h5 className="admin__subtitle">Новости и видео</h5>
-					<p className="admin__desc">Категории</p>
-					<p className="admin__desc">Машины</p>
-				</div>
-				<div className="admin__block">
-					<h5 className="admin__subtitle">Слайдеры</h5>
-					<p className="admin__desc">Категории</p>
-					<p className="admin__desc">Машины</p>
-				</div> */}
-				<div className="admin__block">
-					<h5 className="admin__subtitle">Трекинг</h5>
-					<Link to="/create-tracking" className="admin__desc">Создание</Link>
-					<Link to="/list-tracking" className="admin__desc">Список</Link>
-					<Link to="/list-tracking-closed" className="admin__desc">Завершенные</Link>
-				</div>
-				<div className="admin__block">
-					<h5 className="admin__subtitle">SEO настройки</h5>
-					<Link to="/seo" className='admin__desc'>Настройки</Link>
-				</div>
-				<div className="admin__block">
-					<h5 className="admin__subtitle">Соцсети</h5>
-					<Link to="/icons" className='admin__desc'>Иконки</Link>
-				</div>
-
+				<MenuBlock
+					links={[
+						{ link: "/news", text: "Новости" }, 
+						{ link: "/videos", text: "Видео" }
+					]}
+					name="Новости и видео"
+				/>
+				<MenuBlock 
+					links={[
+						{ link: "/create-tracking", text: "Создание" }, 
+						{ link: "/list-tracking", text: "Список" }, 
+						{ link: "/list-tracking-closed", text: "Завершенные" }]} 
+					name="Трекинг"
+				/>
+				<MenuBlock
+					links={[
+						{ link: "/seo", text: "Настройки" }]}
+					name="SEO настройки"
+				/>
+				<MenuBlock
+					links={[
+						{ link: "/icons", text: "Иконки" }]}
+					name="Соцсети"
+				/>
+				<MenuBlock
+					links={[
+						{ link: "/page-about", text: "О нас"}
+					]}
+					name="Страницы"
+				/>
 			</div>
 		</header>
 	)

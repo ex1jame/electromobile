@@ -25,7 +25,6 @@ const EditCar = ({ setDisplay }) => {
 			const { data } = await axios(config)
 			setBackCar(data)
 			setCar(Object.assign(data, { carCategory: data.carCategory.id }))
-			console.log(data)
 		}
 		getCar()
 
@@ -39,7 +38,6 @@ const EditCar = ({ setDisplay }) => {
 			}
 			try {
 				const { data } = await axios(config)
-				console.log(data)
 				setCategories(data)
 			} catch (e) {
 				alert(e)
@@ -62,7 +60,6 @@ const EditCar = ({ setDisplay }) => {
 	const handleInputImage = (e) => {
 		const { id, files } = e.target
 		if (files?.length) {
-			console.log("heyo", files)
 			switch (id) {
 				case "main": setMain(files[0])
 					break;
@@ -84,7 +81,6 @@ const EditCar = ({ setDisplay }) => {
 	}
 
 	const handleSend = async () => {
-		console.log(car)
 		const config = {
 			method: 'post',
 			url: `${_LINK}/v1/api/car/update/${id}`,
@@ -109,7 +105,6 @@ const EditCar = ({ setDisplay }) => {
 				await addImage(mini, "mini", id)
 			}
 			if (gallery?.length) {
-				console.log(gallery)
 				for (let i = 0; i < gallery.length; i++) {
 					await addImageGallery(gallery[i], "addToGallery", id)
 				}
@@ -225,7 +220,7 @@ const EditCar = ({ setDisplay }) => {
 									<label className="admin__create_label">размер колес</label>
 									<input type="text" className="admin__seo_electro car_wheel_size" placeholder={backCar?.wheelSize} id="wheelSize" onInput={handleInput} />
 									<label className="admin__create_label">колесная база</label>
-									<input type="text" className="admin__seo_electro car_wheelbase" placeholder={backCar?.wheelbase} id="wheelBase" onInput={handleInput} />
+									<input type="text" className="admin__seo_electro car_wheelbase" placeholder={backCar?.wheelbase} id="wheelbase" onInput={handleInput} />
 									<label className="admin__create_label"> снаряженная масса</label>
 									<input type="text" className="admin__seo_electro car_curb_weight" placeholder={backCar?.curbWeight} id="curbWeight" onInput={handleInput} />
 									<label className="admin__create_label">клиренс</label>

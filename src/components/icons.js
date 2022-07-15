@@ -1,4 +1,3 @@
-import '../style/categ.css'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Login from './Login'
@@ -21,6 +20,10 @@ const Icons = ({ setDisplay }) => {
     const [whatsapp, setWhatsapp] = useState("")
     const [youtube, setYoutube] = useState("")
     const [inst, setInstagram] = useState("")
+    const [phone, setPhone] = useState("")
+    const [phoneText, setPhoneText] = useState("")
+    const [address, setAddress] = useState("")
+    const [addressText, setAddressText] = useState("")
 
     useEffect(() => {
         const get = async () => {
@@ -34,6 +37,10 @@ const Icons = ({ setDisplay }) => {
                 setWhatsapp(data?.whatsapp)
                 setYoutube(data?.youtube)
                 setInstagram(data?.inst)
+                setAddress(data?.address)
+                setAddressText(data?.addressText)
+                setPhone(data?.phone)
+                setPhoneText(data?.phoneText)
             } catch (e) {
                 alert(e)
             }
@@ -49,7 +56,7 @@ const Icons = ({ setDisplay }) => {
                 'Authorization': localStorage.getItem("token"),
                 'Content-Type': 'application/json'
             },
-            data: JSON.stringify({id: 1, inst, youtube, whatsapp, telegram})
+            data: JSON.stringify({id: 1, inst, youtube, whatsapp, telegram, phone, phoneText, address, addressText})
         }
         try {
             const { data } = await axios(config)
@@ -112,9 +119,21 @@ const Icons = ({ setDisplay }) => {
                                         <td className="table__block_option "><button className='table-save' onClick={handleSave}>Save</button></td>
                                     </tr>
                                     <tr className="table__header_flex">
-                                        <td className="table__block_id">5</td>
+                                        <td className="table__block_id">4</td>
                                         <td className="table__block_name">Instagram</td>
                                         <td className="table__block_num">   <input type="text" value={inst} onInput={(e) => setInstagram(e.target.value)} className='table-inp' />   </td>
+                                        <td className="table__block_option "><button className='table-save' onClick={handleSave}>Save</button></td>
+                                    </tr>
+                                    <tr className="table__header_flex">
+                                        <td className="table__block_id">Phone</td>
+                                        <td className="table__block_name"><input type="text" value={phoneText} onInput={(e) => setPhoneText(e.target.value)} className='table-inp' /></td>
+                                        <td className="table__block_num">   <input type="text" value={phone} onInput={(e) => setPhone(e.target.value)} className='table-inp' />   </td>
+                                        <td className="table__block_option "><button className='table-save' onClick={handleSave}>Save</button></td>
+                                    </tr>
+                                    <tr className="table__header_flex">
+                                        <td className="table__block_id">Address</td>
+                                        <td className="table__block_name"><input type="text" value={addressText} onInput={(e) => setAddressText(e.target.value)} className='table-inp' /></td>
+                                        <td className="table__block_num">   <input type="text" value={address} onInput={(e) => setAddress(e.target.value)} className='table-inp' />   </td>
                                         <td className="table__block_option "><button className='table-save' onClick={handleSave}>Save</button></td>
                                     </tr>
                                 </tbody>

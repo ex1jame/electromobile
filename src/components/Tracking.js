@@ -1,17 +1,8 @@
-import '../style/tracking.css'
 import React, {useEffect, useState} from 'react'
-import '../style/media.css'
-import tracking_map from "../images/tracking_map.png"
 import light_line from "../images/light_line.png";
-import graf from "../images/График.svg"
-import instagram from '../images/Instagram.png'
-import whatsapp from '../images/Whatsapp.png'
-import youtube from '../images/Youtube.png'
-import telegram from '../images/Telegram.png'
 import axios from 'axios';
 import { _LINK } from '../data/Data';
 import { Footer } from './Footer';
-
 
 const Tracking = ({setIsLight}) => {
 
@@ -30,7 +21,6 @@ const Tracking = ({setIsLight}) => {
         try {
             const { data } = await axios(config)
             setSteps(data)
-            console.log(data)
         } catch (e) {
             alert("Неверно введен код")
         }
@@ -65,7 +55,7 @@ const Tracking = ({setIsLight}) => {
                                         <div className="tracking__hero_line">
                                             {
                                                 steps?.map((el, idx) => (
-                                                    <div className={`tracking__hero_eclipse ${idx === 0 && "eclipse_active"}`}></div>
+                                                    <div key={idx} className={`tracking__hero_eclipse ${idx === 0 && "eclipse_active"}`}></div>
                                                 ))
                                             }
                                         </div>
@@ -73,7 +63,7 @@ const Tracking = ({setIsLight}) => {
                                     <div className="tracking__hero_info">
                                         {
                                             steps?.map((el, idx) => (
-                                                <p className="tracking__hero_text">{el?.name}</p>
+                                                <p key={idx} className="tracking__hero_text">{el?.name}</p>
                                             ))
                                         }
                                     </div>

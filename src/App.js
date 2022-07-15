@@ -1,4 +1,5 @@
 import './style/App.css';
+import './style/media.css'
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
@@ -33,15 +34,17 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import axios from 'axios';
 import { _LINK } from './data/Data';
 import { TrackingListClosed } from './components/TrackingListClosed';
+import News from './components/News';
+import { NewsCreate } from './components/NewsCreate';
+import { NewsUpdate } from './components/NewsUpdate';
+import Videos from './components/Videos';
+import { AboutAdmin } from './components/AboutAdmin';
 
 function App() {
 
     const [isLight, setIsLight] = useState(false)
     const [isDisplay, setDisplay] = useState(false)
     const [isBlack, setIsBlack] = useState(false)
-    const [title, setTitle] = useState("")
-    const [metaDesc, setMetaDesc] = useState("")
-    const [keyWords, setKeyWords] = useState("")
     const [seo, setSeo] = useState({})
 
     useEffect(() => {
@@ -52,10 +55,9 @@ function App() {
             }
             try {
                 const { data } = await axios(config)
-                console.log(data)
                 setSeo(data)
             } catch (e) {
-                alert(e)
+                console.log(e)
             }
         }
         get()
@@ -80,7 +82,7 @@ function App() {
                     <Route path="/about" element={<About setIsLight={setIsLight} />} />
                     <Route path="/login" element={<Login setDisplay={setDisplay} />} />
                     <Route path="/admin" element={<Admin setDisplay={setDisplay} />} />
-                    <Route path="/cars" element={<Cars setIsBlack={setIsBlack} />} />
+                    <Route path="/cars/:id" element={<Cars setIsBlack={setIsBlack} />} />
                     <Route path="/categories" element={<Categories setDisplay={setDisplay} />} />
                     <Route path="/edit-category/:id/:name" element={<EditCategory setDisplay={setDisplay} />} />
                     <Route path="/edit-car/:id" element={<EditCar setDisplay={setDisplay} />} />
@@ -97,6 +99,11 @@ function App() {
                     <Route path="/create" element={<Create setDisplay={setDisplay} />} />
                     <Route path="/vehicle" element={<Vehicle setDisplay={setDisplay} />} />
                     <Route path="/edit/:id" element={<Edit_application setDisplay={setDisplay} />} />
+                    <Route path="/news" element={<News setDisplay={setDisplay} />} />
+                    <Route path="/create-news" element={<NewsCreate setDisplay={setDisplay} />} />
+                    <Route path="/edit-news/:id" element={<NewsUpdate setDisplay={setDisplay} />} />
+                    <Route path="/videos" element={<Videos setDisplay={setDisplay} />} />
+                    <Route path="/page-about" element={<AboutAdmin setDisplay={setDisplay} />} />
                 </Routes>
             </BrowserRouter>
         </HelmetProvider>

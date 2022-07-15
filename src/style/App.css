@@ -1,4 +1,5 @@
-@import "font.css";
+@import "./font.css";
+
 
 body {
     padding: 0;
@@ -40,11 +41,21 @@ html {
     margin: 0 auto;
 }
 
+.testdrive__line_media{
+    display: none;
+}
+
+.orange_text {
+    color: #DC4400;
+}
+
 .d-flex {
     display: flex;
 }
 
-
+.header__none{
+    display: none;
+}
 
 .align-center {
     align-items: center;
@@ -123,12 +134,12 @@ html {
     position: absolute;
     width: 100%;
     height: 100px;
-
+    z-index: 2;
 }
 
-.header__main {
+/* .header__main {
     width: 100%;
-}
+} */
 
 .header__main-link {
     width: 150px;
@@ -278,9 +289,32 @@ html {
 
 /*Hero*/
 .hero {
+    position: relative;
+    z-index: 1;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.5) 100%), url("../images/video.png"), no-repeat center/cover;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.5) 100%), url("../images/mainvi.mp4"), no-repeat center/cover;
+}
+.hero::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    
+}
+.z-100 {
+    position: relative;
+    z-index: 100;
+}
+.hero__vid {
+    position: absolute;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hero__title {
@@ -326,9 +360,9 @@ html {
     max-width: 100%;
 }
 
-.header__main {
+/* .header__main {
     max-width: 100%;
-}
+} */
 
 .header__burger.header__nav_light {
     background: #000000;
@@ -381,7 +415,7 @@ html {
     background: url("../images/test_back.png") no-repeat center/cover;
     height: 100%;
     width: 100%;
-    padding: 105px 0;
+    padding: 105px 0 !important;
 }
 
 .slider_page-subtitle {
@@ -406,8 +440,9 @@ html {
 
 .drive .section__title .section__img {
     text-align: center;
-    left: 380px;
-
+    left: 0;
+    right: 0;
+    margin: 0 auto
 }
 
 /*About*/
@@ -501,12 +536,13 @@ html {
 
 .crossover .container {
     max-width: 1550px;
+    height: 700px;
 }
 
 .crossover .section__title {
     display: flex;
     justify-content: center;
-
+    margin-bottom: 183px;
     align-items: center;
 }
 
@@ -640,16 +676,19 @@ html {
     z-index: 1;
 }
 
+
 .crossover__block {
     align-self: center;
     overflow: hidden;
     position: relative;
     background: url("../images/rectan_2.png") no-repeat center/cover;
-    height: 258px;
-    width: 487px;
+    /* height: 258px;
+    width: 487px; */
+    height: 291px;
+    width: 540px;
     border-radius: 20px;
-    margin-top: 100px;
-    margin-left: -65px;
+    /* margin-top: 100px;
+    margin-left: -65px; */
     padding: 24px 0 0 140px;
     left: 0px;
     -moz-user-select: none;
@@ -660,7 +699,10 @@ html {
 }
 
 .crossover .slide .crossover__block img {
-    width: 70% !important;
+    width: 76% !important;
+}
+.crossover .swiper-pointer-events {
+    clip-path: polygon(7% 1%, 97% 0, 88% 100%, -1% 100%);
 }
 
 .crossover__img {
@@ -737,8 +779,9 @@ html {
     margin-top: 79.22px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-
-
+}
+.news__articles {
+    margin-top: 79.22px;
 }
 
 .news__block {
@@ -864,3 +907,155 @@ html {
 .pagination__after {
     padding: 10px 20px;
 }
+.admin__news-create {
+    display: flex;
+    flex-direction: column;
+}
+.admin__news-create-block {
+    border-radius: calc(0.35rem - 1px) calc(0.35rem - 1px) 0 0;
+    width: 98%;
+    background: #fff;
+    box-shadow: 2px 4px 45px -7px rgb(34 60 80 / 20%);
+    padding: 30px 20px;
+}
+.admin__news-img {
+    width: 500px;
+    height: 300px;
+}
+.admin__news-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.news__articles-cont {
+    max-width: 1360px;
+    margin: auto;
+    position: relative;
+}
+
+.news__articles-cont2 {
+    margin: auto;
+    position: relative;
+}
+
+.news__articles-cont2 .sw-prev-arrow{
+    left: 200px;
+}
+.news__articles-cont2 .sw-next-arrow{
+    right: 200px;
+}
+
+.sw-prev-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    left: -59px;
+    height: 68.27px;
+    width: 46px;
+    background: url("../images/bef.svg") no-repeat center/cover;
+}
+.sw-next-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    right: -59px;
+    height: 68.27px;
+    width: 46px;
+    background: url("../images/aft.svg") no-repeat center/cover;
+}
+
+.form__overlay {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form__overlay .credit__form_block {
+    position: relative;
+    z-index: 999;
+    background-color: #393939;
+    display: flex;
+    flex-direction: column;
+}
+.form__overlay .orange_btn {
+    margin: 0 auto;
+}
+.form__over {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    background-color: rgba(0,0,0,.9);
+    z-index: 998;
+}
+.form__overlay .credit__close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: #dc46006c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-weight: 400;
+    transition: .2s;
+}
+.form__overlay .credit__close:hover {
+    background-color: #dc4600;
+}
+
+.admin__grid-slider {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 900px;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+.admin__slider-img {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+.admin__slider-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.admin__slider-img span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #FFF;
+    padding: 2px 5px;
+    cursor: pointer;
+}
+
+.swiper-pagination-bullets {
+    display: none !important;
+}
+
+@import url("./about.css");
+@import url("./admin.css");
+@import url("./cars.css");
+@import url("./categ.css");
+@import url("./credit.css");
+@import url("./diler.css");
+@import url("./login.css");
+@import url("./TestDrive.css");
+@import url("./tracking.css");

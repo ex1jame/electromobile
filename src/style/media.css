@@ -31,9 +31,32 @@
     .tracking__hero_form .orange_btn {
         right: 0 !important;
     }
+    .section__img {
+        bottom: -54px;
+    }
+    .crossover__block {
+        height: 260px;
+        width: 479px;
+    }
+    .crossover .section__title {
+        margin-bottom: 140px;
+    }
+    .crossover .container {
+        height: 635px;
+    }
+    .cars__text {
+        margin-bottom: 190px;
+    }
+    .cars__about {
+        padding-top: 130px;
+    }
+    .cars__about .cars__text {
+        margin-bottom: 362px;
+    }
 }
 
 @media (max-width: 1600px) {
+    
     .hero__title {
         font-size: 53px;
     }
@@ -43,7 +66,7 @@
     }
 
     .drive .section__title {
-        margin-bottom: 19px;
+        margin-bottom: 48px;
         font-size: 55px;
     }
 
@@ -77,10 +100,10 @@
         height: 435.01px;
     }
 
-    .crossover__block {
+    /* .crossover__block {
         height: 238px;
         width: 426px;
-    }
+    } */
 
     .overlay {
         right: 85px;
@@ -215,7 +238,7 @@
 
     .cars__text {
         width: 100%;
-        margin-bottom: 320px !important;
+        margin-bottom: 268px;
     }
 
     .header__link {
@@ -230,10 +253,7 @@
         font-size: 54px !important;
     }
 
-    .cars .testdrive__form .section__img {
-        left: 20px !important;
-    }
-
+    
     .cars__info {
 
         padding-top: 310px !important;
@@ -287,12 +307,19 @@
         line-height: 37px;
         margin-top: 100px;
     }
-
-    .section__img {
-
-        left: 380px !important;
-
-
+    .news__articles-cont {
+        max-width: 1220px;
+    }
+    .news .section__img {
+        left: 0;
+        right: 0;
+        margin: -11px auto;
+        
+    }
+    .crossover .section__img {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
     }
 
     .carousel .control-prev.control-arrow {
@@ -311,19 +338,30 @@
 
     }
 
+    .crossover__block {
+        height: 246px;
+        width: 449px;
+    }
+
     .crossover__img {
 
         right: 21px;
 
     }
 
-    .crossover__block {
+    /* .crossover__block {
         height: 239px !important;
         width: 427px !important;
-    }
+    } */
 
     .carousel.carousel-slider .control-arrow {
         max-height: 760px;
+    }
+
+    .tracking__hero .section__img {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
     }
 
     .testdrive__hero_img {
@@ -341,9 +379,6 @@
 
     }
 
-    .testdrive__form .section__img {
-        left: 110px !important;
-    }
 
     .testdrive__form_subtitle {
         width: 63% !important;
@@ -404,6 +439,11 @@
 
     .credit__form .section__img {
         left: 0 !important;
+        right: 0;
+        margin: -11px auto;
+    }
+    .cars__hero_title {
+        margin-bottom: 11px;
     }
 
     .aboutpage__col {
@@ -426,6 +466,9 @@
 }
 
 @media (max-width: 1366px) {
+    .drive .section__title .section__img {
+        margin: 10px auto;
+    }
     .header__link {
         font-size: 15px !important;
     }
@@ -476,7 +519,10 @@
     .drive__img {
         margin-bottom: 0px !important;
     }
-
+    .crossover {
+        padding-top: 40px;
+        padding-bottom: 30px;
+    }
     .slider_page-subtitle {
         font-size: 15px !important;
     }
@@ -500,6 +546,9 @@
     .about__title {
         font-size: 20px !important;
     }
+    .aboutpage__video {
+        padding-top: 40px;
+    }
     .sl_container {
         height: 413px !important;
         max-width: 1172px !important;
@@ -508,16 +557,19 @@
         width: 462.32px !important;
         height: 352.01px !important;
     }
+    .aboutpage__video-title {
+        margin-bottom: -20px;
+    }
     .carousel .slide img {
         width: 100% !important;
     }
     .crossover__main-block .crossover__img-block {
         right: -12px !important;
     }
-    .crossover__block {
+    /* .crossover__block {
         height: 222px !important;
         width: 400px !important;
-    }
+    } */
     .overlay {
         right: 68px !important;
         bottom: 110px !important;
@@ -611,6 +663,17 @@
     .aboutpage__form_form {
         text-align: left;
     }
+    .aboutpage__form_block .orange_btn{
+        height: 47px !important;
+        width: 100% !important;
+    }
+    .cars__text {
+        margin-bottom: 150px;
+    }
+    .cars__about .cars__text {
+        margin-bottom: 282px;
+    }
+
 }
 
 @media (max-width: 1280px) {
@@ -622,6 +685,20 @@
     }
     .footer .section__title {
         font-size: 38px !important;
+    }
+    .crossover__block {
+        height: 234px;
+        width: 426px;
+    }
+    .news__articles-cont {
+        max-width: 1150px;
+    }
+    .crossover {
+        padding-bottom: 56px;
+    }
+    .credit__form .orange_btn {
+        width: 100% !important;
+        height: 53px !important;
     }
 }
 
@@ -668,14 +745,14 @@
         height: 215px !important;
     }
 
-    .crossover__block {
+    /* .crossover__block {
         height: 190px !important;
         width: 338px !important;
         margin-top: 70px !important;
         margin-left: -65px !important;
         padding: 24px 0 0 101px !important;
 
-    }
+    } */
 
     .header__testdrive-link {
         width: 91px !important;
@@ -763,11 +840,11 @@
         right: 25px;
     }
 
-    .crossover__block {
+    /* .crossover__block {
         height: 177px !important;
         width: 309px !important;
         margin-left: -52px !important;
-    }
+    } */
 
     .crossover__main-block .crossover__img-block {
         right: -2px !important;
@@ -787,15 +864,15 @@
         font-size: 20px;
 
     }
-
+/* 
     .crossover__block {
         height: 190px;
         width: 343px;
-    }
+    } */
 
-    .crossover .slide .crossover__block img {
+    /* .crossover .slide .crossover__block img {
         width: 65% !important;
-    }
+    } */
 
     .crossover__img-block {
 
@@ -895,9 +972,6 @@
         margin-bottom: 41px !important;
     }
 
-    .testdrive__form .section__img {
-        left: 75px !important;
-    }
 
     .testdrive__form {
 
@@ -1038,11 +1112,64 @@
         font-size: 30px !important;
 
     }
+    .crossover__block {
+        height: 196px;
+        width: 344px;
+    }
+    .drive .section__title .section__img {
+        left: 0 !important;
+        bottom: -41px;
+    }
+    .carousel .slide .section__img {
+        left: 0 !important;
+        right: 0 !important;
+        bottom: -73px;
+    }
+    .news .section__img {
+        left: 0 !important;
+        width: 100%;
+    }
+    .testdrive__form .section__img {
+        width: 100%;
+    }
+    .credit__form .section__img {
+        width: 100%;
+    }
+    .testdrive__line_media {
+        left: 0 !important;
+        right: 0;
+        margin: 0 auto;
+    }
+    .tracking__hero .section__img {
+        width: 100%;
+    }
+    .news__articles-cont {
+        max-width: 896px;
+    }
+    .news__subtitle {
+        width: 100%;
+    }
+    .news__content img {
+        width: 100%;
+    }
+    .testdrive__form .section__img {
+        left: 0 !important;
+    }
+    .tracking__hero .section__img {
+        left: 0 !important;
+    }
 }
 
 @media (max-width: 820px) {
+    .crossover__block {
+        height: 217px;
+        width: 401px;
+    }
     .header__nav {
         display: none !important;
+    }
+    .crossover .swiper-initialized {
+        clip-path: polygon(13% 0, 102% 0%, 87% 100%, -2% 100%);
     }
 
     .cars {
@@ -1266,9 +1393,6 @@
         grid-template-columns: 1fr 1fr !important;
     }
 
-    .news__block:last-child {
-        display: none;
-    }
 
 
     .news__video {
@@ -1277,14 +1401,13 @@
         border: none;
     }
 
+    .news__content img {
+        height: auto;
+    }
+
 
     .section__img {
         left: 210px !important;
-    }
-
-    .news__content img {
-        width: 334px;
-        height: 195px;
     }
 
     .news__subtitle {
@@ -1324,6 +1447,19 @@
 
     .testdrive__hero_main {
         padding-top: 199px !important;
+    }
+    .news .sw-next-arrow {
+        right: -41px;
+        height: 55.27px;
+        width: 26px;
+    }
+    .news .sw-prev-arrow {
+        left: -41px;
+        height: 55.27px;
+        width: 26px;
+    }
+    .header__main {
+        max-width: 100% !important;
     }
 
     .testdrive__hero_title {
@@ -1382,7 +1518,6 @@
 
     .credit__hero {
         align-items: center !important;
-        height: 100% !important;
         padding-top: 320px !important;
     }
 
@@ -1395,6 +1530,9 @@
         width: 100%;
         height: 100%;
         padding: 80px 0 20px;
+    }
+    .diler__hero {
+        min-height: auto;
     }
 
     .credit__block {
@@ -1559,9 +1697,48 @@
     .aboutpage__main {
         width: 702.72px !important;
     }
+    .news__articles-cont2 .sw-next-arrow {
+        right: 80px;
+    }
+    .news__articles-cont2 .sw-prev-arrow {
+        left: 80px;
+    }
+    .aboutpage__footer {
+        height: auto;
+    }
+    .cars .container {
+        display: flex;
+        height: 100%;
+        justify-content: space-around;
+        flex-direction: column;
+    }
 }
 
-@media (max-width: 429px) {
+@media (max-width: 600px) {
+    .carousel .slide .section__img {
+        margin-bottom: 33px;
+    }
+    .news__articles-cont .sw-prev-arrow {
+        left: -7px;
+        height: 32.27px;
+        width: 24px;
+    }
+    .news__articles-cont .sw-next-arrow {
+        right: -7px;
+        height: 32.27px;
+        width: 24px;
+    }
+
+    .news__grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .news__articles-cont2 .sw-prev-arrow{
+        left: 30px;
+    }
+    .news__articles-cont2 .sw-next-arrow{
+        right: 30px;
+    }
     .testdrive {
         overflow-x: hidden;
     }
@@ -1633,12 +1810,12 @@
     }
 
     .cars__hero_title {
-        font-size: 60px !important;
+        font-size: 26px !important;
         margin-bottom: 40px;
     }
 
     .cars__hero_subtitle {
-        font-size: 24px !important;
+        font-size: 15px !important;
     }
 
     .cars .header {
@@ -1760,12 +1937,12 @@
     /* .container {
         max-width: 350px !important;
     } */
-    .crossover__block {
+    /* .crossover__block {
 
         height: 84px !important;
         width: 159px !important;
         margin-left: -36px !important;
-    }
+    } */
     .crossover .forward {
         max-height: 200px !important;
     }
@@ -1807,9 +1984,6 @@
     .news__block:not(:first-child) {
         display: none;
     }
-    .section__img {
-        display: none;
-    }
 
     .footer .section__title {
         font-size: 18.31px !important;
@@ -1842,11 +2016,13 @@
         padding: 20px 0 0 50px;
     }
     .crossover__img-block {
-        top: 29px !important;
+        top: 33px !important;
+        right: -7px;
     }
-    .crossover__block {
+    /* .crossover__block {
         padding: 14px 0 0 45px !important;
-    }
+    } */
+    
 
     .about .section__title {
         font-weight: 700 !important;
@@ -2086,8 +2262,6 @@
         height: 100%;
         width: 100%;
         position: relative;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgb(0, 0, 0) 100%);
-
     }
 
     .black__media_about {
@@ -2139,7 +2313,7 @@
     }
 
     .cars__back_media {
-        width: 234%;
+        width: 100%;
         height: 13vh;
         top: 0;
         background: rgba(0, 0, 0, 0.45) !important;
@@ -2156,7 +2330,7 @@
         box-shadow: 0px 71px 100px 6px rgba(0, 0, 0, 1) inset;
         background: -webkit-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
         background: -moz-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
-        padding-top: 740px !important;
+        padding-top: 400px !important;
         background: linear-gradient(0deg, rgb(0, 0, 0) 10%, rgba(255, 255, 255, 0)), url("../images/cars_media_back.png") no-repeat center/cover !important;
     }
     .cars__info{
@@ -2169,11 +2343,11 @@
         box-shadow: 0px 71px 100px 6px rgba(0, 0, 0, 1) inset;
         background: -webkit-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
         background: -moz-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
-        padding-top: 740px !important;
+        padding-top: 400px !important;
         background: linear-gradient(0deg, rgb(0, 0, 0) 10%, rgba(255, 255, 255, 0)), url("../images/car_media_back-3.png") no-repeat center/cover !important;
     }
     .cars__about_title {
-        font-size: 35px !important;
+        font-size: 19px !important;
     }
     .cars__hero_grid{
         position: relative;
@@ -2184,9 +2358,6 @@
     }
     .cars__info_subtitle {
         font-size: 20px !important;
-    }
-    .cars__info_title {
-        font-size: 32px !important;
     }
     .cars__test_subtitle {
         font-size: 25px !important;
@@ -2224,7 +2395,6 @@
     }
     .aboutpage__hero {
         background-size: cover !important;
-        background-position-y: 100px !important;
         height: 83vh !important;
     }
     .aboutpage__hero .aboutpage__title {
@@ -2397,5 +2567,15 @@
     }
     .aboutpage__footer .orange_btn {
         width: 100% !important;
+    }
+    .swiper-slide .crossover__block {
+        height: 188px;
+        width: 327px;
+    }
+    .crossover .container {
+        height: 390px;
+    }
+    .crossover .section__title {
+        margin-bottom: 95px;
     }
 }

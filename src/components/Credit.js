@@ -1,9 +1,5 @@
-import '../style/credit.css'
-import '../style/media.css'
 import React, { useState } from 'react'
 import {useEffect} from 'react'
-import logo from "../images/logo_black.svg";
-import {NavLink} from "react-router-dom";
 import car from "../images/credit_car.png"
 import dcb from "../images/DCB.svg"
 import aylbank from "../images/aylbank.svg"
@@ -11,10 +7,6 @@ import baitushum from "../images/baitushum.svg"
 import light_line from "../images/light_line.png";
 import axios from "axios"
 import { _LINK } from '../data/Data';
-import instagram from '../images/Instagram.png'
-import whatsapp from '../images/Whatsapp.png'
-import youtube from '../images/Youtube.png'
-import telegram from '../images/Telegram.png'
 import { Footer } from './Footer';
 
 const Credit = ({setIsLight}) => {
@@ -124,7 +116,7 @@ const Credit = ({setIsLight}) => {
                                 <span className="credit__form_span"></span>
                             </div>
                             <div className="credit__form_info">
-                                <input type="date" className='credit__form_input' placeholder="" onInput={handleAddData} id="dateTime" />
+                                <input type="date" className='credit__form_input' placeholder="дд.мм.гггг" onInput={handleAddData} id="dateTime" />
                                 <span className="credit__form_span"></span>
                             </div>
                             <div className="credit__form_info">

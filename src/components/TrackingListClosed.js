@@ -26,7 +26,6 @@ export const TrackingListClosed = ({ setDisplay }) => {
 			try {
 				const { data } = await axios(config)
 				setList(data)
-				console.log(data)
 			} catch (e) {
 				alert(e)
 			}

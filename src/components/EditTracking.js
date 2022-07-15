@@ -30,7 +30,6 @@ export const EditTracking = ({ setDisplay }) => {
 			try {
 				const { data } = await axios(config)
 				setList(data)
-				console.log(data)
 			} catch (e) {
 				alert(e)
 			}
@@ -48,7 +47,6 @@ export const EditTracking = ({ setDisplay }) => {
 			try {
 				const { data } = await axios(config)
 				setTracker(data)
-				console.log(data)
 			} catch (e) {
 				alert(e)
 			}
@@ -68,7 +66,6 @@ export const EditTracking = ({ setDisplay }) => {
 		}
 		try {
 			const { data } = await axios(config)
-			console.log(data)
 			alert("Запись добавлена")
 			window.location.reload()
 		} catch (e) {
@@ -87,7 +84,6 @@ export const EditTracking = ({ setDisplay }) => {
 		}
 		try {
 			const { data } = await axios(config)
-			console.log(data)
 			window.location.reload()
 		} catch (e) {
 			alert(e)
@@ -143,7 +139,6 @@ export const EditTracking = ({ setDisplay }) => {
 					alert(e)
 				}
 			} else if (isClosed === "close") {
-				console.log(tracker.id)
 				const config = {
 					method: 'post',
 					url: `${_LINK}/v1/api/tracker/close/${tracker.id}`,
@@ -159,8 +154,6 @@ export const EditTracking = ({ setDisplay }) => {
 			}
 		}
 		
-// alert("Запись обновлена")
-			// window.location.reload()
 	}
 
 	const {dispatch} = useDispatch()

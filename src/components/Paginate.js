@@ -43,8 +43,8 @@ export const Paginate = ({page, setPage, totalPages }) => {
 						setPage(0)
 					}}>{"<"}</span>
 					{
-						arr.map(el => (
-							<span className={`pagination__num ${handleActice(el-1)}`}
+						arr.map((el, idx) => (
+							<span key={idx} className={`pagination__num ${handleActice(el-1)}`}
 							onClick={() => {
 								setPage(el - 1)
 								}} >{el}</span>

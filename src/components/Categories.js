@@ -1,7 +1,4 @@
-import '../style/categ.css'
 import React, { useEffect, useState } from 'react'
-import logo from '../images/Logo.svg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import pen from '../images/pen-to-square-solid.svg'
 import trash from '../images/trash-can-solid.svg'
 import { NavLink } from "react-router-dom";
@@ -11,6 +8,7 @@ import { AdminPanel } from './AdminPanel'
 import axios from 'axios'
 import { _LINK } from '../data/Data'
 import { logoutAction } from '../redux/actions/login'
+
 const Categories = ({ setDisplay }) => {
 
     useEffect(() => {
@@ -30,7 +28,6 @@ const Categories = ({ setDisplay }) => {
             }
             try {
                 const { data } = await axios(config)
-                console.log(data)
                 setCategories(data)
             } catch (e) {
                 alert(e)
@@ -50,7 +47,6 @@ const Categories = ({ setDisplay }) => {
         }
         try {
             const { data } = await axios(config)
-            console.log(data)
             setCategories(data)
             window.location.reload()
         } catch (e) {

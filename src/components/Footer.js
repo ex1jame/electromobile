@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import instagram from '../images/Instagram.png'
-import whatsapp from '../images/Whatsapp.png'
-import youtube from '../images/Youtube.png'
-import telegram from '../images/Telegram.png'
+import instagram from '../images/Instagram.svg'
+import whatsapp from '../images/Whatsapp.svg'
+import youtube from '../images/Youtube.svg'
+import telegram from '../images/Telegram.svg'
 import { _LINK } from '../data/Data';
 import axios from 'axios';
 
@@ -18,10 +18,9 @@ export const Footer = () => {
 			}
 			try {
 				const { data } = await axios(config)
-				console.log(data)
 				setIcons(data)
 			} catch (e) {
-				alert(e)
+				console.log(e)
 			}
 		}
 		get2()
@@ -38,8 +37,8 @@ export const Footer = () => {
 						<p className="footer__title">Соц. сети:</p>
 					</div>
 					<div className="footer__block">
-						<p className="footer__subtitle">+996 755 055 865</p>
-						<p className="footer__subtitle">г. Бишкек, ул. Раззакова 32</p>
+						<p className="footer__subtitle"><a href={`tel:${icons?.phone}`}>{icons?.phoneText}</a></p>
+						<p className="footer__subtitle"><a href={icons?.address} target="_blank">{icons?.addressText}</a></p>
 						<div className="footer__grid">
 							<a href={icons?.inst} target="_blank" className="footer__eclipse"><img src={instagram} alt="" /></a>
 							<a href={icons?.youtube}

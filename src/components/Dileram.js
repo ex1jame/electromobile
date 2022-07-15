@@ -1,15 +1,7 @@
-import '../style/diler.css'
 import React, {useEffect, useState} from 'react'
-import light_line from "../images/light_line.png";
 import axios from "axios"
-import '../style/media.css'
 import { _LINK } from '../data/Data';
-import instagram from '../images/Instagram.png'
-import whatsapp from '../images/Whatsapp.png'
-import youtube from '../images/Youtube.png'
-import telegram from '../images/Telegram.png'
 import { Footer } from './Footer';
-
 
 const Dileram = ({setIsLight}) => {
 
