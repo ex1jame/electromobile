@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {NavLink} from 'react-router-dom';
 import logo from '../images/Logo.png';
 import logo2 from '../images/logo2.svg';
@@ -6,8 +6,28 @@ import instagram from "../images/Instagram.svg";
 import youtube from "../images/Youtube.svg";
 import whatsapp from "../images/Whatsapp.svg";
 import telegram from "../images/Telegram.svg";
+import { _LINK } from '../data/Data';
+import axios from 'axios';
 
 const Header = ({isLight, isDisplay, isBlack}) => {
+
+    const [icons, setIcons] = useState()
+
+    useEffect(() => {
+        const get2 = async () => {
+            const config = {
+                method: 'get',
+                url: `${_LINK}/v1/api/user/socials`
+            }
+            try {
+                const { data } = await axios(config)
+                setIcons(data)
+            } catch (e) {
+                console.log(e)
+            }
+        }
+        get2()
+    }, [])
 
     const [Light, setIsLight] = useState(false)
     const [display, setDisplay] = useState(false)
@@ -66,11 +86,10 @@ const Header = ({isLight, isDisplay, isBlack}) => {
                                 <NavLink to="/about" className="header__nav_link" onClick={showBurger ? "header__burger_active" : ""}>О компании</NavLink>
 
                             <div className="footer__grid">
-                                <a href="" className="header__eclipse"><img src={instagram} alt=""/></a>
-                                <a href="https://www.youtube.com/channel/UCQ38-AA8Ec1theWNJEQyz1A/featured"
-                                   className="header__eclipse"><img src={youtube} alt=""/></a>
-                                <a href="" className="header__eclipse"><img src={whatsapp} alt=""/></a>
-                                <a href="" className="header__eclipse"><img src={telegram} alt=""/></a>
+                                <a href={icons?.inst} className="header__eclipse"><img src={instagram} alt=""/></a>
+                                <a href={icons?.youtube} className="header__eclipse"><img src={youtube} alt=""/></a>
+                                <a href={icons?.whatsapp} className="header__eclipse"><img src={whatsapp} alt=""/></a>
+                                <a href={icons?.telegram} className="header__eclipse"><img src={telegram} alt=""/></a>
                             </div>
                         </nav>
                     )

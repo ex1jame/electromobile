@@ -75,8 +75,8 @@ export const NewsCreate = ({setDisplay}) => {
 							<input type="text" className="admin__seo_electro car_brand" placeholder="Компания Subaru представила первый электрический автомобиль" 
 								onInput={(e) => setText(e.target.value)}
 							/>
-							<label className="admin__create_label">Ссылка на новость</label>
-							<input type="text" className="admin__seo_electro car_brand" placeholder="https://" 
+							<label className="admin__create_label">Описание</label>
+							<input type="text" className="admin__seo_electro car_brand" placeholder="Описание..." 
 								onInput={(e) => setLink(e.target.value)}
 							/>
 							<label className="admin__create_label">Картинка</label>

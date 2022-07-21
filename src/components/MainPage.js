@@ -89,7 +89,7 @@ const MainPage = ({ setIsLight }) => {
                 </video>
                 <div className="hero__main container d-flex align-center justify-center  flex-column z-100">
                     <h1 className="hero__title">Авто <span className="bold">твоего</span> города</h1>
-                    <h2 className="hero__subtitle ">Будь одним из первых</h2>
+                    <h2 className="hero__subtitle ">Переходи на электро меняй эпоху</h2>
                 </div>
                 <button className="orange_btn z-100" onClick={() => { setFormOn(true); window.scrollTo(0, 0) }}>Оформить заказ</button>
             </section>

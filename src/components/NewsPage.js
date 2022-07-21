@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { NavLink } from 'react-router-dom';
 import SwiperCore, { Autoplay, Navigation, Scrollbar } from 'swiper';
 import { SwiperSlide, Swiper } from 'swiper/react';
 import { _LINK } from '../data/Data';
@@ -135,7 +136,7 @@ export function NewsPage({
                     {
                         articles?.map(el => (
                             <SwiperSlide key={el.id}>
-                                <a href={el?.link} target="_blank" className="news__block">
+                                <NavLink to={`/article/${el?.id}`} target="_blank" className="news__block">
                                     <div className="news__content">
                                         <img src={`${_LINK}/v1/api/file/${el?.file?.name}`} alt="" />
                                     </div>
@@ -144,7 +145,7 @@ export function NewsPage({
                                             el?.text
                                         }
                                     </p>
-                                </a>
+                                </NavLink>
                             </SwiperSlide>
                         ))
                     }

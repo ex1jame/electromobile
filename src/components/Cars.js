@@ -167,7 +167,7 @@ const Cars = ({setIsBlack}) => {
                                 <p className="cars__info_subtitle">цвета </p>
                             </div>
                             <div className="cars__hero_col">
-                                <p className="cars__about_title">{car?.maxSpeed} <span className="cars__hero_subtitle">км/ч</span>
+                                <p className="cars__about_title shadow">{car?.maxSpeed} <span className="cars__hero_subtitle">км/ч</span>
                                 </p>
                                 <p className="cars__info_subtitle">макс. скорость</p>
                             </div>
@@ -188,11 +188,11 @@ const Cars = ({setIsBlack}) => {
                         </div>
                         <div className="cars__test_third d-flex">
 
-                            <p className="cars__test_subtitle">круиз-контроль</p>
+                            <p className="cars__test_subtitle">бесключевой запуск</p>
                         </div>
                         <div className="cars__test_fourth d-flex">
 
-                            <p className="cars__test_subtitle">бесключевой запуск</p>
+                            <p className="cars__test_subtitle">круиз-контроль</p>
                         </div>
                     </div>
                 </div>

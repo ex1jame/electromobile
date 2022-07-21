@@ -700,6 +700,12 @@
         width: 100% !important;
         height: 53px !important;
     }
+    .cars__hero_title, .cars__about_title {
+        font-size: 37px;
+    }
+    .cars__hero_subtitle {
+        font-size: 13px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -1401,11 +1407,6 @@
         border: none;
     }
 
-    .news__content img {
-        height: auto;
-    }
-
-
     .section__img {
         left: 210px !important;
     }
@@ -1798,10 +1799,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        min-height: 170vh !important;
+        min-height: 100vh !important;
         background: -webkit-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
         background: -moz-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
-        padding-top: 940px !important;
+        padding-top: 250px !important;
         background: linear-gradient(0deg, rgb(0, 0, 0) -10%, rgba(255, 255, 255, 0)), url("../images/cars_bak_media.png") no-repeat center/cover !important;
     }
 
@@ -2214,30 +2215,31 @@
 
     .aboutpage__hero {
 
-        -webkit-box-shadow: 0px -7px 100px 100px rgba(0, 0, 0, 1) inset;
-        -moz-box-shadow: 0px -7px 100px 100px rgba(0, 0, 0, 1) inset;
-        box-shadow: 2px 163px 176px 70px rgb(0 0 0) inset;
+        -webkit-box-shadow: 2px 158px 47px 80px rgb(0 0 0 / 90%) inset;
+        -moz-box-shadow: 2px 158px 47px 80px rgb(0 0 0 / 90%) inset;
+        box-shadow: 2px 158px 47px 80px rgb(0 0 0 / 90%) inset;
 
     }
 
     .aboutpage__about {
-
-        -webkit-box-shadow: 0px -7px 100px 100px rgba(0, 0, 0, 1) inset;
-        -moz-box-shadow: 0px -7px 100px 100px rgba(0, 0, 0, 1) inset;
-        box-shadow: -26px 65px 49px 40px rgb(0 0 0) inset;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../images/aboutpage_bg1.png" ) ;
+        /* -webkit-box-shadow: 2px 158px 47px 80px rgb(0 0 0 / 90%) inset;
+        -moz-box-shadow: 2px 158px 47px 80px rgb(0 0 0 / 90%) inset;
+        box-shadow: 2px 158px 47px 80px rgb(0 0 0 / 90%) inset; */
 
     }
 
     .aboutpage__third {
-        -webkit-box-shadow: 0px -7px 100px 100px rgba(0, 0, 0, 1) inset;
-        -moz-box-shadow: 0px -7px 100px 100px rgba(0, 0, 0, 1) inset;
-        box-shadow: -26px 65px 49px 40px rgb(0 0 0) inset;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../images/aboutpage_bg2.png" ) ;
+        /* -webkit-box-shadow: 2px 158px 47px 80px rgb(0 0 0 / 90%) inset;
+        -moz-box-shadow: 2px 158px 47px 80px rgb(0 0 0 / 90%) inset;
+        box-shadow: 2px 158px 47px 80px rgb(0 0 0 / 90%) inset; */
     }
 
     .aboutpage__fourth {
-        -webkit-box-shadow: 0px -7px 100px 100px rgba(0, 0, 0, 1) inset;
-        -moz-box-shadow: 0px -7px 100px 100px rgba(0, 0, 0, 1) inset;
-        box-shadow: -26px 65px 49px 40px rgb(0 0 0) inset;
+       -webkit-box-shadow: 2px 158px 47px 80px rgb(0 0 0 / 90%) inset;
+        -moz-box-shadow: 2px 158px 47px 80px rgb(0 0 0 / 90%) inset;
+        box-shadow: 2px 158px 47px 80px rgb(0 0 0 / 90%) inset;
     }
 
     .black__media_third {
@@ -2324,26 +2326,26 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        min-height: 110vh !important;
+        min-height: 100vh !important;
         -webkit-box-shadow: 0px 71px 100px 6px rgba(0, 0, 0, 1) inset;
         -moz-box-shadow: 0px 71px 100px 6px rgba(0, 0, 0, 1) inset;
         box-shadow: 0px 71px 100px 6px rgba(0, 0, 0, 1) inset;
         background: -webkit-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
         background: -moz-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
-        padding-top: 400px !important;
+        padding-top: 270px !important;
         background: linear-gradient(0deg, rgb(0, 0, 0) 10%, rgba(255, 255, 255, 0)), url("../images/cars_media_back.png") no-repeat center/cover !important;
     }
     .cars__info{
         display: flex;
         flex-direction: column;
         align-items: center;
-        min-height: 110vh !important;
+        min-height: 100vh !important;
         -webkit-box-shadow: 0px 71px 100px 6px rgba(0, 0, 0, 1) inset;
         -moz-box-shadow: 0px 71px 100px 6px rgba(0, 0, 0, 1) inset;
         box-shadow: 0px 71px 100px 6px rgba(0, 0, 0, 1) inset;
         background: -webkit-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
         background: -moz-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
-        padding-top: 400px !important;
+        padding-top: 240px !important;
         background: linear-gradient(0deg, rgb(0, 0, 0) 10%, rgba(255, 255, 255, 0)), url("../images/car_media_back-3.png") no-repeat center/cover !important;
     }
     .cars__about_title {
@@ -2369,21 +2371,25 @@
         -webkit-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
         -moz-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
         box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
+        height: 50vh;
     }
     .cars__test_second{
         -webkit-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
         -moz-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
         box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
+         height: 50vh;
     }
     .cars__test_third{
         -webkit-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
         -moz-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
         box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
+         height: 50vh;
     }
     .cars__test_fourth{
         -webkit-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
         -moz-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
         box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
+         height: 50vh;
     }
     .tracking__hero .section__title {
         font-size: 16px !important;
@@ -2394,8 +2400,12 @@
         overflow: hidden;
     }
     .aboutpage__hero {
-        background-size: cover !important;
+        background-size: contain !important;
         height: 83vh !important;
+        background-color: #000;
+        background-attachment: revert;
+        background-position-y: 202px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../images/about_bg2.png" ) ;
     }
     .aboutpage__hero .aboutpage__title {
         font-size: 12.1042px !important;
@@ -2403,7 +2413,6 @@
     }
     .aboutpage__desc {
         font-size: 11px !important;
-        line-height: 148% !important;
     }
     .about__shadow-img1 {
         display: block !important;
@@ -2462,15 +2471,21 @@
         object-fit: cover;
     }
     .aboutpage__about {
+        background-size: contain !important;
         height: 83vh !important;
+        background-color: #000;
+        background-attachment: revert;
+        background-position-y: 202px;
     }
     .aboutpage__third {
         position: relative;
-        height: 82vh !important;
+        background-size: contain !important;
+        background-color: #000;
+        background-attachment: revert;
+        background-position-y: 77px;
     }
     .black__media_third {
         padding: 377px 0px 0px 0px;
-        height: 82vh;
     }
     .about__shadow-img3 {
         display: block !important;
@@ -2577,5 +2592,25 @@
     }
     .crossover .section__title {
         margin-bottom: 95px;
+    }
+    .news__articles-cont2 .swiper {
+        height: 50vh;
+    }
+    .cars__slide {
+        height: 50vh;
+    }
+    .cars__slide div {
+        height: 50vh;
+    }
+    .cars__slide_page .sw-next-arrow {
+        right: 40px;
+        height: 70px;
+    }
+    .cars__slide_page .sw-prev-arrow {
+        right: 40px;
+        height: 70px;
+    }
+    .article__title {
+        font-size: 27px;
     }
 }

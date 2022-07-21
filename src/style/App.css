@@ -790,6 +790,13 @@ html {
     flex-direction: column;
     width: 100%;
     height: 100%;
+    max-width: 368px;
+    max-height: 243px;
+}
+.news__block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .news__video {
@@ -1059,3 +1066,4 @@ html {
 @import url("./login.css");
 @import url("./TestDrive.css");
 @import url("./tracking.css");
+@import url("./article.css");

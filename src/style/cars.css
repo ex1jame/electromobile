@@ -85,6 +85,12 @@
     color: #FFFFFF;
     text-align: center;
     margin-bottom: 40px;
+    
+}
+.cars__about_title.shadow {
+    background: rgba(0,0,0,.7);
+    padding: 0 10px;
+    border-radius: 12px;
 }
 
 /*Info*/
@@ -195,7 +201,6 @@
     /* or 56px */
     text-align: center;
     margin-bottom: 30px;
-
     color: #FFFFFF;
 }
 

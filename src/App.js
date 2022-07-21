@@ -39,6 +39,7 @@ import { NewsCreate } from './components/NewsCreate';
 import { NewsUpdate } from './components/NewsUpdate';
 import Videos from './components/Videos';
 import { AboutAdmin } from './components/AboutAdmin';
+import { ArticlePage } from './components/ArticlePage';
 
 function App() {
 
@@ -104,6 +105,7 @@ function App() {
                     <Route path="/edit-news/:id" element={<NewsUpdate setDisplay={setDisplay} />} />
                     <Route path="/videos" element={<Videos setDisplay={setDisplay} />} />
                     <Route path="/page-about" element={<AboutAdmin setDisplay={setDisplay} />} />
+                    <Route path="/article/:id" element={<ArticlePage setIsLight={setIsLight}/>} />
                 </Routes>
             </BrowserRouter>
         </HelmetProvider>

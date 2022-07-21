@@ -33,6 +33,23 @@ const Vehicle = ({ setDisplay }) => {
 		get()
 	}, [])
 
+	const handleDelete = async (id) => {
+		try {
+			const config = {
+				method: 'post',
+				url: `${_LINK}/v1/api/car/delete/${id}`,
+				headers: {
+					'Authorization': localStorage.getItem("token")
+				}
+			}
+			await axios(config)
+			alert("Запись удалена")
+			window.location.reload()
+		} catch (e) {
+			alert(e)
+		}
+	}
+
 	const { isAuth } = useSelector(store => store.login)
 	const dispatch = useDispatch()
 
@@ -74,7 +91,7 @@ const Vehicle = ({ setDisplay }) => {
 											<td className="table__block_id">{el.id}</td>
 											<td className="table__block_name modify">{el.brand}</td>
 											<td className='table__block_name modify'>{el.yearCreated}</td>
-											<td className="table__block_option "><NavLink to={`/edit-car/${el.id}`}><img src={pen} alt="" className="table__icon" /></NavLink><img onClick={() => { }} src={trash} alt="" className="table__icon" /></td>
+											<td className="table__block_option "><NavLink to={`/edit-car/${el.id}`}><img src={pen} alt="" className="table__icon" /></NavLink><img onClick={() => { handleDelete(el.id) }} src={trash} alt="" className="table__icon" /></td>
 										</tr>
 									))}
 								</tbody>
