@@ -13,9 +13,16 @@ const Credit = ({setIsLight}) => {
 
     useEffect(() => {
         setIsLight(true)
+        const getCreditPage = async () => {
+            const { data } = await axios(`${_LINK}/v1/api/page/credit`)
+            console.log(data)
+            setCredit(data)
+        }
+        getCreditPage()
     }, [])
 
     const [request, setRequest] = useState({ isCalled: false, category: 3 })
+    const [credit, setCredit] = useState({})
 
     const handleCreateRequest = async () => {
         const config = {
@@ -53,45 +60,58 @@ const Credit = ({setIsLight}) => {
 
     }
 
+    const drowText = (str) => {
+        if (str.includes("<br>")) {
+            return (<br></br>)
+        } else if (str.includes("<o>")) {
+            return (<span className="orange_span">{str.substring(3)} </span>)
+        } else {
+            return (str + " ")
+        }
+    }
+
     return (
         <div className="credit">
             <section className="credit__hero d-flex flex-column">
                 <div className="credit__img">
-                    <img src={car} alt=""/>
+                    <img src={credit?.carFile ? `${_LINK}/v1/api/file/${credit?.carFile?.name}` : car} alt=""/>
                 </div>
                 <div className="credit__main-block"><span className="credit__line"></span>
                     <span className="credit__line"></span>
                     <div className="credit__block">
 
                         <div className="credit__col">
-                            <h2 className="credit__title">РАССРОЧКА</h2>
-                            <p className="credit__subtitle">до <span className="orange_span">3</span> лет<br/>
+                            <h2 className="credit__title">{credit?.firstTitle}</h2>
+                            {/* <p className="credit__subtitle">до <span className="orange_span">3</span> лет<br/>
                                 Первоначальный взнос <span className="orange_span">10%</span><br/>
-                                <span className="orange_span">0,5%</span> в месяц</p>
-                            <img src={dcb} alt="" className="credit__dcb"/>
+                                <span className="orange_span">0,5%</span> в месяц</p> */}
+                            <p className="credit__subtitle">{credit?.firstDesc?.split(" ")?.map(el => drowText(el))}</p>
+                            <img src={credit?.firstFile ? `${_LINK}/v1/api/file/${credit?.firstFile?.name}` : dcb} alt="" className="credit__dcb"/>
 
                         </div>
 
                         <div className="credit__col">
-                            <h2 className="credit__title">АВТОКРЕДИТ</h2>
-                            <p className="credit__subtitle">до <span className="orange_span">1</span> года - <span
+                            <h2 className="credit__title">{credit?.secondTitle}</h2>
+                            {/* <p className="credit__subtitle">до <span className="orange_span">1</span> года - <span
                                 className="orange_span">13%</span> годовых<br/>
                                 до <span className="orange_span">2</span> лет - <span
                                     className="orange_span">16%</span> годовых<br/>
                                 до <span className="orange_span">3</span> лет - <span
                                     className="orange_span">18%</span> годовых<br/>
                                 Первоначальный взнос на новые авто - <span className="orange_span">20%</span> <br/>
-                                Взнос на б/у авто не ранее 2017 г. - <span className="orange_span">30%</span></p>
-                            <img src={baitushum} alt="" className="credit__baitushum"/>
+                                Взнос на б/у авто не ранее 2017 г. - <span className="orange_span">30%</span></p> */}
+                            <p className="credit__subtitle">{credit?.secondDesc?.split(" ")?.map(el => drowText(el))}</p>
+                            <img src={credit?.secondFile ? `${_LINK}/v1/api/file/${credit?.secondFile?.name}` : baitushum} alt="" className="credit__baitushum"/>
 
                         </div>
                         <div className="credit__col">
-                            <h2 className="credit__title">ЛИЗИНГ</h2>
-                            <p className="credit__subtitle">до <span className="orange_span">5</span> лет<br/>
+                            <h2 className="credit__title">{credit?.thirdTitle}</h2>
+                            {/* <p className="credit__subtitle">до <span className="orange_span">5</span> лет<br/>
                                 Первоначальный взнос <span className="orange_span">10-30%</span><br/>
                                 <span className="orange_span">9%</span> годовых в $ США<br/>
-                                <span className="orange_span">16%</span> годовых в сомах</p>
-                            <img src={aylbank} alt="" className="credit__ayl"/>
+                                <span className="orange_span">16%</span> годовых в сомах</p> */}
+                            <p className="credit__subtitle">{credit?.thirdDesc?.split(" ")?.map(el => drowText(el))}</p>
+                            <img src={credit?.thirdFile ? `${_LINK}/v1/api/file/${credit?.thirdFile?.name}` : aylbank} alt="" className="credit__ayl"/>
                         </div>
                     </div>
                 </div>
@@ -99,11 +119,10 @@ const Credit = ({setIsLight}) => {
             <section className="credit__form" id="credit">
                 <div className="container">
                     <h2 className="section__title"><img src={light_line} alt="" className="section__img"/>
-                        СВЯЗЬ С НАМИ
+                        {credit?.formTitle}
                     </h2>
                     <p className="credit__form_subtitle">
-                        Выберите подходящую дату, заполните заявку и с вами свяжется наш менеджер
-                        для подтверждения данной информации.
+                        {credit?.formDesc}
                     </p>
                     <div className="credit__form_block">
                         <form className='credit__form_form'>

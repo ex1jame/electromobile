@@ -6,6 +6,10 @@
     padding-top: 230px;
 }
 
+.cars__hidden-img {
+    display: none;
+}
+
 .cars__text {
     width: 100%;
 
@@ -223,7 +227,6 @@
     display: block;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(270deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%), url("../images/cars_slider.png") no-repeat center/cover;
 }
 
 .cars__slide_img {

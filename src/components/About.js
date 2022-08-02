@@ -14,6 +14,7 @@ const About = ({ setIsLight }) => {
 
     const [video, setVideo] = useState({})
     const [imgs, setImgs] = useState([])
+    const [about, setAbout] = useState({})
 
     const sliderRef = useRef(null);
 
@@ -58,6 +59,13 @@ const About = ({ setIsLight }) => {
             setImgs(data)
         }
         get2()
+
+        const getAboutPage = async () => {
+            const { data } = await axios(`${_LINK}/v1/api/page/aboutpage`)
+            console.log(data)
+            setAbout(data)
+        }
+        getAboutPage()
     }, [])
 
     const [request, setRequest] = useState({ isCalled: false, category: 4 })
@@ -98,41 +106,33 @@ const About = ({ setIsLight }) => {
 
     }
 
+    const textWriter = (str) => {
+        if (str.includes("<br>")) {
+            return (<br/>)
+        } else {
+            return (str + " ")
+        }
+    }
+
     return (
         <div className="aboutpage">
-            <section className="aboutpage__hero black__media d-flex ">
+            <section className="aboutpage__hero black__media d-flex " style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.51)), url(${_LINK}/v1/api/file/${about?.first?.name})`}}>
                 <div className="black__media">
                     <div className="container">
                         <div className="aboutpage__info">
-                            <h1 className="aboutpage__title-sm-2 aboutpage__title">НАША МИССИЯ - ПЕРЕСАДИТЬ ВСЮ СТРАНУ НА
-                                ЭЛЕКТРОтранСПОРТ</h1>
+                            <h1 className="aboutpage__title-sm-2 aboutpage__title">{about?.title}</h1>
                             {/* <div className='about__shadow-img1'>
                                 <img src={el1} alt="" />
                             </div> */}
                             <div className="aboutpage__grid">
                                 <div className="aboutpage__col">
-                                    <p className="aboutpage__desc">Основатели нашей команды, серийные предприниматели
-                                        Чаргынов Замир
-                                        и Чаргынов Дастан, также, как и многие современные жители нашей планеты
-                                        вдохновлялись успехом Илона Маска
-                                        с электромобилем Tesla.
-                                        Они говорят: «Мы всегда мечтали ездить на электромобилях.
-                                    </p>
+                                    <p className="aboutpage__desc">{about?.firstOne?.split(" ").map(el => textWriter(el))}</p>
                                 </div>
                                 <div className="aboutpage__col">
-                                    <p className="aboutpage__desc">Ведь сам факт перехода человека
-                                        от автомобиля с ДВС на электромобиль хоть и символично, но означает переход
-                                        человечества от старой эпохи в новую, «более экологичную, разумную
-                                        и технологичную». Мы просто хотели быть частью этого.
-                                    </p>
+                                    <p className="aboutpage__desc">{about?.firstTwo?.split(" ").map(el => textWriter(el))}</p>
                                 </div>
                                 <div className="aboutpage__col">
-                                    <p className="aboutpage__desc">Прочувствовать это волнение и быть непосредственно
-                                        свидетелем этого исторического процесса. А находясь
-                                        в странах и городах ЕАЭС, мы поняли, что хотим ускорить этот процесс для себя
-                                        и для наших современников.
-
-                                    </p>
+                                    <p className="aboutpage__desc">{about?.firstThree?.split(" ").map(el => textWriter(el))}</p>
                                 </div>
                             </div>
                         </div>
@@ -140,7 +140,7 @@ const About = ({ setIsLight }) => {
                 </div>
             </section>
 
-            <section className="aboutpage__about  d-flex">
+            <section className="aboutpage__about  d-flex" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.51)), url(${_LINK}/v1/api/file/${about?.second?.name})` }}>
                 <div className="black__media_about">
                     <div className="container">
                         <div className="aboutpage__info">
@@ -149,61 +149,42 @@ const About = ({ setIsLight }) => {
                             </div> */}
                             <div className="aboutpage__grid">
                                 <div className="aboutpage__col">
-                                    <p className="aboutpage__desc">Не дожидаясь, пока Теsla или другие автоконцерны
-                                        откроют
-                                        у нас представительства или массовое производство на местах, мы основали
-                                        компанию
-                                        Электромобиль. Наша компания импортирует новые электромобили ведущих брэндов
-                                    </p>
+                                    <p className="aboutpage__desc">{about?.secondOne?.split(" ").map(el => textWriter(el))}</p>
                                 </div>
                                 <div className="aboutpage__col">
-                                    <p className="aboutpage__desc">в страны ЕАЭС.
+                                    {/* <p className="aboutpage__desc">в страны ЕАЭС.
                                         <br />
                                         <br />
                                         С нами вы можете купить различные электромобили, начиная с дорогих брендов, как
                                         Mercedes или Tesla, и заканчивая экономичными моделями от BYD и Changan.
-                                    </p>
+                                    </p> */}
+                                    <p className="aboutpage__desc">{about?.secondTwo?.split(" ").map(el => textWriter(el))}</p>
                                 </div>
                                 <div className="aboutpage__col">
-                                    <p className="aboutpage__desc">Если наше волнение также резонирует
-                                        у Вас, то мы нашли друг друга.
-                                        <br />
-                                        <br />
-                                        Добро пожаловать в компанию единомышленников!
-                                    </p>
+                                    <p className="aboutpage__desc">{about?.secondThree?.split(" ").map(el => textWriter(el))}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="aboutpage__third black__media d-flex">
+            <section className="aboutpage__third black__media d-flex" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.51)), url(${_LINK}/v1/api/file/${about?.third?.name})` }}>
                 <div className="black__media_third">
                     <div className="container">
                         <div className="aboutpage__info">
                             {/* <div className='about__shadow-img3'>
                                 <img src={el3} alt="" />
                             </div> */}
-                            <h1 className="aboutpage__title ">НАС ВЫБИРАЮТ ЛУЧШИЕ</h1>
+                            <h1 className="aboutpage__title ">{about?.thirdTitle}</h1>
                             <div className="aboutpage__grid">
                                 <div className="aboutpage__col">
-                                    <p className="aboutpage__desc">За год существования компании “Электромобиль” мы успели
-                                        продать более 50 электромобилей. Среди крупных покупателей есть такие компании, как
-                                        GIZ, Jorgo Taxi, “Лекарь” и другие. На обзоре
-                                        и в качестве покупателей у нас успели побывать такие успешные люди, как
-                                    </p>
+                                    <p className="aboutpage__desc">{about?.thirdOne?.split(" ").map(el => textWriter(el))}</p>
                                 </div>
                                 <div className="aboutpage__col">
-                                    <p className="aboutpage__desc">известный КВН артист Ростислав Ященко,
-                                        серебрянный призёр по греко-римской борьбе на Олимпиаде в Токио 2021 - Акжол
-                                        Махмудов, известные кыргызстанские певцы Бек Исраилов, Омар и другие. Также мы
-                                        успели открыть наш казахстанский филиал в городе Алматы!
-                                    </p>
+                                    <p className="aboutpage__desc">{about?.thirdTwo?.split(" ").map(el => textWriter(el))}</p>
                                 </div>
                                 <div className="aboutpage__col">
-                                    <p className="aboutpage__desc">Так мы распространяем идею перехода
-                                        на электро по всему миру!
-                                    </p>
+                                    <p className="aboutpage__desc">{about?.thirdThree?.split(" ").map(el => textWriter(el))}</p>
                                 </div>
                             </div>
                         </div>
@@ -245,12 +226,10 @@ const About = ({ setIsLight }) => {
             <section className="aboutpage__footer d-flex align-center justify-center flex-column">
                 <div className="container d-flex align-center justify-center flex-column" id="order">
                     <h2 className="section__title">
-                        желаете встретиться лично?
+                        {about?.formTitle}
                     </h2>
                     <img src={light_line} alt="" />
-                    <p className="section__subtitle"> Оставьте пожалуйста свой номер, и наши менеджеры свяжутся с вами
-                        для
-                        утверждения даты и времени встречи.</p>
+                    <p className="section__subtitle">{about?.formDesc}</p>
                     <div className="aboutpage__form_block">
                         <form className='aboutpage__form_form'>
                             <div className="testdrive__form_info">

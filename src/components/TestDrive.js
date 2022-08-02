@@ -18,6 +18,7 @@ const TestDrive = ({setIsLight}) => {
     const [request, setRequest] = useState({isCalled: false, category: 1})
 
     const [icons, setIcons] = useState()
+    const [testDrive, setTestDrive] = useState()
 
     useEffect(() => {
         const get2 = async () => {
@@ -33,6 +34,12 @@ const TestDrive = ({setIsLight}) => {
             }
         }
         get2()
+        const getTestDrivePage = async () => {
+            const { data } = await axios(`${_LINK}/v1/api/page/testdrive`)
+            console.log(data)
+            setTestDrive(data)
+        }
+        getTestDrivePage()
     }, [])
 
     const handleCreateRequest = async () => {
@@ -77,45 +84,40 @@ const TestDrive = ({setIsLight}) => {
                 <div className="container">
                     <div className="d-flex justify-between align-center">
                         <div className="testdrive__hero_main">
-                            <h1 className="testdrive__hero_title">Тест-драйв электромобиля
+                            <h1 className="testdrive__hero_title">{testDrive?.title}
                                 <img src={light_line_media} alt="" className="testdrive__line_media"/>
                             </h1>
-                            <p className="testdrive__hero_subtitle">Мы предоставляем возможность лично прочувствовать
-                                электромобиль </p>
+                            <p className="testdrive__hero_subtitle">{testDrive?.subtitle}</p>
                             <div className="testdrive__hero_grid">
                                 <div className="testdrive__hero_block">
                                     <img src={timeicon} alt=""/>
-                                    <p className="testdrive__hero_text">Тест-драйв длится 30 минут по любому выбранному
-                                        маршруту
+                                    <p className="testdrive__hero_text">{testDrive?.firstText}
                                     </p>
                                 </div>
                                 <div className="testdrive__hero_block">
                                     <img src={priteicon} alt=""/>
-                                    <p className="testdrive__hero_text">Тест-драйв абсолютно бесплатный! При себе
-                                        необходимо
-                                        иметь права.</p>
+                                    <p className="testdrive__hero_text">{testDrive?.secondText}</p>
                                 </div>
                                 <div className="testdrive__hero_block">
                                     <img src={mapicon} alt=""/>
-                                    <p className="testdrive__hero_text">г. Бишкек, ул. Раззакова 32, БЦ “Олимп”, 9 этаж.<br/>
+                                    <p className="testdrive__hero_text">{testDrive?.thirdText}<br/>
                                         <a className="orange_text" href={icons?.address} target="_blank">Смотреть на карте</a>
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        <img src={car_1} alt="" className='testdrive__hero_img'/>
+                        <img src={testDrive?.carImage ? `${_LINK}/v1/api/file/${testDrive?.carImage?.name}` : car_1} alt="" className='testdrive__hero_img'/>
                     </div>
                 </div>
             </section>
             <section className="testdrive__form" id="testdrive">
                 <div className="container">
                     <h2 className="section__title"><img src={light_line} alt="" className="section__img"/>
-                        КАК ЗАПИСАТЬСЯ?
+                        {testDrive?.formTitle}
                     </h2>
                     <p className="testdrive__form_subtitle">
-                        Выберите подходящую дату, заполните заявку и с вами свяжется наш менеджер
-                        для подтверждения данной информации.
+                        {testDrive?.formDesc}
                     </p>
                     <div className="testdrive__form_block">
                         <form className='testdrive__form_form'>

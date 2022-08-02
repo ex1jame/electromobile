@@ -14,6 +14,7 @@ export const EditTracking = ({ setDisplay }) => {
 	const [list, setList] = useState([])
 	const [tracker, setTracker] = useState({})
 	const [newStep, setNewStep] = useState("")
+	const [files, setFiles] = useState([])
 
 	const { code, id } = useParams()
 
@@ -29,6 +30,7 @@ export const EditTracking = ({ setDisplay }) => {
 			}
 			try {
 				const { data } = await axios(config)
+				console.log(data)
 				setList(data)
 			} catch (e) {
 				alert(e)
@@ -106,7 +108,7 @@ export const EditTracking = ({ setDisplay }) => {
 			const user = tracker
 			user.phone = phone
 			setTracker(user)
-		} 
+		}
 
 		const config = {
 			method: 'post',
@@ -153,10 +155,53 @@ export const EditTracking = ({ setDisplay }) => {
 				}
 			}
 		}
-		
+
 	}
 
-	const {dispatch} = useDispatch()
+	const { dispatch } = useDispatch()
+
+	const handleSend = async () => {
+		try {
+			for (let i = 0; i < files.length; i++) {
+				await addFile(files[i], `/tracker/file/${id}`)
+			}
+			alert("Фотографии добавлены")
+			window.location.reload()
+		} catch (e) {
+			alert(e)
+		}
+	}
+
+	const addFile = async (file, path) => {
+		const formData = new FormData()
+		formData.append(
+			'file',
+			file,
+			file.name
+		)
+		await axios.post(`${_LINK}/v1/api${path}`, formData, {
+			headers: {
+				'Authorization': localStorage.getItem("token"),
+			}
+		})
+	}
+
+	const handleDeleteImage = async (fileId) => {
+		try {
+			const config = {
+				method: 'post',
+				url: `${_LINK}/v1/api/tracker/delete/file/${id}/${fileId}`,
+				headers: {
+					'Authorization': localStorage.getItem("token")
+				}
+			}
+			const { data } = await axios(config)
+			alert("Изображение удалено")
+			window.location.reload()
+		} catch(e) {
+			alert(e)
+		}
+	}
 
 	if (isAuth) {
 		return (
@@ -175,8 +220,8 @@ export const EditTracking = ({ setDisplay }) => {
 					<div className="admin__categories_block ">
 						<div className="table__block table__categories">
 							<div className='d-flex'>
-								<input placeholder={tracker.fullName} className="admin__code" onInput={e => setName(e.target.value)}/>
-								<input placeholder={tracker.phone} className="admin__code" onInput={e => setPhone(e.target.value)}/>
+								<input placeholder={tracker.fullName} className="admin__code" onInput={e => setName(e.target.value)} />
+								<input placeholder={tracker.phone} className="admin__code" onInput={e => setPhone(e.target.value)} />
 								<p className="admin__code">{tracker.code}</p>
 								<select className='admin__code' onInput={e => setIsClosed(e.target.value)}>
 									<option disabled selected>Поменять статус</option>
@@ -206,6 +251,25 @@ export const EditTracking = ({ setDisplay }) => {
 								</tbody>
 							</table>
 						</div>
+						<div className="admin__seo_main d-flex flex-column">
+							<label className="admin__create_label">Слайдер</label>
+							<input type="file" className="admin__seo_electro car_brand" onInput={(e) => {
+								const { files } = e.target
+								setFiles(files)
+							}} multiple />
+							<div className='admin__grid-slider'>
+								{
+									tracker?.files?.map((el, idx) => (
+										<div className='admin__slider-i'>
+											<span className='admin__slider-x' onClick={() => handleDeleteImage(el.id)}>x</span>
+											<img src={`${_LINK}/v1/api/file/${el?.name}`} alt="" />
+										</div>
+									))
+								}
+							</div>
+							<button className="admin__seo_btn" style={{ height: "45px", marginTop: "20px" }} onClick={handleSend}>Сохранить</button>
+						</div>
+
 						<div className='create-step'>
 							<input onInput={(e) => setNewStep(e.target.value)} type="text" />
 							<button onClick={handleAdd}>Add</button>

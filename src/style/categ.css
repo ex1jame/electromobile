@@ -359,11 +359,12 @@ height: 4%;
     min-height: 14vh;
 
 }
+.admin__categories_header.h-auto {
+    height: auto;
+}
 
 .sm-red {
-
     width: 20%;
-
     color: #FFFFFF;
     background: #ff0000;
     border-radius: 10px;

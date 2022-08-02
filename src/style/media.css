@@ -433,6 +433,7 @@
     }
 
     .credit__form {
+        height: auto;
         min-height: 100% !important;
         padding-top: 150px !important;
     }
@@ -1520,6 +1521,7 @@
     .credit__hero {
         align-items: center !important;
         padding-top: 320px !important;
+        min-height: 1000px !important;
     }
 
     .credit__main-block {
@@ -1799,11 +1801,19 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        min-height: 100vh !important;
-        background: -webkit-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
-        background: -moz-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
-        padding-top: 250px !important;
-        background: linear-gradient(0deg, rgb(0, 0, 0) -10%, rgba(255, 255, 255, 0)), url("../images/cars_bak_media.png") no-repeat center/cover !important;
+        /* background: -webkit-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
+        background: -moz-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important; */
+        min-height: 825px !important;
+
+        /* background:  url("../images/cars_bak_media.png") no-repeat center/cover !important; */
+        padding-top: 510px;
+        -moz-box-shadow: inset 0 -346px 76px -10px #000000;
+        -webkit-box-shadow: inset 0 -346px 76px -10px #000000;
+        box-shadow: inset 0 -346px 76px -10px #000000;
+        background-position-x: center !important;
+        background-color: #000 !important;
+        background-size: 1017px !important;
+        background-position-y: 0px !important;
     }
 
     .cars__text {
@@ -1812,7 +1822,7 @@
 
     .cars__hero_title {
         font-size: 26px !important;
-        margin-bottom: 40px;
+        margin-bottom: 0 !important;
     }
 
     .cars__hero_subtitle {
@@ -1991,6 +2001,7 @@
     }
 
     .footer {
+        height: auto;
         padding: 102px 22px !important;
     }
 
@@ -2100,6 +2111,7 @@
         font-weight: 400 !important;
         font-size: 20.6193px !important;
         line-height: 21px !important;
+        text-align: center;
     }
 
     .diler {
@@ -2136,7 +2148,7 @@
     .credit__main-block {
         position: absolute;
         top: 163px !important;
-        height: 120% !important;
+        height: auto !important;
     }
     .credit__img {
         top: 100px !important;
@@ -2151,12 +2163,16 @@
         width: 101px;
     }
     .credit__line:first-child {
-        left: 195px !important;
-        top: 475px !important;
+        left: 0px !important;
+        right: 0 !important;
+        margin: 0 auto;
+        top: 456px !important;
         border: 1px solid rgba(255, 255, 255, 0.44) !important;
     }
     .credit__line  {
-        left: 197px !important;
+        left: 0px !important;
+        right: 0 !important;
+        margin: 0 auto;
         top: 192px !important;
         border: 1px solid rgba(255, 255, 255, 0.44) !important;
     }
@@ -2185,7 +2201,7 @@
         padding: 25px 46px 40px 46px !important;
     }
     .credit__ayl {
-        width: 85px !important;
+        width: 101px !important;
     }
     .credit__form_input {
         width: 100% !important;
@@ -2313,6 +2329,11 @@
     .aboutpage__fourth {
         padding: 0 !important;
     }
+    /* .cars__hidden-img {
+        display: block;
+        position: absolute;
+
+    } */
 
     .cars__back_media {
         width: 100%;
@@ -2326,30 +2347,38 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        min-height: 100vh !important;
-        -webkit-box-shadow: 0px 71px 100px 6px rgba(0, 0, 0, 1) inset;
-        -moz-box-shadow: 0px 71px 100px 6px rgba(0, 0, 0, 1) inset;
-        box-shadow: 0px 71px 100px 6px rgba(0, 0, 0, 1) inset;
-        background: -webkit-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
-        background: -moz-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
+        min-height: 60vh !important;
+        height: 60vh;
+        -moz-box-shadow: inset 0 -350px 76px -10px #000000;
+        -webkit-box-shadow: inset 0 -350px 76px -10px #000000;
+        box-shadow: inset 0 -350px 76px -10px #000000;
+        background: -webkit-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255));
+        background: -moz-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255));
         padding-top: 270px !important;
-        background: linear-gradient(0deg, rgb(0, 0, 0) 10%, rgba(255, 255, 255, 0)), url("../images/cars_media_back.png") no-repeat center/cover !important;
+        background:  url("../images/cars_media_back.png") no-repeat center/cover;
+        background-position-y: 0 !important;
+        background-color: #000 !important;
+        background-size: 556px !important;
     }
     .cars__info{
         display: flex;
         flex-direction: column;
         align-items: center;
-        min-height: 100vh !important;
-        -webkit-box-shadow: 0px 71px 100px 6px rgba(0, 0, 0, 1) inset;
-        -moz-box-shadow: 0px 71px 100px 6px rgba(0, 0, 0, 1) inset;
-        box-shadow: 0px 71px 100px 6px rgba(0, 0, 0, 1) inset;
+        min-height: 60vh !important;
+        height: 60vh;
+        -webkit-box-shadow: 0px -287px 100px 6px rgba(0, 0, 0, 1) inset;
+        -moz-box-shadow: 0px -287px 100px 6px rgba(0, 0, 0, 1) inset;
+        box-shadow: 0px -287px 100px 6px rgba(0, 0, 0, 1) inset;
         background: -webkit-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
         background: -moz-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
         padding-top: 240px !important;
-        background: linear-gradient(0deg, rgb(0, 0, 0) 10%, rgba(255, 255, 255, 0)), url("../images/car_media_back-3.png") no-repeat center/cover !important;
+        background-position-y: 0 !important;
+        background-color: #000 !important;
+        background-size: 556px !important;
     }
     .cars__about_title {
         font-size: 19px !important;
+        margin-bottom: 0 !important;
     }
     .cars__hero_grid{
         position: relative;
@@ -2362,33 +2391,34 @@
         font-size: 20px !important;
     }
     .cars__test_subtitle {
-        font-size: 25px !important;
+        font-size: 16px !important;
     }
     .cars__test_title {
-        font-size: 40px !important;
+        font-size: 23px !important;
+        margin-bottom: 0 !important;
     }
     .cars__test_first{
-        -webkit-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
+        /* -webkit-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
         -moz-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
-        box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
+        box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset; */
         height: 50vh;
     }
     .cars__test_second{
-        -webkit-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
+        /* -webkit-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
         -moz-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
-        box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
+        box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset; */
          height: 50vh;
     }
     .cars__test_third{
-        -webkit-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
+        /* -webkit-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
         -moz-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
-        box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
+        box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset; */
          height: 50vh;
     }
     .cars__test_fourth{
-        -webkit-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
-        -moz-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
-        box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
+            /* -webkit-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
+            -moz-box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset;
+            box-shadow: 0px 5px 100px 45px rgba(0, 0, 0, 1) inset; */
          height: 50vh;
     }
     .tracking__hero .section__title {
@@ -2612,5 +2642,11 @@
     }
     .article__title {
         font-size: 27px;
+    }
+    .cars__info_title {
+        margin-bottom: 0 !important;
+    }
+    .cars__slide_img img {
+        filter: brightness(91%)
     }
 }

@@ -78,7 +78,13 @@ export const AdminPanel = ({height}) => {
 				/>
 				<MenuBlock
 					links={[
-						{ link: "/page-about", text: "О нас"}
+						{ link: "/page-about", text: "О нас слайдер"},
+						{ link: "/admin-about", text: "О нас" },
+						{ link: "/admin-credit", text: "Кредитование"},
+						{ link: "/admin-dealer", text: "Дилерам" },
+						{ link: "/admin-main", text: "Главная"},
+						{ link: "/admin-test", text: "Тест-драйв"},
+						{ link: "/admin-tracking", text: "Трекинг"}
 					]}
 					name="Страницы"
 				/>

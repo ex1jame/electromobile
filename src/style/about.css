@@ -2,13 +2,11 @@
 .aboutpage__hero{
     height: 100vh;
     width: 100%;
-
     background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.51)), url("../images/about_bg2.png" ) ;
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-
 }
 .aboutpage__hero{
     float: bottom;

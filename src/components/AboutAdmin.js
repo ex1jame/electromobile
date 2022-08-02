@@ -115,7 +115,6 @@ export const AboutAdmin = ({setDisplay}) => {
 						</div>
 					</div>
 				</section>
-
 			</div>
 		)
 	}

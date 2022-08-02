@@ -5,7 +5,9 @@ import SwiperCore, { Autoplay, Navigation, Scrollbar } from 'swiper';
 import { SwiperSlide, Swiper } from 'swiper/react';
 import { _LINK } from '../data/Data';
 export function NewsPage({
-    light_line
+    light_line,
+    fTitle,
+    sTitle
 }) {
 
     SwiperCore.use([Autoplay])
@@ -65,8 +67,8 @@ export function NewsPage({
 
     return <section className="news">
         <div className="container">
-            <p className="section__title">ВИДЕО-ОБЗОРЫ И отзывы <img src={light_line} className="section__img" /></p>
-            <div className="news__grid">
+            <p className="section__title">{fTitle} <img src={light_line} className="section__img" /></p>
+            <div className="news__grid news__vid">
                 <div className="news__block">
                     <iframe className='news__video' src={news1?.link}>
                     </iframe>
@@ -89,7 +91,7 @@ export function NewsPage({
                     </p>
                 </div>
             </div>
-            <p className="section__title">новости <img src={light_line} className="section__img" /></p>
+            <p className="section__title">{sTitle} <img src={light_line} className="section__img" /></p>
             <div className="news__articles-cont">
                 <Swiper
                     className='news__articles'

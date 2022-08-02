@@ -3,6 +3,7 @@ export const loginAction = (token) => {
 	localStorage.setItem("isAuth", "true")
 	return { type: "LOG_IN_SUCCESS" }
 }
+
 export const logoutAction = () => {
 	localStorage.removeItem("isAuth")
 	localStorage.removeItem("token")

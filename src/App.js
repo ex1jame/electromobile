@@ -40,6 +40,13 @@ import { NewsUpdate } from './components/NewsUpdate';
 import Videos from './components/Videos';
 import { AboutAdmin } from './components/AboutAdmin';
 import { ArticlePage } from './components/ArticlePage';
+import ico from './ico.png'
+import AboutPageAdmin from './components/pages-admin/AboutPageAdmin';
+import CreditPageAdmin from './components/pages-admin/CreditPageAdmin';
+import DealerPageAdmin from './components/pages-admin/DealerPageAdmin';
+import MainPageAdmin from './components/pages-admin/MainPageAdmin';
+import TestDrivePageAdmin from './components/pages-admin/TestDrivePageAdmin';
+import TrackingPageAdmin from './components/pages-admin/TrackingPageAdmin';
 
 function App() {
 
@@ -71,6 +78,7 @@ function App() {
                 <title>{seo?.title}</title>
                 <meta name="description" content={seo?.metaDesc} />
                 <meta name="keywords" content={seo?.keyWords} />
+                {/* <link rel="icon" type="image/png" href={ico} sizes="16x16" /> */}
             </Helmet>
             <BrowserRouter className="App">
                 <Header isLight={isLight} isDisplay={isDisplay} isBlack={isBlack} />
@@ -106,6 +114,12 @@ function App() {
                     <Route path="/videos" element={<Videos setDisplay={setDisplay} />} />
                     <Route path="/page-about" element={<AboutAdmin setDisplay={setDisplay} />} />
                     <Route path="/article/:id" element={<ArticlePage setIsLight={setIsLight}/>} />
+                    <Route path="/admin-about" element={<AboutPageAdmin setDisplay={setDisplay} />} />
+                    <Route path="/admin-credit" element={<CreditPageAdmin setDisplay={setDisplay} />} />
+                    <Route path="/admin-dealer" element={<DealerPageAdmin setDisplay={setDisplay} />} />
+                    <Route path="/admin-main" element={<MainPageAdmin setDisplay={setDisplay} />} />
+                    <Route path="/admin-test" element={<TestDrivePageAdmin setDisplay={setDisplay} />} />
+                    <Route path="/admin-tracking" element={<TrackingPageAdmin setDisplay={setDisplay} />} />
                 </Routes>
             </BrowserRouter>
         </HelmetProvider>

@@ -40,8 +40,18 @@ const MainPage = ({ setIsLight }) => {
         if (window.screen.width < 821) {
             setMob(false)
         }
+
+        const getMainPage = async () => {
+            const { data } = await axios(`${_LINK}/v1/api/page/mainpage`)
+            console.log(data)
+            setMain(data)
+        }
+        getMainPage()
     }, [])
 
+    
+
+    const [main, setMain] = useState({})
     const [cars, setCars] = useState([])
     const [vygodno, setVygodno] = useState(false)
     const [eco, setEco] = useState(false)
@@ -75,21 +85,34 @@ const MainPage = ({ setIsLight }) => {
 
     }
 
+
     useEffect(() => {
         setTimeout(() => {
             setStart(true)
         }, 1000)
     }, [])
 
+    const handleBolder = (str) => {
+        if (str) {
+            if (str.includes("<b>")) {
+                return (<span className='bold'>{str.substring(3)} </span>)
+            } else {
+                return (str + " ")
+            }
+        }
+        return ""
+    }
+
     return (
         <div className="mainpage">
             <section className="hero d-flex justify-center flex-column align-items">
-                <video playsInline autoPlay muted loop className='hero__vid' poster={backg}>
-                    <source src={mainvi} type="video/mp4" />
+                <video playsInline autoPlay muted loop className='hero__vid' poster={`${_LINK}/v1/api/file/${main?.videoBack?.name}`}>
+                    {main?.video && <source src={`${_LINK}/v1/api/file/${main?.video.name}`} type="video/mp4" />}
                 </video>
                 <div className="hero__main container d-flex align-center justify-center  flex-column z-100">
-                    <h1 className="hero__title">Авто <span className="bold">твоего</span> города</h1>
-                    <h2 className="hero__subtitle ">Переходи на электро <br/>Меняй эпоху</h2>
+                    {/* <h1 className="hero__title">Переходи на <span className="bold">электро</span></h1> */}
+                    <h1 className="hero__title">{main?.title?.split(" ").map(el => handleBolder(el))}</h1>
+                    <h2 className="hero__subtitle ">{main?.subtitle}</h2>
                 </div>
                 <button className="orange_btn z-100" onClick={() => { setFormOn(true); window.scrollTo(0, 0) }}>Оформить заказ</button>
             </section>
@@ -113,12 +136,18 @@ const MainPage = ({ setIsLight }) => {
                     <div className="d-flex justify-center align-center">
                         <div className="drive d-flex flex-column align-center   justify-center">
                             <h2 className="section__title"><img src={light_line} alt="" className="section__img" />
-                                ТЕСТ-ДРАЙВ
+                                {main?.firstTitle}
                             </h2>
                             <p className="slider_page-subtitle">
-                                Мы предоставляем возможность лично прочувствовать электромобиль
+                                {main?.firstDesc?.split(" ").map((el) => {
+                                    if (el.includes("<br>")) {
+                                        return (<br></br>)
+                                    } else {
+                                        return (el+ " ")
+                                    }
+                                })}
                             </p>
-                            <img src={volkswagen} alt="" className="drive__img" />
+                            <img src={ main?.firstFile ? `${_LINK}/v1/api/file/${main?.firstFile?.name}` : volkswagen} alt="" className="drive__img" />
                             <HashLink to="/testdrive#testdrive`"><button className="orange_btn">Записаться</button></HashLink>
                         </div>
                     </div>
@@ -126,13 +155,18 @@ const MainPage = ({ setIsLight }) => {
                 <SwiperSlide>
                     <div className="d-flex justify-center align-center">
                         <div className="drive d-flex flex-column align-center   justify-center">
-                            <h2 className="section__title">КРЕДИТОВАНИЕ
+                            <h2 className="section__title">{main?.secondTitle}
                                 <img src={light_line} alt="" className="section__img" /></h2>
                             <p className="slider_page-subtitle">
-                                Мы предоставляем возможность автокредитования на наши<br />
-                                электромобили от различных банков
+                                {main?.secondDesc?.split(" ").map((el) => {
+                                    if (el.includes("<br>")) {
+                                        return (<br></br>)
+                                    } else {
+                                        return (el + " ")
+                                    }
+                                })}
                             </p>
-                            <img src={credit_car} alt="" className="drive__img" />
+                            <img src={main?.secondFile ? `${_LINK}/v1/api/file/${main?.secondFile?.name}` : credit_car} alt="" className="drive__img" />
                             <HashLink to="/credit#credit"><button className="orange_btn">Подробнее</button></HashLink>
                         </div>
                     </div>
@@ -142,7 +176,7 @@ const MainPage = ({ setIsLight }) => {
                 <h2 className="section__title text-right">ПОЧЕМУ НЕОБХОДИМ
                     ЭЛЕКТРОМОБИЛЬ?</h2>
                 <div className="about__main d-flex ">
-                    <img src={about__car} alt="" className="about__img" />
+                    <img src={main?.thirdSectionFile ? `${_LINK}/v1/api/file/${main?.thirdSectionFile?.name}` : about__car} alt="" className="about__img" />
                     <div className="about__info">
                         <div className="about__flex align-center" onClick={() => {
                             setVygodno(!vygodno)
@@ -152,7 +186,7 @@ const MainPage = ({ setIsLight }) => {
 
                         }}>
                             <p className="about__num about__num-right">01</p>
-                            <p className="about__title">Выгодно</p>
+                            <p className="about__title">{main?.stepFirstTitle}</p>
 
 
                         </div>
@@ -160,10 +194,7 @@ const MainPage = ({ setIsLight }) => {
                             vygodno && (
                                 <div className="about__block">
                                     <p className="about__click animate__animated animate__fadeInRight">
-                                        Ездить на электромобиле в 35 раз дешевле. Буквально
-                                        за сумму от 10-20 тысяч долларов вы становитесь обладателем совсем нового «свежего»
-                                        автомобиля, вместо подержанного импортного авто, купленного на задворках развитых
-                                        стран. Ну и огромная экономия на топливе,</p>
+                                        {main?.stepFirstDesc}</p>
 
                                 </div>)
                         }
@@ -177,17 +208,13 @@ const MainPage = ({ setIsLight }) => {
 
                         }}>
                             <p className="about__num">02</p>
-                            <p className="about__title">экологично</p>
+                            <p className="about__title">{main?.stepSecondTitle}</p>
                         </div>
                         {
                             eco && (
                                 <div className="about__block">
                                     <p className="about__click animate__animated animate__fadeInRight">
-                                        Никаких выхлопов. Став обладателем электромобиля,
-                                        вы перестаете загрязнять атмосферу нашего любимого города. В Кыргызстане 93%
-                                        электроэнергии приходится
-                                        на чистые энергоисточники как гидроэнергетика. Электромобили же используют эту
-                                        чистую энергию.</p>
+                                        {main?.stepSecondDesc}</p>
 
                                 </div>
                             )
@@ -203,16 +230,13 @@ const MainPage = ({ setIsLight }) => {
 
                         }}>
                             <p className="about__num">03</p>
-                            <p className="about__title">патриотично</p>
+                            <p className="about__title">{main?.stepThirdTitle}</p>
                         </div>
                         {
                             patri && (
                                 <div className="about__block">
                                     <p className="about__click animate__animated animate__fadeInRight">
-                                        Использование собственной электроэнергии. Деньги потраченные на бензин каждый месяц
-                                        плавно перетекают в Россию в то время, когда наши соотечественники кровью и потом
-                                        зарабатывают эти деньги и отправляют на родину. Используя электромобиль,
-                                        мы оставляем эти деньги у себя в стране, ведь электроэнергию производим мы сами.</p>
+                                        {main?.stepThirdDesc}</p>
 
                                 </div>
                             )
@@ -226,16 +250,13 @@ const MainPage = ({ setIsLight }) => {
 
                         }}>
                             <p className="about__num">04</p>
-                            <p className="about__title">презентабельно</p>
+                            <p className="about__title">{main?.stepFourthTitle}</p>
                         </div>
                         {
                             present && (
                                 <div className="about__block">
                                     <p className="about__click animate__animated animate__fadeInRight">
-                                        Будьте первыми. Электромобили это уже наступление будущего. Будучи пионерами в
-                                        использовании электромобилей вы одним из первых ощутите современные технологии в
-                                        своей повседневной жизни. Внимание друзей и знакомых к вашему выбору машины будет
-                                        обеспечено в ближайшие 2 года</p>
+                                        {main?.stepFourthDesc}</p>
                                 </div>
                             )
                         }
@@ -333,9 +354,7 @@ const MainPage = ({ setIsLight }) => {
                 }
             </Carousel>
 
-
-
-            <NewsPage light_line={light_line} news_1={news_1} news_2={news_2} news_3={news_3} />
+            <NewsPage fTitle={main?.videos} sTitle={main?.news} light_line={light_line} news_1={news_1} news_2={news_2} news_3={news_3} />
             <Footer />
         </div>
     )

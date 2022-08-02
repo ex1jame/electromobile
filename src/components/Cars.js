@@ -17,6 +17,7 @@ const Cars = ({setIsBlack}) => {
     const { id } = useParams()
 
     const [car, setCar] = useState({})
+    const [hero, setHero] = useState({})
 
     useEffect(() => {
         setIsBlack(true)
@@ -27,6 +28,7 @@ const Cars = ({setIsBlack}) => {
             }
             const { data } = await axios(config)
             setCar(data)
+            console.log(data)
         }
         get()
     }, [])
@@ -81,11 +83,26 @@ const Cars = ({setIsBlack}) => {
         sliderRef.current.swiper.slideNext();
     }, []);
 
+    const changeGradient = (link, photos) => {
+        console.log(photos)
+        if (window.screen.width <= 600) {
+            return { background: `url(${link}/v1/api/file/${photos}) no-repeat center/cover !important` } 
+        } else {
+            return { background : `linear-gradient(180deg, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url(${link}/v1/api/file/${photos}) no-repeat center/cover !important` }
+        }
+    }
 
+    useEffect(() => {
+        const obj = {
+            background: window.screen.width <= 600 ? `url(${_LINK}/v1/api/file/${car?.mainPhoto?.name}) no-repeat center/cover !important` : `linear-gradient(180deg, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url(${_LINK}/v1/api/file/${car?.mainPhoto?.name}) no-repeat center/cover !important`
+        }
+        setHero(obj)
+        console.log("Hello")
+    }, [window.screen.width])
     
     return (
         <div className="cars">
-            <section className="cars__hero" id="cars-nav" style={{ background: `linear-gradient(180deg, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url(${_LINK}/v1/api/file/${car?.mainPhoto?.name}) no-repeat center/cover`}}>
+            <section className="cars__hero" id="cars-nav" style={{ background: (window.screen.width <= 600) ? `url(${_LINK}/v1/api/file/${car?.mainPhoto?.name}) no-repeat center/cover` : `linear-gradient(rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%), url(${_LINK}/v1/api/file/${car?.mainPhoto?.name}) center center / cover no-repeat` }}>
                 <div className="cars__back_media"></div>
                 <div className="cars__info_back">
                     <div className="container">
@@ -117,12 +134,12 @@ const Cars = ({setIsBlack}) => {
                     </div>
                 </div>
             </section>
-            <section className="cars__about" style={{ background: `linear-gradient(180deg, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0) 0%), linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url(${_LINK}/v1/api/file/${car?.secondPhoto?.name}) no-repeat center/cover`}}>
+            {/* <section className="cars__about" style={{ background:`linear-gradient(180deg, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0) 0%), linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url(${_LINK}/v1/api/file/${car?.secondPhoto?.name}) no-repeat center/cover`}}> */}
+            <section className="cars__about" style={{ background: (window.screen.width <= 600) ? `url(${_LINK}/v1/api/file/${car?.secondPhoto?.name}) no-repeat center/cover` : `linear-gradient(rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%), url(${_LINK}/v1/api/file/${car?.secondPhoto?.name}) center center / cover no-repeat` }}>
                 <div className="cars__info_back">
                     <div className="container">
                         <div className="cars__text d-flex justify-center align-center flex-column">
-                            <h2 className="cars__subtitle">Honda M-NV идеально подходит для передвижения по городу
-                                и для выездов на природу</h2>
+                            <h2 className="cars__subtitle">{car?.longDesc}</h2>
                         </div>
                         <div className="cars__hero_grid">
                             <div className="cars__hero_col">
@@ -148,7 +165,7 @@ const Cars = ({setIsBlack}) => {
                     </div>
                 </div>
             </section>
-            <section className="cars__info" style={{ background: `linear-gradient(180deg, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0) 0%), linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url(${_LINK}/v1/api/file/${car?.thirdPhoto?.name}) no-repeat center/cover`}}>
+            <section className="cars__info" style={{ background: (window.screen.width <= 600) ? `url(${_LINK}/v1/api/file/${car?.thirdPhoto?.name}) no-repeat center/cover` : `linear-gradient(rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%), url(${_LINK}/v1/api/file/${car?.thirdPhoto?.name}) center center / cover no-repeat` }}>
                 <div className="cars__info_back">
                     <div className="container">
                         <div className="cars__text d-flex justify-center align-center flex-column">
