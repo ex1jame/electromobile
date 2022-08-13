@@ -8,10 +8,16 @@ import whatsapp from "../images/Whatsapp.svg";
 import telegram from "../images/Telegram.svg";
 import { _LINK } from '../data/Data';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 const Header = ({isLight, isDisplay, isBlack}) => {
 
     const [icons, setIcons] = useState()
+    const seo = useSelector(store => store.seo.seo)
+
+    useEffect(() => {
+        console.log("seot", seo) 
+    }, [seo])
 
     useEffect(() => {
         const get2 = async () => {
@@ -42,7 +48,7 @@ const Header = ({isLight, isDisplay, isBlack}) => {
          ${isBlack ? "header__cars" : ""} ${isDisplay ? "header__none" : ""}`}>
             <div className="header__main container d-flex justify-between align-center">
                 <NavLink to="/" className="header__logo">
-                    <img src={isLight ? logo2 : logo} alt="" className=""/>
+                    <img src={isLight ? (seo?.logoDarkFile?.name ? `${_LINK}/v1/api/file/${seo?.logoDarkFile?.name}` : logo) : (seo?.logoFile?.name ? `${_LINK}/v1/api/file/${seo?.logoFile?.name}` : logo )} alt="" className=""/>
                 </NavLink>
                 <nav className="header__nav d-flex justify-between">
                     <div className="header__main-link">
@@ -70,8 +76,11 @@ const Header = ({isLight, isDisplay, isBlack}) => {
                            O компании</NavLink>
                     </div>
                 </nav>
-                <button onClick={handleBurger}
+                <div className='header__burger_overlay' onClick={handleBurger}>
+               
+                <button 
                         className={`header__burger ${showBurger ? "header__burger_active" : ""}${isLight ? "header__nav_light" : ""}`}></button>
+                </div>
                 {
                     showBurger && (
                         <nav className="header__nav_burger d-flex flex-column">

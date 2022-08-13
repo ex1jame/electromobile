@@ -116,7 +116,7 @@ const About = ({ setIsLight }) => {
 
     return (
         <div className="aboutpage">
-            <section className="aboutpage__hero black__media d-flex " style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.51)), url(${_LINK}/v1/api/file/${about?.first?.name})`}}>
+            <section className="aboutpage__hero black__media d-flex " style={{ backgroundImage: ((window.screen.width <= 600) ? `url(${_LINK}/v1/api/file/${about?.first?.name})` : `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.51)), url(${_LINK}/v1/api/file/${about?.first?.name})`)}}>
                 <div className="black__media">
                     <div className="container">
                         <div className="aboutpage__info">
@@ -140,7 +140,7 @@ const About = ({ setIsLight }) => {
                 </div>
             </section>
 
-            <section className="aboutpage__about  d-flex" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.51)), url(${_LINK}/v1/api/file/${about?.second?.name})` }}>
+            <section className="aboutpage__about  d-flex" style={{ backgroundImage: ((window.screen.width <= 600) ? `url(${_LINK}/v1/api/file/${about?.second?.name})` : `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.51)), url(${_LINK}/v1/api/file/${about?.second?.name})`) }}>
                 <div className="black__media_about">
                     <div className="container">
                         <div className="aboutpage__info">
@@ -168,7 +168,7 @@ const About = ({ setIsLight }) => {
                     </div>
                 </div>
             </section>
-            <section className="aboutpage__third black__media d-flex" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.51)), url(${_LINK}/v1/api/file/${about?.third?.name})` }}>
+            <section className="aboutpage__third black__media d-flex" style={{ backgroundImage: ((window.screen.width <= 600) ? `url(${_LINK}/v1/api/file/${about?.third?.name})` :`linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.51)), url(${_LINK}/v1/api/file/${about?.third?.name})`) }}>
                 <div className="black__media_third">
                     <div className="container">
                         <div className="aboutpage__info">

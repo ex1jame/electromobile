@@ -23,6 +23,7 @@ const EditCar = ({ setDisplay }) => {
 				},
 			}
 			const { data } = await axios(config)
+			console.log("back", data)
 			setBackCar(data)
 			setCar(Object.assign(data, { carCategory: data.carCategory.id }))
 		}
@@ -53,6 +54,10 @@ const EditCar = ({ setDisplay }) => {
 	const [third, setThird] = useState({})
 	const [mini, setMini] = useState({})
 	const [gallery, setGallery] = useState([])
+	const [fFirst, setFFirst] = useState({})
+	const [fSecond, setFSecond] = useState({})
+	const [fThird, setFThird] = useState({})
+	const [fFourth, setFFourth] = useState({})
 
 	const { id } = useParams()
 	const { isAuth } = useSelector(store => store.login)
@@ -68,6 +73,14 @@ const EditCar = ({ setDisplay }) => {
 				case "mini": setMini(files[0])
 					break;
 				case "third": setThird(files[0])
+					break;
+				case "fFirst" : setFFirst(files[0])
+					break;
+				case "fSecond" : setFSecond(files[0])
+					break;
+				case "fThird" : setFThird(files[0])
+					break;
+				case "fFourth" : setFFourth(files[0])
 					break;
 				case "addToGallery": setGallery(files)
 					break;
@@ -109,6 +122,18 @@ const EditCar = ({ setDisplay }) => {
 					await addImageGallery(gallery[i], "addToGallery", id)
 				}
 			}
+			if (fFirst?.name) {
+				await addImage2(fFirst, "fourth/first", id)
+			}
+			if (fSecond?.name) {
+				await addImage2(fSecond, "fourth/second", id)
+			}
+			if (fThird?.name) {
+				await addImage2(fThird, "fourth/third", id)
+			}
+			if (fFourth?.name) {
+				await addImage2(fFourth, "fourth/fourth", id)
+			}
 			alert("Запись обновлена")
 			window.location.reload();
 		} catch (e) {
@@ -124,6 +149,20 @@ const EditCar = ({ setDisplay }) => {
 			file.name
 		)
 		await axios.post(`${_LINK}/v1/api/car/update/${name}/${id}`, formData, {
+			headers: {
+				'Authorization': localStorage.getItem("token"),
+			}
+		})
+	}
+
+	const addImage2 = async (file, name, id) => {
+		const formData = new FormData()
+		formData.append(
+			'file',
+			file,
+			file.name
+		)
+		await axios.post(`${_LINK}/v1/api/car/${name}/${id}`, formData, {
 			headers: {
 				'Authorization': localStorage.getItem("token"),
 			}
@@ -299,6 +338,62 @@ const EditCar = ({ setDisplay }) => {
 									}
 
 									<input id="mini" type="file" className="admin__seo_file car_mini_photo" onInput={handleInputImage} />
+
+									<label className="admin__seo_icon">4 фото №1</label>
+									<div className="">
+
+									</div>
+									{
+										backCar?.fourthFirstPhoto?.name && (
+											<div className='admin__img'>
+												<img src={`${_LINK}/v1/api/file/${backCar?.fourthFirstPhoto?.name}`} alt='' />
+											</div>
+										)
+									}
+
+									<input id="fFirst" type="file" className="admin__seo_file car_mini_photo" onInput={handleInputImage} />
+
+									<label className="admin__seo_icon">4 фото №2</label>
+									<div className="">
+
+									</div>
+									{
+										backCar?.fourthSecondPhoto?.name && (
+											<div className='admin__img'>
+												<img src={`${_LINK}/v1/api/file/${backCar?.fourthSecondPhoto?.name}`} alt='' />
+											</div>
+										)
+									}
+
+									<input id="fSecond" type="file" className="admin__seo_file car_mini_photo" onInput={handleInputImage} />
+
+									<label className="admin__seo_icon">4 фото №3</label>
+									<div className="">
+
+									</div>
+									{
+										backCar?.fourthThirdPhoto?.name && (
+											<div className='admin__img'>
+												<img src={`${_LINK}/v1/api/file/${backCar?.fourthThirdPhoto?.name}`} alt='' />
+											</div>
+										)
+									}
+
+									<input id="fThird" type="file" className="admin__seo_file car_mini_photo" onInput={handleInputImage} />
+
+									<label className="admin__seo_icon">4 фото №4</label>
+									<div className="">
+
+									</div>
+									{
+										backCar?.fourthFourthPhoto?.name && (
+											<div className='admin__img'>
+												<img src={`${_LINK}/v1/api/file/${backCar?.fourthFourthPhoto?.name}`} alt='' />
+											</div>
+										)
+									}
+
+									<input id="fFourth" type="file" className="admin__seo_file car_mini_photo" onInput={handleInputImage} />
 
 									<label className="admin__seo_icon">Галерея</label>
 									<div className="">

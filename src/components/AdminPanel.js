@@ -4,12 +4,16 @@ import { Link } from 'react-router-dom'
 import { _LINK } from '../data/Data'
 import axios from 'axios'
 import { MenuBlock } from './MenuBlock'
+import { useSelector } from 'react-redux'
 
 export const AdminPanel = ({height}) => {
 
 	const [back, setBack] = useState({})
 
+	const seo = useSelector(store => store.seo.seo)
+
 	useEffect(() => {
+
 		const getApplications = async () => {
 			const config = {
 				method: 'get',
@@ -31,7 +35,7 @@ export const AdminPanel = ({height}) => {
 	return (
 		<header className="admin__header" >
 			<div className="admin__header-sm" style={{ height: `${height ? height : 109}px` }}>
-				<img src={logo} alt="" />
+				<img src={`${_LINK}/v1/api/file/${seo?.logoFile?.name}` } alt="" />
 			</div>
 			<div className="admin__home d-flex align-center">
 				<Link to='/admin' className="admin__subtitle ">Главная</Link>

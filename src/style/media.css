@@ -1718,6 +1718,9 @@
 }
 
 @media (max-width: 600px) {
+    .article__img {
+        height: 292px;
+    }
     .carousel .slide .section__img {
         margin-bottom: 33px;
     }
@@ -1839,7 +1842,7 @@
     }
 
     .aboutpage__hero .aboutpage__title {
-        margin-bottom: 250px !important;
+        margin-bottom: 323px !important;
     }
 
     .cars__info_back {
@@ -1854,8 +1857,16 @@
 
 
     .header__burger {
-        right: -330px !important;
+        right: -40px !important;
         top: 50px;
+        z-index: 2;
+    }
+    .header__burger_overlay {
+            position: absolute;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        z-index: 1;
     }
 
     .header__main {
@@ -1864,7 +1875,7 @@
 
     .header__burger.header__burger_active {
         height: 0;
-        left: 320px !important;
+        left: auto !important;
     }
     .header__burger.header__burger_active:before {
         right: 0;
@@ -2231,9 +2242,9 @@
 
     .aboutpage__hero {
 
-        -webkit-box-shadow: 2px 158px 47px 80px rgb(0 0 0 / 90%) inset;
+        /* -webkit-box-shadow: 2px 158px 47px 80px rgb(0 0 0 / 90%) inset;
         -moz-box-shadow: 2px 158px 47px 80px rgb(0 0 0 / 90%) inset;
-        box-shadow: 2px 158px 47px 80px rgb(0 0 0 / 90%) inset;
+        box-shadow: 2px 158px 47px 80px rgb(0 0 0 / 90%) inset; */
 
     }
 
@@ -2262,7 +2273,6 @@
         height: 100%;
         width: 100%;
         position: relative;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgb(0, 0, 0) 100%);
         padding: 460px 221px 0px 153px;
 
     }
@@ -2286,7 +2296,6 @@
         height: 100%;
         width: 100%;
         position: relative;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgb(0, 0, 0) 100%);
         padding: 425px 221px 0px 153px;
     }
 
@@ -2348,10 +2357,10 @@
         flex-direction: column;
         align-items: center;
         min-height: 60vh !important;
-        height: 60vh;
-        -moz-box-shadow: inset 0 -350px 76px -10px #000000;
+        height: 76vh;
+        /* -moz-box-shadow: inset 0 -350px 76px -10px #000000;
         -webkit-box-shadow: inset 0 -350px 76px -10px #000000;
-        box-shadow: inset 0 -350px 76px -10px #000000;
+        box-shadow: inset 0 -350px 76px -10px #000000; */
         background: -webkit-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255));
         background: -moz-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255));
         padding-top: 270px !important;
@@ -2365,10 +2374,10 @@
         flex-direction: column;
         align-items: center;
         min-height: 60vh !important;
-        height: 60vh;
-        -webkit-box-shadow: 0px -287px 100px 6px rgba(0, 0, 0, 1) inset;
+        height: 76vh;
+        /* -webkit-box-shadow: 0px -287px 100px 6px rgba(0, 0, 0, 1) inset;
         -moz-box-shadow: 0px -287px 100px 6px rgba(0, 0, 0, 1) inset;
-        box-shadow: 0px -287px 100px 6px rgba(0, 0, 0, 1) inset;
+        box-shadow: 0px -287px 100px 6px rgba(0, 0, 0, 1) inset; */
         background: -webkit-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
         background: -moz-linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(255, 255, 255)) !important;
         padding-top: 240px !important;
@@ -2472,7 +2481,7 @@
     }
     .black__media_about {
         position: relative;
-        padding: 425px 0 0 0 !important;
+        padding: 476px 0 0 0 !important;
     }
     .about__shadow-img2 {
         display: block !important;
@@ -2502,7 +2511,7 @@
     }
     .aboutpage__about {
         background-size: contain !important;
-        height: 83vh !important;
+        min-height: 70vh !important;
         background-color: #000;
         background-attachment: revert;
         background-position-y: 202px;

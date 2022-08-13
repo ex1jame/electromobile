@@ -195,19 +195,19 @@ const Cars = ({setIsBlack}) => {
             <section className="cars__test">
                 <div className="cars__test_shadow">
                     <div className="cars__test_grid">
-                        <div className="cars__test_first d-flex">
+                        <div className="cars__test_first d-flex" style={{ background: `linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url(${_LINK}/v1/api/file/${car?.fourthFirstPhoto?.name}) no-repeat center/cover`}}>
                             <h4 className="cars__test_title">{car?.dashboard} <span className="cars__test_subtitle">дюймов</span></h4>
                             <p className="cars__test_subtitle">приборная панель</p>
                         </div>
-                        <div className="cars__test_second d-flex">
+                        <div className="cars__test_second d-flex" style={{ background: `linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url(${_LINK}/v1/api/file/${car?.fourthSecondPhoto?.name}) no-repeat center/cover` }}>
 
                             <p className="cars__test_subtitle">климат-контроль</p>
                         </div>
-                        <div className="cars__test_third d-flex">
+                        <div className="cars__test_third d-flex" style={{ background: `linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url(${_LINK}/v1/api/file/${car?.fourthThirdPhoto?.name}) no-repeat center/cover` }}>
 
                             <p className="cars__test_subtitle">бесключевой запуск</p>
                         </div>
-                        <div className="cars__test_fourth d-flex">
+                        <div className="cars__test_fourth d-flex" style={{ background: `linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url(${_LINK}/v1/api/file/${car?.fourthFourthPhoto?.name}) no-repeat center/cover` }}>
 
                             <p className="cars__test_subtitle">круиз-контроль</p>
                         </div>

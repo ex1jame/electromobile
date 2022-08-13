@@ -19,6 +19,10 @@ const Create = ({ setDisplay }) => {
     const [third, setThird] = useState({})
     const [mini, setMini] = useState({})
     const [gallery, setGallery] = useState([])
+    const [fFirst, setFFirst] = useState({})
+    const [fSecond, setFSecond] = useState({})
+    const [fThird, setFThird] = useState({})
+    const [fFourth, setFFourth] = useState({})
 
     useEffect(() => {
         const get = async () => {
@@ -70,6 +74,18 @@ const Create = ({ setDisplay }) => {
             if (mini?.name) {
                 await addImage(mini, "mini", data.id)
             }
+            if (fFirst?.name) {
+                await addImage(fFirst, "fourth/first", data.id)
+            }
+            if (fSecond?.name) {
+                await addImage(fSecond, "fourth/second", data.id)
+            }
+            if (fThird?.name) {
+                await addImage(fThird, "fourth/third", data.id)
+            }
+            if (fFourth?.name) {
+                await addImage(fFourth, "fourth/fourth", data.id)
+            }
             if (gallery?.length) {
                 for (let i = 0; i < gallery.length; i++) {
                     await addImage(gallery[i], "addToGallery", data.id)
@@ -109,6 +125,14 @@ const Create = ({ setDisplay }) => {
                 case "third": setThird(files[0])
                     break;
                 case "addToGallery": setGallery(files)
+                    break;
+                case "fFirst" : setFFirst(files[0])
+                    break;
+                case "fSecond" : setFSecond(files[0])
+                    break;
+                case "fThird" : setFThird(files[0])
+                    break;
+                case "fFourth" : setFFourth(files[0])
                     break;
             }
         }
@@ -223,7 +247,27 @@ const Create = ({ setDisplay }) => {
 
                                     </div>
                                     <input id="mini" type="file" className="admin__seo_file car_mini_photo" onInput={handleInputImage} />
+                                    <label className="admin__seo_icon">4 фото №1</label>
+                                    <div className="">
 
+                                    </div>
+                                    <input id="fFirst" type="file" className="admin__seo_file car_mini_photo" onInput={handleInputImage} />
+                                    <label className="admin__seo_icon">4 фото №2</label>
+                                    <div className="">
+
+                                    </div>
+                                    <input id="fSecond" type="file" className="admin__seo_file car_mini_photo" onInput={handleInputImage} />
+                                    <label className="admin__seo_icon">4 фото №3</label>
+                                    <div className="">
+
+                                    </div>
+                                    <input id="fThird" type="file" className="admin__seo_file car_mini_photo" onInput={handleInputImage} />
+                                    <label className="admin__seo_icon">4 фото №4</label>
+                                    <div className="">
+
+                                    </div>
+                                    <input id="fFourth" type="file" className="admin__seo_file car_mini_photo" onInput={handleInputImage} />
+                                    
                                     <label className="admin__seo_icon">Галерея</label>
                                     <div className="">
 

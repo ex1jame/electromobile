@@ -19,6 +19,9 @@ const Seo = ({ setDisplay, seo }) => {
 
     const { isAuth } = useSelector(store => store.login)
     const [newSeo, setNewSeo] = useState({ id: 1 })
+    const [meta, setMeta] = useState(null)
+    const [file, setFile] = useState(null)
+    const [dark, setDark] = useState(null)
 
     const handleSend = async () => {
         const config = {
@@ -32,10 +35,34 @@ const Seo = ({ setDisplay, seo }) => {
         }
         try {
             const { data } = await axios(config)
+            if (meta) {
+                addImage(meta, "meta")
+            }
+            if (file) {
+                addImage(file, "file")
+            }
+            if (dark) {
+                addImage(dark, "dark")
+            }
             alert("Запись создана")
+            window.location.reload()
         } catch (e) {
             alert(e)
         }
+    }
+
+    const addImage = async (file, name) => {
+        const formData = new FormData()
+        formData.append(
+            'file',
+            file,
+            file.name
+        )
+        await axios.post(`${_LINK}/v1/api/request/seo/${name}`, formData, {
+            headers: {
+                'Authorization': localStorage.getItem("token"),
+            }
+        })
     }
 
     const dispatch = useDispatch()
@@ -89,17 +116,30 @@ const Seo = ({ setDisplay, seo }) => {
                                 <div className="admin__seo_images">
                                     <label className="admin__seo_icon">Мета изображение (icon)</label>
                                     <div className="">
-                                        <img src={logo} alt="" className="admin__seo_img" />
+                                        <img src={seo?.metaLogo?.name ? `${_LINK}/v1/api/file/${seo?.metaLogo?.name}` : logo} alt="" className="admin__seo_img" />
                                     </div>
                                     <label className="admin__seo_icon">Обновить мета изображение</label>
-                                    <input type="file" className="admin__seo_file" />
+                                    <input type="file" className="admin__seo_file" onInput={(e) => {
+                                        setMeta(e.target.files[0])
+                                    }} />
 
-                                    <label className="admin__seo_icon">Логотип</label>
+                                    <label className="admin__seo_icon">Логотип Светлый</label>
                                     <div className="">
-                                        <img src={logo} alt="" className="admin__seo_img" />
+                                        <img src={seo?.logoFile?.name ? `${_LINK}/v1/api/file/${seo?.logoFile?.name}` : logo} alt="" className="admin__seo_img" />
                                     </div>
                                     <label className="admin__seo_icon">Обновить Логотип</label>
-                                    <input type="file" className="admin__seo_file" />
+                                    <input type="file" className="admin__seo_file" onInput={(e) => {
+                                        setFile(e.target.files[0])
+                                    }} />
+
+                                    <label className="admin__seo_icon">Логотип Тёмный</label>
+                                    <div className="">
+                                        <img src={seo?.logoDarkFile?.name ? `${_LINK}/v1/api/file/${seo?.logoDarkFile?.name}` : logo} alt="" className="admin__seo_img" style={{background: "#fff"}}/>
+                                    </div>
+                                    <label className="admin__seo_icon">Обновить Логотип</label>
+                                    <input type="file" className="admin__seo_file" onInput={(e) => {
+                                        setDark(e.target.files[0])
+                                    }} />
                                 </div>
                             </div>
                         </div>
