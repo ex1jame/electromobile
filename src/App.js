@@ -80,8 +80,11 @@ function App() {
         <HelmetProvider>
             <Helmet>
                 <title>{seo?.title}</title>
+                <meta property="og:title" content={seo?.title} />
                 <meta name="description" content={seo?.metaDesc} />
+                <meta name="og:description" content={seo?.metaDesc} />
                 <meta name="keywords" content={seo?.keyWords} />
+                <meta name="og:keywords" content={seo?.keyWords} />
                 <link rel="icon" type="image/png" href={seo?.metaLogo?.name ? `${_LINK}/v1/api/file/${seo?.metaLogo?.name}` : ico} sizes="16x16" />
             </Helmet>
             <BrowserRouter className="App">
