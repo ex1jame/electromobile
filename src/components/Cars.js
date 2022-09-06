@@ -196,20 +196,20 @@ const Cars = ({setIsBlack}) => {
                 <div className="cars__test_shadow">
                     <div className="cars__test_grid">
                         <div className="cars__test_first d-flex" style={{ background: `linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url(${_LINK}/v1/api/file/${car?.fourthFirstPhoto?.name}) no-repeat center/cover`}}>
-                            <h4 className="cars__test_title">{car?.dashboard} <span className="cars__test_subtitle">дюймов</span></h4>
-                            <p className="cars__test_subtitle">приборная панель</p>
+                            <h4 className="cars__test_title">{car?.dashboard}</h4>
+                            <p className="cars__test_subtitle">{car?.text1 || "приборная панель"}</p>
                         </div>
                         <div className="cars__test_second d-flex" style={{ background: `linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url(${_LINK}/v1/api/file/${car?.fourthSecondPhoto?.name}) no-repeat center/cover` }}>
 
-                            <p className="cars__test_subtitle">климат-контроль</p>
+                            <p className="cars__test_subtitle">{car?.text2 || "климат-контроль"}</p>
                         </div>
                         <div className="cars__test_third d-flex" style={{ background: `linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url(${_LINK}/v1/api/file/${car?.fourthThirdPhoto?.name}) no-repeat center/cover` }}>
 
-                            <p className="cars__test_subtitle">бесключевой запуск</p>
+                            <p className="cars__test_subtitle">{car?.text3 || "бесключевой запуск"}</p>
                         </div>
                         <div className="cars__test_fourth d-flex" style={{ background: `linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%), url(${_LINK}/v1/api/file/${car?.fourthFourthPhoto?.name}) no-repeat center/cover` }}>
 
-                            <p className="cars__test_subtitle">круиз-контроль</p>
+                            <p className="cars__test_subtitle">{car?.text4 || "круиз-контроль"}</p>
                         </div>
                     </div>
                 </div>

@@ -7,9 +7,16 @@ const Dileram = ({setIsLight}) => {
 
     useEffect(() => {
         setIsLight (false)
+        const getDilerPage = async () => {
+            const { data } = await axios(`${_LINK}/v1/api/page/dealer`)
+            console.log(data)
+            setDilerPage(data)
+        }
+        getDilerPage()
     }, [])
 
     const [request, setRequest] = useState({ isCalled: false, category: 5 })
+    const [dilerPage, setDilerPage] = useState({})
 
     const handleCreateRequest = async () => {
         const config = {
@@ -53,10 +60,9 @@ const Dileram = ({setIsLight}) => {
             <section className="diler__hero d-flex justify-center align-center">
                 <div className="container">
                     <h2 className="section__title">
-                        ХОТИТЕ ПРИСОЕДИНИТЬСЯ К ДИЛЕРСКОЙ СЕТИ?
+                        {dilerPage?.formTitle}
                     </h2>
-                    <p className="section__subtitle">Если вы решили приобрести официальный статус дилера компании “Электромобиль”,
-                        вам необходимо подать заявку, чтобы запланировать личную встречу. Успейте присоединиться к нам по выгодным условиям!</p>\
+                    <p className="section__subtitle">{dilerPage?.formDesc}</p>\
                     <div className="diler__form_block">
                         <form className='diler__form_form'>
                             <div className="diler__form_info">

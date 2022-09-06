@@ -266,6 +266,14 @@ const EditCar = ({ setDisplay }) => {
 									<input type="text" className="admin__seo_electro car_clearance" placeholder={backCar?.clearance} id="clearance" onInput={handleInput} />
 									<label className="admin__create_label">приборная панель</label>
 									<input type="text" className="admin__seo_electro car_dashboard" placeholder={backCar?.dashboard} id="dashboard" onInput={handleInput} />
+									<label className="admin__create_label">4 фото, Текст №1</label>
+									<input type="text" className="admin__seo_electro car_dashboard" placeholder={backCar?.text1} id="text1" onInput={handleInput} />
+									<label className="admin__create_label">4 фото, Текст №2</label>
+									<input type="text" className="admin__seo_electro car_dashboard" placeholder={backCar?.text2} id="text2" onInput={handleInput} />
+									<label className="admin__create_label">4 фото, Текст №3</label>
+									<input type="text" className="admin__seo_electro car_dashboard" placeholder={backCar?.text3} id="text3" onInput={handleInput} />
+									<label className="admin__create_label">4 фото, Текст №4</label>
+									<input type="text" className="admin__seo_electro car_dashboard" placeholder={backCar?.text4} id="text4" onInput={handleInput} />
 									<span className="admin__seo_line"></span>
 									<button className="admin__seo_btn" onClick={handleSend}>Сохранить</button>
 								</div>

@@ -204,6 +204,14 @@ const Create = ({ setDisplay }) => {
                                     <input type="text" className="admin__seo_electro car_clearance" placeholder="клиренс" id="clearance" onInput={handleInput} />
                                     <label className="admin__create_label">приборная панель</label>
                                     <input type="text" className="admin__seo_electro car_dashboard" placeholder="приборная панель" id="dashboard" onInput={handleInput} />
+                                    <label className="admin__create_label">4 фото, Текст №1</label>
+                                    <input type="text" className="admin__seo_electro car_dashboard" placeholder="приборная панель" id="carText1" onInput={handleInput} />
+                                    <label className="admin__create_label">4 фото, Текст №2</label>
+                                    <input type="text" className="admin__seo_electro car_dashboard" placeholder="климат-контроль" id="carText2" onInput={handleInput} />
+                                    <label className="admin__create_label">4 фото, Текст №3</label>
+                                    <input type="text" className="admin__seo_electro car_dashboard" placeholder="бесключевой запуск" id="carText3" onInput={handleInput} />
+                                    <label className="admin__create_label">4 фото, Текст №4</label>
+                                    <input type="text" className="admin__seo_electro car_dashboard" placeholder="круиз-контроль" id="carText4" onInput={handleInput} />
                                     <span className="admin__seo_line"></span>
                                     <button className="admin__seo_btn" onClick={handleSend}>Сохранить</button>
                                 </div>

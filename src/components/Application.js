@@ -98,9 +98,11 @@ const Application = ({ setDisplay }) => {
                                     <tr className="table__header_flex">
                                         <th className="table__id">ID</th>
                                         <th className="table__name">ФИО</th>
+                                        <th className='table__name'>Модель</th>
                                         <th className="table__num">Телефон</th>
                                         <th className="table__status ">Статус</th>
                                         <th className="table__option">Option</th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody className="table__block_body">
@@ -109,6 +111,7 @@ const Application = ({ setDisplay }) => {
                                             <tr className="table__header_flex" key={idx}>
                                                 <td className="table__block_id">{el.id}</td>
                                                 <td className="table__block_name">{el.fullName}</td>
+                                                <td className="table__block_name">{el.carModel}</td>
                                                 <td className="table__block_num">{el.phone}</td>
                                                 <td className="table__block_status "><span className={`${el.isCalled ? "sm-green" : "sm-red"}`}>{el.isCalled ? "Звонили" : "Не звонили"}</span></td>
                                                 <td className="table__block_option "><NavLink to={`/edit/${el.id}`}><img src={pen} alt="" className="table__icon" /></NavLink><img onClick={() => handleDelete(el.id)} src={trash} alt="" className="table__icon" /></td>

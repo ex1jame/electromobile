@@ -24,6 +24,7 @@ import SwiperCore, { Autoplay, HashNavigation, Pagination } from 'swiper';
 import { FormBlock } from './FormBlock';
 import mainvi from '../images/mainvi.mp4'
 import backg from '../images/video.png'
+import { FormBlockMain } from './FormBlockMain';
 
 const MainPage = ({ setIsLight }) => {
 
@@ -49,7 +50,7 @@ const MainPage = ({ setIsLight }) => {
         getMainPage()
     }, [])
 
-    
+
 
     const [main, setMain] = useState({})
     const [cars, setCars] = useState([])
@@ -114,16 +115,16 @@ const MainPage = ({ setIsLight }) => {
                     <h1 className="hero__title">{main?.title?.split(" ").map(el => handleBolder(el))}</h1>
                     <h2 className="hero__subtitle ">{main?.subtitle}</h2>
                 </div>
-                <button className="orange_btn z-100" onClick={() => { setFormOn(true); window.scrollTo(0, 0) }}>Оформить заказ</button>
+                <button className="orange_btn z-100" onClick={() => { setFormOn(true); window.scrollTo(0, 0) }}>Оставить заявку</button>
             </section>
             {
-                formOn && <div className='form__overlay' ><FormBlock setOnForm={setFormOn} /><div onClick={() => setFormOn(false)} className='form__over'></div></div>
+                formOn && <div className='form__overlay' ><FormBlockMain setOnForm={setFormOn} /><div onClick={() => setFormOn(false)} className='form__over'></div></div>
             }
 
             <Swiper
                 slidesPerView={1}
-                onSlideChange={() =>{}}
-                onSwiper={(swiper) => {}}
+                onSlideChange={() => { }}
+                onSwiper={(swiper) => { }}
                 className="slider_page"
                 loop={true}
                 autoplay={{
@@ -143,11 +144,11 @@ const MainPage = ({ setIsLight }) => {
                                     if (el.includes("<br>")) {
                                         return (<br></br>)
                                     } else {
-                                        return (el+ " ")
+                                        return (el + " ")
                                     }
                                 })}
                             </p>
-                            <img src={ main?.firstFile ? `${_LINK}/v1/api/file/${main?.firstFile?.name}` : volkswagen} alt="" className="drive__img" />
+                            <img src={main?.firstFile ? `${_LINK}/v1/api/file/${main?.firstFile?.name}` : volkswagen} alt="" className="drive__img" />
                             <HashLink to="/testdrive#testdrive`"><button className="orange_btn">Записаться</button></HashLink>
                         </div>
                     </div>
@@ -167,7 +168,7 @@ const MainPage = ({ setIsLight }) => {
                                 })}
                             </p>
                             <img src={main?.secondFile ? `${_LINK}/v1/api/file/${main?.secondFile?.name}` : credit_car} alt="" className="drive__img" />
-                            <HashLink to="/credit#credit"><button className="orange_btn">Подробнее</button></HashLink>
+                            <HashLink to="/diler#root"><button className="orange_btn">Подробнее</button></HashLink>
                         </div>
                     </div>
                 </SwiperSlide>
@@ -272,7 +273,7 @@ const MainPage = ({ setIsLight }) => {
                 showStatus={false}
                 onRequestChange={containerWidth}
                 swipeable={mob}
-                
+
 
             >
                 {
@@ -325,7 +326,7 @@ const MainPage = ({ setIsLight }) => {
                                         1430: {
                                             spaceBetween: -100
                                         },
-                                        1530 : {
+                                        1530: {
                                             spaceBetween: -130
                                         }
                                     }}

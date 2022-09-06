@@ -116,6 +116,8 @@ const Edit_application = ({ setDisplay }) => {
                                     <input disabled type="text" className="admin__seo_electro car_mini_desc" placeholder={handleTitle(application?.category)} />
                                     <label className="admin__create_label">Имя</label>
                                     <input disabled type="text" className="admin__seo_electro car_long_desc" placeholder={application?.fullName} />
+                                    <label className="admin__create_label">Модель машины</label>
+                                    <input disabled type="text" className="admin__seo_electro car_long_desc" placeholder={application?.carModel} />
                                     <label className="admin__create_label">Телефон</label>
                                     <input disabled type="text" className="admin__seo_electro car_wheel_drive" placeholder={application?.phone} />
                                     <label className="admin__create_label">Дата тест-драйва</label>

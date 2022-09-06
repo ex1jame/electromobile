@@ -69,7 +69,7 @@ const Header = ({isLight, isDisplay, isBlack}) => {
                     </div>
                     <div className="header__diler-link">
                         <NavLink to="/diler"
-                                 className={`header__link ${isLight ? "header__light" : ""}`}>Дилерам</NavLink>
+                                 className={`header__link ${isLight ? "header__light" : ""}`}>Заказ в Россию</NavLink>
                     </div>
                     <div className="header__company-link">
                         <NavLink to="/about" className={`header__link ${isLight ? "header__light" : ""}`}>
