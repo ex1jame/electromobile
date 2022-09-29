@@ -15,12 +15,14 @@ const MainPageAdmin = ({ setDisplay }) => {
 	const [firstFile, setFirstFile] = useState(null)
 	const [secondFile, setSecondFile] = useState(null)
 	const [stepFile, setStepFile] = useState(null)
+	const [videoOn, setVideoOn] = useState(1)
 
 	useEffect(() => {
 		setDisplay(true)
 		const getPage = async () => {
 			const { data } = await axios(`${_LINK}/v1/api/page/mainpage`)
 			setPage(data)
+			setVideoOn(data.videoOn)
 			console.log(data)
 		}
 		getPage()
@@ -59,6 +61,7 @@ const MainPageAdmin = ({ setDisplay }) => {
 			}
 			const { data } = await axios(config)
 			console.log(data)
+
 			if (video) {
 				await addFile(video, "/mainpage/video")
 			}
@@ -223,6 +226,13 @@ const MainPageAdmin = ({ setDisplay }) => {
 									</div>
 								)
 							}
+							<div>
+								<label for="videoOn">Включить / Выключить видео</label>
+								<input checked={page?.videoOn} onInput={(e) => {
+									const newVideo = page.videoOn === 1 ? 0 : 1
+									setPage({...page, videoOn : newVideo})
+								}} id="videoOn" type="checkbox" style={{width: "18px", height: "18px", marginLeft: "20px", marginBottom: "20px"}}/>
+							</div>
 							<button className="admin__seo_btn" style={{ marginLeft: "15px", height: "45px" }} onClick={handleSend}>Сохранить</button>
 						</div>
 					</div>

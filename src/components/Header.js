@@ -9,6 +9,7 @@ import telegram from "../images/Telegram.svg";
 import { _LINK } from '../data/Data';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import whats from '../images/whatsapp.png'
 
 const Header = ({isLight, isDisplay, isBlack}) => {
 
@@ -104,6 +105,9 @@ const Header = ({isLight, isDisplay, isBlack}) => {
                     )
                 }
             </div>
+            <a href={icons?.whatsapp} target="_blank" className='whatsapp-ico' >
+                <img src={whats} alt=""/>
+            </a>
         </header>
     )
 }

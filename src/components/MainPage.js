@@ -108,7 +108,7 @@ const MainPage = ({ setIsLight }) => {
         <div className="mainpage">
             <section className="hero d-flex justify-center flex-column align-items">
                 <video playsInline autoPlay muted loop className='hero__vid' poster={`${_LINK}/v1/api/file/${main?.videoBack?.name}`}>
-                    {main?.video && <source src={`${_LINK}/v1/api/file/${main?.video.name}`} type="video/mp4" />}
+                    {(main?.video && main?.videoOn) && <source src={`${_LINK}/v1/api/file/${main?.video.name}`} type="video/mp4" />}
                 </video>
                 <div className="hero__main container d-flex align-center justify-center  flex-column z-100">
                     {/* <h1 className="hero__title">Переходи на <span className="bold">электро</span></h1> */}
